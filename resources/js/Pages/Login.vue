@@ -1,6 +1,54 @@
 <template>
     <DefaultLayout>
-        Login page
+        <div class="login-page pt-50px pb-80px">
+            <div class="container flex items-center">
+                <div class="w-5/12 ml-auto">
+                    <img class="block w-full" src="/img/logo-amigos-cerveceros.svg" alt="">
+                    <div class="divider"></div>
+                    <div class="custom-text-with-shadow relative">
+                        <p class="font-bold text-35px leading-35px text-white z-0 absolute w-full text-center">EL JUEGO EN EL QUE APRENDES</p>
+                        <p class="font-bold text-35px leading-35px text-white z-0 absolute w-full text-center">EL JUEGO EN EL QUE APRENDES</p>
+                        <p class="font-bold text-35px leading-35px text-white z-0 absolute w-full text-center">EL JUEGO EN EL QUE APRENDES</p>
+                        <p class="font-bold text-35px leading-35px text-white z-0 absolute w-full text-center">EL JUEGO EN EL QUE APRENDES</p>
+                        <p class="font-bold text-35px leading-33px text-black relative z-10 w-full text-center">EL JUEGO EN EL QUE APRENDES</p>
+                    </div>
+                    <p class="text-white text-26px leading-35px text-center">Y GANAS CON NUESTROS PRODUCTOS</p>
+                </div>
+
+                <div class="w-4/12 mx-auto">
+                    <div class="login-form-box">
+                        <form class="text-center" action="#" @submit.prevent="login">
+                            <p class="font-bold text-32px leading-34px text-white uppercase">Ingresa con tu ID</p>
+                            <p class="text-white uppercase text-29px leading-34px mb-25px">A la plataforma</p>
+                            <input v-model="form.commercial_id" class="form-control mb-5px placeholder-primary" type="text" placeholder="ID COMERCIAL">
+                            <input v-model="form.username" class="form-control placeholder-primary mb-10px" type="text" placeholder="NOMBRE DE USUARIO">
+
+                            <ul class="mb-10px">
+                                <li class="text-left text-white" v-for="error in $page.errors">{{ error[0] }}</li>
+                            </ul>
+
+                            <div class="bavaria-custom-checkbox">
+                                <input type="checkbox" name="remember" id="remember" v-model="form.remember">
+                                <label for="remember">
+                                    <div class="custom-checkbox-box">
+                                        <img src="/img/icons/icon-check-white.svg" alt="" class="custom-checkbox-icon">
+                                    </div>
+                                    <p class="text-white text-18px leading-20px">Recordar mis datos</p>
+                                </label>
+                            </div>
+                            <div class="px-15px pt-30px flex">
+                                <div class="w-1/2 pr-15px">
+                                    <button class="focus:outline-none block w-full rounded-10px bg-white font-bold text-xl text-primary uppercase py-3" type="submit">Ingresar</button>
+                                </div>
+                                <div class="w-1/2 pl-15px">
+                                    <a class="focus:outline-none block w-full rounded-10px bg-white font-bold text-xl text-primary uppercase py-3" href="#">Registrarse</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </DefaultLayout>
 </template>
 
@@ -10,10 +58,119 @@ import DefaultLayout from "../Layouts/DefaultLayout";
 export default {
     components: {
         DefaultLayout
+    },
+    data(){
+        return {
+            form: {
+                commercial_id: '',
+                username: '',
+                password: 'password',
+                remember: false
+            }
+        }
+    },
+    methods: {
+        login(){
+            axios.get('/sanctum/csrf-cookie').then(response => {
+                this.$inertia.post('/login', this.form)
+            });
+            console.log(this.$page);
+        }
     }
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.login-page{
+    background-image: url('/img/bg-home.jpg');
+    background-size: cover;
+    background-position: center;
+}
 
+.divider{
+    width: 200%;
+    height: 1px;
+    background: #fff;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    margin-right: 0;
+    margin-left: -100%;
+}
+
+.custom-text-with-shadow p:nth-child(1){
+    top: -3px;
+    left: -2px;
+    pointer-events: none;
+}
+.custom-text-with-shadow p:nth-child(2){
+    top: 1px;
+    left: -2px;
+    pointer-events: none;
+}
+.custom-text-with-shadow p:nth-child(3){
+    top: -3px;
+    left: 2px;
+    pointer-events: none;
+}
+.custom-text-with-shadow p:nth-child(4){
+    top: 1px;
+    left: 2px;
+    pointer-events: none;
+}
+
+.login-form-box{
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    border: 1px solid #fff;
+    padding: 50px 30px 30px;
+}
+
+.form-control{
+    border-radius: 10px;
+    width: 100%;
+    display: block;
+    font-size: 20px;
+    line-height: 24px;
+    padding: 5px 30px;
+
+    &:focus{
+        outline: none;
+    }
+}
+
+.bavaria-custom-checkbox{
+    input{
+        position: absolute;
+        visibility: hidden;
+    }
+
+    label{
+        display: flex;
+        align-items: center;
+    }
+
+    .custom-checkbox-box{
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
+        border: 1px solid #fff;
+        position: relative;
+    }
+
+    .custom-checkbox-icon{
+        display: none;
+        width: 15px;
+        position: absolute;
+        left: 4px;
+        top: -4px;
+    }
+
+    input:checked{
+        &~label{
+            .custom-checkbox-icon{
+                display: block;
+            }
+        }
+    }
+}
 </style>

@@ -135,6 +135,9 @@ module.exports = {
             container: {
                 center: true,
             },
+            borderRadius: {
+                '10px': '10px'
+            }
         },
     },
 
