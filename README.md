@@ -1,3 +1,54 @@
+## Important
+> **Note:** Temporarily you have to change the content of the file:
+```
+vendor/laravel/fortify/src/Http/Requests/LoginRequest.php
+```
+> Replace the content with:
+
+```php
+<?php
+
+namespace Laravel\Fortify\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+use Laravel\Fortify\Fortify;
+
+class LoginRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        return [
+            'commercial_id' => 'required|string',
+            Fortify::username() => 'required|string',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'commercial_id.required' => 'El ID Comercial es requerido',
+            'username.required' => 'El nombre de usuario es requerido'
+        ];
+    }
+}
+
+```
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
