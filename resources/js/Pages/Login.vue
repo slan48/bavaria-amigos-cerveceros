@@ -41,7 +41,7 @@
                                     <button class="focus:outline-none block w-full rounded-10px bg-white font-bold text-xl text-primary uppercase py-3" type="submit">Ingresar</button>
                                 </div>
                                 <div class="w-1/2 pl-15px">
-                                    <a class="focus:outline-none block w-full rounded-10px bg-white font-bold text-xl text-primary uppercase py-3" href="#">Registrarse</a>
+                                    <InertiaLink class="focus:outline-none block w-full rounded-10px bg-white font-bold text-xl text-primary uppercase py-3" href="/registro">Registrarse</InertiaLink>
                                 </div>
                             </div>
                         </form>

@@ -19,12 +19,14 @@ class CreateNewUser implements CreatesNewUsers
     public function create(array $input)
     {
         $validator = Validator::make($input, [
-            'name' => ['string', 'max:255'],
-            'dni' => ['string', 'max:255'],
-            'phone' => ['string', 'max:15'],
+            'name' => ['required', 'string', 'max:255'],
+            'dni' => ['required', 'string', 'max:255'],
+            'phone' => ['required', 'string', 'max:15'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'username' => ['required', 'string', 'min:8', 'unique:users'],
             'commercial_id' => ['required', 'string'],
+            'remember' => ['required', 'boolean'],
+            'acceptTerms' => ['required', 'boolean', 'accepted']
         ])->validate();
 
         $user = User::where('commercial_id', $input['commercial_id'])->first();
@@ -38,11 +40,11 @@ class CreateNewUser implements CreatesNewUsers
                 $user->registered = true;
                 $user->save();
 
-                Auth::login($user, true);
+                Auth::login($user, $input['remember']);
 
                 return $user;
             } else{
-                Auth::login($user, true);
+                Auth::login($user, $input['remember']);
 
                 return $user;
             }

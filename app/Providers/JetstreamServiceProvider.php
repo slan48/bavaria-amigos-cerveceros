@@ -37,6 +37,10 @@ class JetstreamServiceProvider extends ServiceProvider
             return Inertia::render('Login')->toResponse($request);
         });
 
+        Fortify::registerView(function (Request $request) {
+            return Inertia::render('Register')->toResponse($request);
+        });
+
         Fortify::authenticateUsing(function (Request $request) {
             $user = User::where([
                 ['username', '=', $request->username],
