@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Laravel\Fortify\Features;
 use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 use Laravel\Fortify\Http\Controllers\RegisteredUserController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,7 @@ use Laravel\Fortify\Http\Controllers\RegisteredUserController;
 */
 
 Route::middleware(['auth:sanctum'])->group(function (){
-    Route::get('/', function (Request $request) {
-        return Inertia\Inertia::render('Home', ['user' => $request->user()]);
-    })->name('home');
+    Route::get('/', HomeController::class)->name('home');
 
     Route::get('/perfil', function () {
         return Inertia\Inertia::render('Profile/Show');

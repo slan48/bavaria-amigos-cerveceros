@@ -17,6 +17,7 @@
                         <div class="register-form-box">
                             <p class="font-bold text-32px leading-34px text-white uppercase">Regístrate ahora</p>
                             <p class="text-white uppercase text-20px leading-24px mb-25px tracking-tighter">INGRESA TUS DATOS PARA ACCEDER<br>A LA PLATAFORMA</p>
+
                             <input v-model="form.name" class="form-control tracking-tighter w-full mb-5px placeholder-primary" type="text" placeholder="NOMBRE">
                             <p class="text-white text-left mt-5px mb-10px" v-if="$page.errors.name">{{ $page.errors.name[0] }}</p>
                             <input v-model="form.dni" class="form-control tracking-tighter w-full mb-5px placeholder-primary" type="text" placeholder="CÉDULA">
