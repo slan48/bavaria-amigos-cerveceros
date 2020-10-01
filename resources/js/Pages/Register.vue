@@ -5,28 +5,33 @@
                 <div class="w-4/12 pt-50px pb-30px mx-auto">
                     <form class="text-center" action="#" @submit.prevent="register">
                         <p class="text-30px leading-30px mb-8px text-white uppercase tracking-tighter">Fecha de nacimiento</p>
-                        <div class="flex justify-center mb-30px">
-                            <input type="text" class="w-63px rounded-10px text-20px leading-24px py-5px placeholder-gray text-center focus:outline-none" placeholder="DÍA">
-                            <input type="text" class="mx-5px w-63px rounded-10px text-20px leading-24px py-5px placeholder-gray text-center focus:outline-none" placeholder="MES">
-                            <input type="text" class="w-75px rounded-10px text-20px leading-24px py-5px placeholder-gray text-center focus:outline-none" placeholder="AÑO">
+                        <div class="mb-30px">
+                            <div class="flex justify-center">
+                                <the-mask mask="##" v-model="day" type="text" class="w-63px rounded-10px text-20px leading-24px py-5px placeholder-gray text-center focus:outline-none" placeholder="DÍA" />
+                                <the-mask mask="##" v-model="month" type="text" class="mx-5px w-63px rounded-10px text-20px leading-24px py-5px placeholder-gray text-center focus:outline-none" placeholder="MES" />
+                                <the-mask mask="####" v-model="year" type="text" class="w-75px rounded-10px text-20px leading-24px py-5px placeholder-gray text-center focus:outline-none" placeholder="AÑO" />
+                            </div>
+                            <p class="text-white text-center mt-10px" v-if="$page.errors.birthday">{{ $page.errors.birthday[0] }}</p>
                         </div>
+
                         <div class="register-form-box">
                             <p class="font-bold text-32px leading-34px text-white uppercase">Regístrate ahora</p>
                             <p class="text-white uppercase text-20px leading-24px mb-25px tracking-tighter">INGRESA TUS DATOS PARA ACCEDER<br>A LA PLATAFORMA</p>
                             <input v-model="form.name" class="form-control tracking-tighter w-full mb-5px placeholder-primary" type="text" placeholder="NOMBRE">
+                            <p class="text-white text-left mt-5px mb-10px" v-if="$page.errors.name">{{ $page.errors.name[0] }}</p>
                             <input v-model="form.dni" class="form-control tracking-tighter w-full mb-5px placeholder-primary" type="text" placeholder="CÉDULA">
+                            <p class="text-white text-left mt-5px mb-10px" v-if="$page.errors.dni">{{ $page.errors.dni[0] }}</p>
                             <input v-model="form.phone" class="form-control tracking-tighter w-full mb-5px placeholder-primary" type="text" placeholder="TELÉFONO">
+                            <p class="text-white text-left mt-5px mb-10px" v-if="$page.errors.phone">{{ $page.errors.phone[0] }}</p>
                             <input v-model="form.email" class="form-control tracking-tighter w-full mb-5px placeholder-primary" type="text" placeholder="E-MAIL">
+                            <p class="text-white text-left mt-5px mb-10px" v-if="$page.errors.email">{{ $page.errors.email[0] }}</p>
                             <input v-model="form.commercial_id" class="form-control tracking-tighter w-full mb-5px placeholder-primary" type="text" placeholder="ID COMERCIAL">
+                            <p class="text-white text-left mt-5px mb-10px" v-if="$page.errors.commercial_id">{{ $page.errors.commercial_id[0] }}</p>
                             <div class="relative">
                                 <input v-model="form.username" class="form-control tracking-tighter w-full placeholder-primary mb-10px" type="text" placeholder="NOMBRE DE USUARIO">
                                 <span v-show="!form.username.length" class="absolute text-gray-dark text-14px extra-placeholder tracking-tighter">Min 8 caracteres</span>
                             </div>
-
-                            <ul class="mb-10px">
-                                <li class="text-left text-white" v-for="errorKey in Object.keys($page.errors)" v-if="errorKey !== 'acceptTerms'">{{ $page.errors[errorKey][0] }}</li>
-                                <li class="text-left text-white" v-if="$page.errors.acceptTerms">Debe aceptar los términos y condiciones</li>
-                            </ul>
+                            <p class="text-white text-left mt-5px mb-10px" v-if="$page.errors.username">{{ $page.errors.username[0] }}</p>
 
                             <div class="bavaria-custom-checkbox">
                                 <input type="checkbox" name="remember" id="acceptTerms" v-model="form.acceptTerms">
@@ -37,6 +42,8 @@
                                     <p class="text-white text-18px leading-20px">Aceptar términos y condiciones</p>
                                 </label>
                             </div>
+                            <p class="text-white text-center mb-10px" v-if="$page.errors.acceptTerms">{{ $page.errors.acceptTerms[0] }}</p>
+
                             <div class="bavaria-custom-checkbox">
                                 <input type="checkbox" name="remember" id="remember" v-model="form.remember">
                                 <label for="remember">
@@ -89,10 +96,13 @@
 
 <script>
 import DefaultLayout from "../Layouts/DefaultLayout";
+import {TheMask} from 'vue-the-mask'
+import moment from 'moment';
 
 export default {
     components: {
-        DefaultLayout
+        DefaultLayout,
+        TheMask
     },
     data(){
         return {
@@ -105,13 +115,32 @@ export default {
                 username: '',
                 acceptTerms: false,
                 remember: false
+            },
+            day: '',
+            month: '',
+            year: ''
+        }
+    },
+    computed: {
+        birthday(){
+            if (this.day.length && this.month.length && this.year.length){
+                let day = this.day;
+                let month = this.month;
+                if (day.length === 1) day = '0' + day;
+                if (month.length === 1) month = '0' + month;
+
+                // let isValidDate =  moment(`${this.year}-${month}-${day}`, 'YYYY-MM-DD', true).isValid();
+
+                return `${this.year}-${month}-${day}`;
             }
+
+            return '';
         }
     },
     methods: {
         register(){
             axios.get('/sanctum/csrf-cookie').then(response => {
-                this.$inertia.post('/register', this.form)
+                this.$inertia.post('/register', {...this.form, birthday: this.birthday})
             });
         }
     }

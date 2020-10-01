@@ -26,7 +26,8 @@ class CreateNewUser implements CreatesNewUsers
             'username' => ['required', 'string', 'min:8', 'unique:users'],
             'commercial_id' => ['required', 'string'],
             'remember' => ['required', 'boolean'],
-            'acceptTerms' => ['required', 'boolean', 'accepted']
+            'acceptTerms' => ['required', 'boolean', 'accepted'],
+            'birthday' => ['required', 'date'],
         ])->validate();
 
         $user = User::where('commercial_id', $input['commercial_id'])->first();
@@ -38,6 +39,7 @@ class CreateNewUser implements CreatesNewUsers
                 $user->email = $input['email'];
                 $user->username = $input['username'];
                 $user->registered = true;
+                $user->birthday = $input['birthday'];
                 $user->save();
 
                 Auth::login($user, $input['remember']);

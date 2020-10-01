@@ -20,7 +20,7 @@ use Laravel\Fortify\Http\Controllers\RegisteredUserController;
 Route::middleware(['auth:sanctum'])->group(function (){
     Route::get('/', function (Request $request) {
         return Inertia\Inertia::render('Home', ['user' => $request->user()]);
-    })->name('inicio');
+    })->name('home');
 
     Route::get('/perfil', function () {
         return Inertia\Inertia::render('Profile/Show');

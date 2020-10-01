@@ -130,9 +130,13 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'birthday' => [
+            'required' => 'Debes ingresar tu fecha de nacimiento',
+            'date' => 'La fecha indicada no es válida'
         ],
+        'acceptTerms' => [
+            'accepted' =>  'Debes aceptar los términos y condiciones'
+        ]
     ],
 
     /*
@@ -146,6 +150,13 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'name' => 'Nombre',
+        'dni' => 'Cédula',
+        'phone' => 'Teléfono',
+        'email' => 'E-mail',
+        'username' => 'Nombre de usuario',
+        'commercial_id' => 'Id Comercial'
+    ],
 
 ];
