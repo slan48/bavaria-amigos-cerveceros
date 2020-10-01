@@ -33,27 +33,6 @@ import DefaultLayout from "../Layouts/DefaultLayout";
 export default {
     components: {
         DefaultLayout
-    },
-    props: {
-        awards: Array
-    },
-    data(){
-        return {
-            form: {
-                commercial_id: '',
-                username: '',
-                password: 'password',
-                remember: false
-            }
-        }
-    },
-    methods: {
-        login(){
-            axios.get('/sanctum/csrf-cookie').then(response => {
-                this.$inertia.post('/login', this.form)
-            });
-            console.log(this.$page);
-        }
     }
 }
 </script>

@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
 use Laravel\Fortify\Features;
 use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 use Laravel\Fortify\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PlayController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +24,8 @@ Route::middleware(['auth:sanctum'])->group(function (){
     Route::get('/como-participar', function (){
         return Inertia\Inertia::render('HowToParticipate');
     })->name('como-participar');
+
+    Route::get('/juega-y-gana', [PlayController::class, 'Instructions'])->name('juega-y-gana');
 
     Route::get('/perfil', function () {
         return Inertia\Inertia::render('Profile/Show');
