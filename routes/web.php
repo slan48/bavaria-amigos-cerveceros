@@ -21,6 +21,10 @@ use App\Http\Controllers\HomeController;
 Route::middleware(['auth:sanctum'])->group(function (){
     Route::get('/', HomeController::class)->name('home');
 
+    Route::get('/como-participar', function (){
+        return Inertia\Inertia::render('HowToParticipate');
+    })->name('como-participar');
+
     Route::get('/perfil', function () {
         return Inertia\Inertia::render('Profile/Show');
     })->name('perfil');
