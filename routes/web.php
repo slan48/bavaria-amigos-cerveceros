@@ -6,6 +6,7 @@ use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 use Laravel\Fortify\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PlayController;
+use App\Http\Controllers\ParticipationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,9 @@ Route::middleware(['auth:sanctum'])->group(function (){
     })->name('como-participar');
 
     Route::get('/juega-y-gana', [PlayController::class, 'Instructions'])->name('juega-y-gana');
+    Route::get('/juega-y-gana/juego/{participation}', [PlayController::class, 'game'])->name('juega-y-gana.game');
+
+    Route::post('/participations', [ParticipationController::class, 'create'])->name('participations.create');
 
     Route::get('/perfil', function () {
         return Inertia\Inertia::render('Profile/Show');

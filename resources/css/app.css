@@ -8,3 +8,7 @@
         max-width: 1140px;
     }
 }
+
+*{
+    @apply outline-none;
+}

@@ -1,9 +1,9 @@
 <template>
     <header class="z-10 bg-white">
         <div class="container relative h-full">
-            <div class="logo rounded-full bg-white absolute left-0 top-0">
+            <inertia-link href="/" class="logo rounded-full bg-white absolute left-0 top-0 block">
                 <img class="w-9/12 block mx-auto mt-5" src="/img/logo-amigos-cerveceros.svg" alt="">
-            </div>
+            </inertia-link>
             <nav class="main-menu-container h-full py-15px">
                 <ul class="flex justify-center items-center mx-auto h-full">
                     <li>

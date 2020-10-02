@@ -15,10 +15,10 @@ class CreateCodesTable extends Migration
     {
         Schema::create('codes', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->integer('award_id');
-            $table->integer('participation_id');
-            $table->integer('code');
+            $table->integer('user_id')->nullable();
+            $table->integer('award_id')->nullable();
+            $table->integer('participation_id')->nullable();
+            $table->string('code');
             $table->timestamps();
         });
     }

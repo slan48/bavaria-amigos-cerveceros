@@ -19,7 +19,7 @@ class CreateParticipationsTable extends Migration
             $table->integer('user_id');
             $table->integer('code_id');
             $table->integer('score');
-            $table->timestamp('time');
+            $table->integer('time_in_seconds');
             $table->timestamps();
         });
     }

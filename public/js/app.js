@@ -3253,78 +3253,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/PlayAndWin.vue?vue&type=script&lang=js&":
-/*!****************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/PlayAndWin.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Layouts_DefaultLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Layouts/DefaultLayout */ "./resources/js/Layouts/DefaultLayout.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    DefaultLayout: _Layouts_DefaultLayout__WEBPACK_IMPORTED_MODULE_0__["default"]
-  },
-  props: {
-    awards: Array
-  },
-  data: function data() {
-    return {
-      form: {
-        commercial_id: '',
-        username: '',
-        password: 'password',
-        remember: false
-      }
-    };
-  },
-  methods: {
-    login: function login() {
-      var _this = this;
-
-      axios.get('/sanctum/csrf-cookie').then(function (response) {
-        _this.$inertia.post('/login', _this.form);
-      });
-      console.log(this.$page);
-    }
-  }
-});
-
-/***/ }),
-
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Profile/DeleteUserForm.vue?vue&type=script&lang=js&":
 /*!****************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Profile/DeleteUserForm.vue?vue&type=script&lang=js& ***!
@@ -4285,6 +4213,124 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/juega-y-gana/Index.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/juega-y-gana/Index.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Layouts_DefaultLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Layouts/DefaultLayout */ "./resources/js/Layouts/DefaultLayout.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    DefaultLayout: _Layouts_DefaultLayout__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  props: {
+    awards: Array
+  },
+  data: function data() {
+    return {
+      code: {}
+    };
+  },
+  methods: {
+    startParticipation: function startParticipation(award_id) {
+      this.$inertia.post('/participations', {
+        award_id: award_id,
+        user_id: this.$page.user.id,
+        code: this.code[award_id]
+      }, {
+        preserveScroll: true
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/juega-y-gana/Play.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/juega-y-gana/Play.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Layouts_DefaultLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Layouts/DefaultLayout */ "./resources/js/Layouts/DefaultLayout.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    DefaultLayout: _Layouts_DefaultLayout__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  props: {
+    awards: Array
+  },
+  data: function data() {
+    return {
+      code: {}
+    };
+  },
+  methods: {
+    startParticipation: function startParticipation(award_id) {
+      this.$inertia.post('/participations', {
+        award_id: award_id,
+        user_id: this.$page.user.id,
+        code: this.code[award_id]
+      });
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Footer.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Footer.vue?vue&type=script&lang=js& ***!
@@ -4449,25 +4495,6 @@ exports.push([module.i, ".login-page[data-v-0004d9e0] {\n  background-image: url
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/PlayAndWin.vue?vue&type=style&index=0&id=1b83ae7c&scoped=true&lang=scss&":
-/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/PlayAndWin.vue?vue&type=style&index=0&id=1b83ae7c&scoped=true&lang=scss& ***!
-  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".play-and-win-instructions-page[data-v-1b83ae7c] {\n  background-image: url(\"/img/bg-white.jpg\");\n  background-size: cover;\n  background-position: center;\n}\nimg[data-v-1b83ae7c] {\n  height: 140px;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Register.vue?vue&type=style&index=0&id=b7e42868&scoped=true&lang=scss&":
 /*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Register.vue?vue&type=style&index=0&id=b7e42868&scoped=true&lang=scss& ***!
@@ -4481,6 +4508,44 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 // module
 exports.push([module.i, ".register-page[data-v-b7e42868] {\n  background-image: url(\"/img/bg-register.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.register-form-box[data-v-b7e42868] {\n  background: rgba(0, 0, 0, 0.4);\n  border-radius: 10px;\n  border: 1px solid #fff;\n  padding: 30px;\n}\n.form-control[data-v-b7e42868] {\n  border-radius: 10px;\n  display: block;\n  font-size: 20px;\n  line-height: 24px;\n  padding: 5px 7px;\n}\n.form-control[data-v-b7e42868]:focus {\n  outline: none;\n}\n.bavaria-custom-checkbox[data-v-b7e42868] {\n  display: inline-block;\n}\n.bavaria-custom-checkbox input[data-v-b7e42868] {\n  position: absolute;\n  visibility: hidden;\n}\n.bavaria-custom-checkbox label[data-v-b7e42868] {\n  display: flex;\n  align-items: center;\n}\n.bavaria-custom-checkbox .custom-checkbox-box[data-v-b7e42868] {\n  width: 18px;\n  height: 18px;\n  margin-right: 10px;\n  border: 1px solid #fff;\n  position: relative;\n}\n.bavaria-custom-checkbox .custom-checkbox-icon[data-v-b7e42868] {\n  display: none;\n  width: 15px;\n  position: absolute;\n  left: 4px;\n  top: -4px;\n}\n.bavaria-custom-checkbox input:checked ~ label .custom-checkbox-icon[data-v-b7e42868] {\n  display: block;\n}\n.terms-box[data-v-b7e42868] {\n  width: calc(100% + 60px);\n  padding-right: 60px;\n  padding-top: 25px;\n  height: 265px;\n  overflow: auto;\n}\n.terms-box p[data-v-b7e42868] {\n  margin-bottom: 18px;\n  font-size: 14px;\n  line-height: 16px;\n  --text-opacity: 1;\n  color: #666666;\n  color: rgba(102, 102, 102, var(--text-opacity));\n}\n.extra-placeholder[data-v-b7e42868] {\n  left: 170px;\n  bottom: 5px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/juega-y-gana/Index.vue?vue&type=style&index=0&id=5f1561b4&scoped=true&lang=scss&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/juega-y-gana/Index.vue?vue&type=style&index=0&id=5f1561b4&scoped=true&lang=scss& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".play-and-win-instructions-page[data-v-5f1561b4] {\n  background-image: url(\"/img/bg-white.jpg\");\n  background-size: cover;\n  background-position: center;\n}\nimg[data-v-5f1561b4] {\n  height: 140px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/juega-y-gana/Play.vue?vue&type=style&index=0&id=5f6bcf90&scoped=true&lang=scss&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/juega-y-gana/Play.vue?vue&type=style&index=0&id=5f6bcf90&scoped=true&lang=scss& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".game-play-page[data-v-5f6bcf90] {\n  background-image: url(\"/img/bg-white.jpg\");\n  background-size: cover;\n  background-position: center;\n}\nimg[data-v-5f6bcf90] {\n  height: 140px;\n}\n", ""]);
 
 // exports
 
@@ -45408,36 +45473,6 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/PlayAndWin.vue?vue&type=style&index=0&id=1b83ae7c&scoped=true&lang=scss&":
-/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/PlayAndWin.vue?vue&type=style&index=0&id=1b83ae7c&scoped=true&lang=scss& ***!
-  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./PlayAndWin.vue?vue&type=style&index=0&id=1b83ae7c&scoped=true&lang=scss& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/PlayAndWin.vue?vue&type=style&index=0&id=1b83ae7c&scoped=true&lang=scss&");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Register.vue?vue&type=style&index=0&id=b7e42868&scoped=true&lang=scss&":
 /*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Register.vue?vue&type=style&index=0&id=b7e42868&scoped=true&lang=scss& ***!
@@ -45461,6 +45496,66 @@ options.transform = transform
 options.insertInto = undefined;
 
 var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/juega-y-gana/Index.vue?vue&type=style&index=0&id=5f1561b4&scoped=true&lang=scss&":
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/juega-y-gana/Index.vue?vue&type=style&index=0&id=5f1561b4&scoped=true&lang=scss& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../node_modules/vue-loader/lib??vue-loader-options!./Index.vue?vue&type=style&index=0&id=5f1561b4&scoped=true&lang=scss& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/juega-y-gana/Index.vue?vue&type=style&index=0&id=5f1561b4&scoped=true&lang=scss&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/juega-y-gana/Play.vue?vue&type=style&index=0&id=5f6bcf90&scoped=true&lang=scss&":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/juega-y-gana/Play.vue?vue&type=style&index=0&id=5f6bcf90&scoped=true&lang=scss& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../node_modules/vue-loader/lib??vue-loader-options!./Play.vue?vue&type=style&index=0&id=5f6bcf90&scoped=true&lang=scss& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/juega-y-gana/Play.vue?vue&type=style&index=0&id=5f6bcf90&scoped=true&lang=scss&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -48670,122 +48765,6 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/PlayAndWin.vue?vue&type=template&id=1b83ae7c&scoped=true&":
-/*!********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/PlayAndWin.vue?vue&type=template&id=1b83ae7c&scoped=true& ***!
-  \********************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("DefaultLayout", [
-    _c("div", { staticClass: "play-and-win-instructions-page" }, [
-      _c("div", { staticClass: "container py-45px" }, [
-        _c(
-          "h2",
-          {
-            staticClass:
-              "font-bold text-24px text-primary text-center uppercase"
-          },
-          [_vm._v("INGRESA TUS CÓDIGOS, JUEGA Y GANA ESPECTACULARES PREMIOS")]
-        ),
-        _vm._v(" "),
-        _c(
-          "p",
-          { staticClass: "text-center text-gray-dark text-18px mb-25px -mt-2" },
-          [_vm._v("Recuerda que puedes ingresar máximo dos códigos por premio")]
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "awards-box" }, [
-          _c(
-            "h3",
-            {
-              staticClass:
-                "bg-primary tracking-tighter text-white uppercase text-27px py-5px text-center rounded-t-10px"
-            },
-            [_vm._v("Premios octubre")]
-          ),
-          _vm._v(" "),
-          _vm.awards && _vm.awards.length
-            ? _c(
-                "div",
-                { staticClass: "grid grid-cols-3 gap-5px pt-5px" },
-                _vm._l(_vm.awards, function(award) {
-                  return _c("div", { staticClass: "bg-white p-10px" }, [
-                    _c("div", { staticClass: "flex flex-wrap items-end" }, [
-                      _c("div", { staticClass: "w-1/4" }, [
-                        _c(
-                          "p",
-                          {
-                            staticClass:
-                              "text-90px leading-70px font-bold text-gray-dark"
-                          },
-                          [_vm._v(_vm._s(award.stock))]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "span",
-                          {
-                            staticClass:
-                              "text-primary text-16px tracking-tighter uppercase leading-16px block"
-                          },
-                          [_vm._v(_vm._s(award.name))]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("img", {
-                        staticClass: "w-3/4 object-center object-contain",
-                        attrs: { src: award.image_path, alt: "" }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "grid grid-cols-2 gap-5px mt-10px" },
-                      [
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "py-5px px-7px bg-gray-light text-gray uppercase rounded-10px tracking-tighter"
-                          },
-                          [_vm._v("Ingresa tu código")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "py-5px px-7px bg-primary text-white uppercase rounded-10px tracking-tighter"
-                          },
-                          [_vm._v("Jugar ahora")]
-                        )
-                      ]
-                    )
-                  ])
-                }),
-                0
-              )
-            : _vm._e()
-        ])
-      ])
-    ])
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Profile/DeleteUserForm.vue?vue&type=template&id=4ed1f029&":
 /*!********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Profile/DeleteUserForm.vue?vue&type=template&id=4ed1f029& ***!
@@ -50600,6 +50579,211 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/juega-y-gana/Index.vue?vue&type=template&id=5f1561b4&scoped=true&":
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/juega-y-gana/Index.vue?vue&type=template&id=5f1561b4&scoped=true& ***!
+  \****************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("DefaultLayout", [
+    _c("div", { staticClass: "play-and-win-instructions-page" }, [
+      _c("div", { staticClass: "container py-45px" }, [
+        _c(
+          "h2",
+          {
+            staticClass:
+              "font-bold text-24px text-primary text-center uppercase"
+          },
+          [_vm._v("INGRESA TUS CÓDIGOS, JUEGA Y GANA ESPECTACULARES PREMIOS")]
+        ),
+        _vm._v(" "),
+        _c(
+          "p",
+          { staticClass: "text-center text-gray-dark text-18px mb-25px -mt-2" },
+          [_vm._v("Recuerda que puedes ingresar máximo dos códigos por premio")]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "awards-box" }, [
+          _c(
+            "h3",
+            {
+              staticClass:
+                "bg-primary tracking-tighter text-white uppercase text-27px py-5px text-center rounded-t-10px"
+            },
+            [_vm._v("Premios octubre")]
+          ),
+          _vm._v(" "),
+          _vm.awards && _vm.awards.length
+            ? _c(
+                "div",
+                { staticClass: "grid grid-cols-3 gap-5px pt-5px" },
+                _vm._l(_vm.awards, function(award) {
+                  return _c(
+                    "div",
+                    { staticClass: "bg-white p-10px relative" },
+                    [
+                      _c("div", { staticClass: "flex flex-wrap items-end" }, [
+                        _c("div", { staticClass: "w-1/4" }, [
+                          _c(
+                            "p",
+                            {
+                              staticClass:
+                                "text-90px leading-70px font-bold text-gray-dark"
+                            },
+                            [_vm._v(_vm._s(award.stock))]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "span",
+                            {
+                              staticClass:
+                                "text-primary text-16px tracking-tighter uppercase leading-16px block"
+                            },
+                            [_vm._v(_vm._s(award.name))]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("img", {
+                          staticClass: "w-3/4 object-center object-contain",
+                          attrs: { src: award.image_path, alt: "" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "grid grid-cols-2 gap-5px mt-10px" },
+                        [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.code[award.id],
+                                expression: "code[award.id]"
+                              }
+                            ],
+                            staticClass:
+                              "text-center py-5px px-7px bg-gray-light text-gray-dark placeholder-gray uppercase rounded-10px tracking-tighter",
+                            attrs: { placeholder: "Ingresa tu código" },
+                            domProps: { value: _vm.code[award.id] },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.code,
+                                  award.id,
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              staticClass:
+                                "py-5px px-7px bg-primary text-white uppercase rounded-10px tracking-tighter focus:outline-none",
+                              on: {
+                                click: function($event) {
+                                  $event.preventDefault()
+                                  return _vm.startParticipation(award.id)
+                                }
+                              }
+                            },
+                            [_vm._v("Jugar ahora")]
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _vm.$page.errors.code &&
+                      _vm.$page.errors.award_id == award.id
+                        ? _c("p", { staticClass: "text-primary" }, [
+                            _vm._v(_vm._s(_vm.$page.errors.code[0]))
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      !award.available
+                        ? _c(
+                            "div",
+                            {
+                              staticClass:
+                                "absolute top-0 left-0 w-full h-full z-10 uppercase text-white text-center flex justify-center items-center text-22px leading-22px",
+                              staticStyle: { background: "rgba(0,0,0,0.8)" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                            Premio disponible"
+                              ),
+                              _c("br"),
+                              _vm._v(
+                                "en " +
+                                  _vm._s(award.available_month) +
+                                  "\n                        "
+                              )
+                            ]
+                          )
+                        : _vm._e()
+                    ]
+                  )
+                }),
+                0
+              )
+            : _vm._e()
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/juega-y-gana/Play.vue?vue&type=template&id=5f6bcf90&scoped=true&":
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/juega-y-gana/Play.vue?vue&type=template&id=5f6bcf90&scoped=true& ***!
+  \***************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("DefaultLayout", [
+    _c("div", { staticClass: "game-play-page" }, [
+      _c("div", { staticClass: "container py-45px" }, [
+        _vm._v(
+          "\n            Estas en la página del juego y has registrado tu participacion, no puedes recargar la pagina\n        "
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Footer.vue?vue&type=template&id=61a7c374&scoped=true&":
 /*!*********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Footer.vue?vue&type=template&id=61a7c374&scoped=true& ***!
@@ -50746,155 +50930,157 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("header", { staticClass: "z-10 bg-white" }, [
-    _c("div", { staticClass: "container relative h-full" }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _c("nav", { staticClass: "main-menu-container h-full py-15px" }, [
+    _c(
+      "div",
+      { staticClass: "container relative h-full" },
+      [
         _c(
-          "ul",
-          { staticClass: "flex justify-center items-center mx-auto h-full" },
+          "inertia-link",
+          {
+            staticClass:
+              "logo rounded-full bg-white absolute left-0 top-0 block",
+            attrs: { href: "/" }
+          },
           [
-            _c(
-              "li",
-              [
-                _c(
-                  "InertiaLink",
-                  {
-                    staticClass:
-                      "text-20px leading-24px font-bold uppercase block text-center py-10px px-15px border-l border-gray",
-                    class: { active: _vm.$page.currentRouteName === "home" },
-                    attrs: { href: "/" }
-                  },
-                  [_vm._v("Inicio")]
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              [
-                _c(
-                  "InertiaLink",
-                  {
-                    staticClass:
-                      "text-20px leading-24px font-bold uppercase block text-center py-10px px-15px border-l border-gray",
-                    class: {
-                      active: _vm.$page.currentRouteName === "como-participar"
-                    },
-                    attrs: { href: "/como-participar" }
-                  },
-                  [_vm._v("Cómo participar")]
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              [
-                _c(
-                  "InertiaLink",
-                  {
-                    staticClass:
-                      "text-20px leading-24px font-bold uppercase block text-center py-10px px-15px border-l border-gray",
-                    class: {
-                      active: _vm.$page.currentRouteName === "juega-y-gana"
-                    },
-                    attrs: { href: "/juega-y-gana" }
-                  },
-                  [_vm._v("Juega y gana")]
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              [
-                _c(
-                  "InertiaLink",
-                  {
-                    staticClass:
-                      "text-20px leading-24px font-bold uppercase block text-center py-10px px-15px border-l border-r border-gray",
-                    class: {
-                      active: _vm.$page.currentRouteName === "ganadores"
-                    },
-                    attrs: { href: "/ganadores" }
-                  },
-                  [_vm._v("Ganadores")]
-                )
-              ],
-              1
-            )
+            _c("img", {
+              staticClass: "w-9/12 block mx-auto mt-5",
+              attrs: { src: "/img/logo-amigos-cerveceros.svg", alt: "" }
+            })
           ]
-        )
-      ]),
-      _vm._v(" "),
-      _vm.$page.user
-        ? _c("div", { staticClass: "user-menu" }, [
-            _c("div", { staticClass: "user-menu-toggle" }, [
-              _c("img", { attrs: { src: "/img/avatar-blank.svg", alt: "" } }),
-              _vm._v(
-                "\n                " +
-                  _vm._s(_vm.$page.user.name) +
-                  "\n            "
-              )
-            ]),
-            _vm._v(" "),
-            _c("ul", [
+        ),
+        _vm._v(" "),
+        _c("nav", { staticClass: "main-menu-container h-full py-15px" }, [
+          _c(
+            "ul",
+            { staticClass: "flex justify-center items-center mx-auto h-full" },
+            [
               _c(
                 "li",
                 [
-                  _c("InertiaLink", { attrs: { href: "/perfil" } }, [
-                    _vm._v("Mi perfil")
-                  ])
+                  _c(
+                    "InertiaLink",
+                    {
+                      staticClass:
+                        "text-20px leading-24px font-bold uppercase block text-center py-10px px-15px border-l border-gray",
+                      class: { active: _vm.$page.currentRouteName === "home" },
+                      attrs: { href: "/" }
+                    },
+                    [_vm._v("Inicio")]
+                  )
                 ],
                 1
               ),
               _vm._v(" "),
-              _c("li", [
-                _c(
-                  "a",
-                  {
-                    attrs: { href: "/cerrar-sesion" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.logout($event)
-                      }
-                    }
-                  },
-                  [
-                    _vm._v(
-                      "\n                        Cerrar sesión\n                    "
-                    )
-                  ]
+              _c(
+                "li",
+                [
+                  _c(
+                    "InertiaLink",
+                    {
+                      staticClass:
+                        "text-20px leading-24px font-bold uppercase block text-center py-10px px-15px border-l border-gray",
+                      class: {
+                        active: _vm.$page.currentRouteName === "como-participar"
+                      },
+                      attrs: { href: "/como-participar" }
+                    },
+                    [_vm._v("Cómo participar")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "li",
+                [
+                  _c(
+                    "InertiaLink",
+                    {
+                      staticClass:
+                        "text-20px leading-24px font-bold uppercase block text-center py-10px px-15px border-l border-gray",
+                      class: {
+                        active: _vm.$page.currentRouteName === "juega-y-gana"
+                      },
+                      attrs: { href: "/juega-y-gana" }
+                    },
+                    [_vm._v("Juega y gana")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "li",
+                [
+                  _c(
+                    "InertiaLink",
+                    {
+                      staticClass:
+                        "text-20px leading-24px font-bold uppercase block text-center py-10px px-15px border-l border-r border-gray",
+                      class: {
+                        active: _vm.$page.currentRouteName === "ganadores"
+                      },
+                      attrs: { href: "/ganadores" }
+                    },
+                    [_vm._v("Ganadores")]
+                  )
+                ],
+                1
+              )
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _vm.$page.user
+          ? _c("div", { staticClass: "user-menu" }, [
+              _c("div", { staticClass: "user-menu-toggle" }, [
+                _c("img", { attrs: { src: "/img/avatar-blank.svg", alt: "" } }),
+                _vm._v(
+                  "\n                " +
+                    _vm._s(_vm.$page.user.name) +
+                    "\n            "
                 )
+              ]),
+              _vm._v(" "),
+              _c("ul", [
+                _c(
+                  "li",
+                  [
+                    _c("InertiaLink", { attrs: { href: "/perfil" } }, [
+                      _vm._v("Mi perfil")
+                    ])
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c("li", [
+                  _c(
+                    "a",
+                    {
+                      attrs: { href: "/cerrar-sesion" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.logout($event)
+                        }
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n                        Cerrar sesión\n                    "
+                      )
+                    ]
+                  )
+                ])
               ])
             ])
-          ])
-        : _vm._e()
-    ])
+          : _vm._e()
+      ],
+      1
+    )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "logo rounded-full bg-white absolute left-0 top-0" },
-      [
-        _c("img", {
-          staticClass: "w-9/12 block mx-auto mt-5",
-          attrs: { src: "/img/logo-amigos-cerveceros.svg", alt: "" }
-        })
-      ]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -64624,8 +64810,6 @@ var map = {
 	"./HowToParticipate.vue": "./resources/js/Pages/HowToParticipate.vue",
 	"./Login": "./resources/js/Pages/Login.vue",
 	"./Login.vue": "./resources/js/Pages/Login.vue",
-	"./PlayAndWin": "./resources/js/Pages/PlayAndWin.vue",
-	"./PlayAndWin.vue": "./resources/js/Pages/PlayAndWin.vue",
 	"./Profile/DeleteUserForm": "./resources/js/Pages/Profile/DeleteUserForm.vue",
 	"./Profile/DeleteUserForm.vue": "./resources/js/Pages/Profile/DeleteUserForm.vue",
 	"./Profile/LogoutOtherBrowserSessionsForm": "./resources/js/Pages/Profile/LogoutOtherBrowserSessionsForm.vue",
@@ -64639,7 +64823,11 @@ var map = {
 	"./Profile/UpdateProfileInformationForm": "./resources/js/Pages/Profile/UpdateProfileInformationForm.vue",
 	"./Profile/UpdateProfileInformationForm.vue": "./resources/js/Pages/Profile/UpdateProfileInformationForm.vue",
 	"./Register": "./resources/js/Pages/Register.vue",
-	"./Register.vue": "./resources/js/Pages/Register.vue"
+	"./Register.vue": "./resources/js/Pages/Register.vue",
+	"./juega-y-gana/Index": "./resources/js/Pages/juega-y-gana/Index.vue",
+	"./juega-y-gana/Index.vue": "./resources/js/Pages/juega-y-gana/Index.vue",
+	"./juega-y-gana/Play": "./resources/js/Pages/juega-y-gana/Play.vue",
+	"./juega-y-gana/Play.vue": "./resources/js/Pages/juega-y-gana/Play.vue"
 };
 
 
@@ -64989,93 +65177,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Login_vue_vue_type_template_id_0004d9e0_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Login_vue_vue_type_template_id_0004d9e0_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/js/Pages/PlayAndWin.vue":
-/*!*******************************************!*\
-  !*** ./resources/js/Pages/PlayAndWin.vue ***!
-  \*******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _PlayAndWin_vue_vue_type_template_id_1b83ae7c_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PlayAndWin.vue?vue&type=template&id=1b83ae7c&scoped=true& */ "./resources/js/Pages/PlayAndWin.vue?vue&type=template&id=1b83ae7c&scoped=true&");
-/* harmony import */ var _PlayAndWin_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PlayAndWin.vue?vue&type=script&lang=js& */ "./resources/js/Pages/PlayAndWin.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _PlayAndWin_vue_vue_type_style_index_0_id_1b83ae7c_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PlayAndWin.vue?vue&type=style&index=0&id=1b83ae7c&scoped=true&lang=scss& */ "./resources/js/Pages/PlayAndWin.vue?vue&type=style&index=0&id=1b83ae7c&scoped=true&lang=scss&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
-  _PlayAndWin_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _PlayAndWin_vue_vue_type_template_id_1b83ae7c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _PlayAndWin_vue_vue_type_template_id_1b83ae7c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  "1b83ae7c",
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/Pages/PlayAndWin.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/Pages/PlayAndWin.vue?vue&type=script&lang=js&":
-/*!********************************************************************!*\
-  !*** ./resources/js/Pages/PlayAndWin.vue?vue&type=script&lang=js& ***!
-  \********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PlayAndWin_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./PlayAndWin.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/PlayAndWin.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PlayAndWin_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/Pages/PlayAndWin.vue?vue&type=style&index=0&id=1b83ae7c&scoped=true&lang=scss&":
-/*!*****************************************************************************************************!*\
-  !*** ./resources/js/Pages/PlayAndWin.vue?vue&type=style&index=0&id=1b83ae7c&scoped=true&lang=scss& ***!
-  \*****************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_PlayAndWin_vue_vue_type_style_index_0_id_1b83ae7c_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./PlayAndWin.vue?vue&type=style&index=0&id=1b83ae7c&scoped=true&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/PlayAndWin.vue?vue&type=style&index=0&id=1b83ae7c&scoped=true&lang=scss&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_PlayAndWin_vue_vue_type_style_index_0_id_1b83ae7c_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_PlayAndWin_vue_vue_type_style_index_0_id_1b83ae7c_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_PlayAndWin_vue_vue_type_style_index_0_id_1b83ae7c_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_PlayAndWin_vue_vue_type_style_index_0_id_1b83ae7c_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_PlayAndWin_vue_vue_type_style_index_0_id_1b83ae7c_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
-/***/ "./resources/js/Pages/PlayAndWin.vue?vue&type=template&id=1b83ae7c&scoped=true&":
-/*!**************************************************************************************!*\
-  !*** ./resources/js/Pages/PlayAndWin.vue?vue&type=template&id=1b83ae7c&scoped=true& ***!
-  \**************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PlayAndWin_vue_vue_type_template_id_1b83ae7c_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./PlayAndWin.vue?vue&type=template&id=1b83ae7c&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/PlayAndWin.vue?vue&type=template&id=1b83ae7c&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PlayAndWin_vue_vue_type_template_id_1b83ae7c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PlayAndWin_vue_vue_type_template_id_1b83ae7c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -65577,6 +65678,180 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Register_vue_vue_type_template_id_b7e42868_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Register_vue_vue_type_template_id_b7e42868_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/juega-y-gana/Index.vue":
+/*!***************************************************!*\
+  !*** ./resources/js/Pages/juega-y-gana/Index.vue ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Index_vue_vue_type_template_id_5f1561b4_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Index.vue?vue&type=template&id=5f1561b4&scoped=true& */ "./resources/js/Pages/juega-y-gana/Index.vue?vue&type=template&id=5f1561b4&scoped=true&");
+/* harmony import */ var _Index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Index.vue?vue&type=script&lang=js& */ "./resources/js/Pages/juega-y-gana/Index.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _Index_vue_vue_type_style_index_0_id_5f1561b4_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Index.vue?vue&type=style&index=0&id=5f1561b4&scoped=true&lang=scss& */ "./resources/js/Pages/juega-y-gana/Index.vue?vue&type=style&index=0&id=5f1561b4&scoped=true&lang=scss&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _Index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Index_vue_vue_type_template_id_5f1561b4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Index_vue_vue_type_template_id_5f1561b4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "5f1561b4",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Pages/juega-y-gana/Index.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/juega-y-gana/Index.vue?vue&type=script&lang=js&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/Pages/juega-y-gana/Index.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./Index.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/juega-y-gana/Index.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/Pages/juega-y-gana/Index.vue?vue&type=style&index=0&id=5f1561b4&scoped=true&lang=scss&":
+/*!*************************************************************************************************************!*\
+  !*** ./resources/js/Pages/juega-y-gana/Index.vue?vue&type=style&index=0&id=5f1561b4&scoped=true&lang=scss& ***!
+  \*************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_style_index_0_id_5f1561b4_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../node_modules/vue-loader/lib??vue-loader-options!./Index.vue?vue&type=style&index=0&id=5f1561b4&scoped=true&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/juega-y-gana/Index.vue?vue&type=style&index=0&id=5f1561b4&scoped=true&lang=scss&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_style_index_0_id_5f1561b4_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_style_index_0_id_5f1561b4_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_style_index_0_id_5f1561b4_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_style_index_0_id_5f1561b4_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_style_index_0_id_5f1561b4_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/Pages/juega-y-gana/Index.vue?vue&type=template&id=5f1561b4&scoped=true&":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/Pages/juega-y-gana/Index.vue?vue&type=template&id=5f1561b4&scoped=true& ***!
+  \**********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_5f1561b4_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./Index.vue?vue&type=template&id=5f1561b4&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/juega-y-gana/Index.vue?vue&type=template&id=5f1561b4&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_5f1561b4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_5f1561b4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/juega-y-gana/Play.vue":
+/*!**************************************************!*\
+  !*** ./resources/js/Pages/juega-y-gana/Play.vue ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Play_vue_vue_type_template_id_5f6bcf90_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Play.vue?vue&type=template&id=5f6bcf90&scoped=true& */ "./resources/js/Pages/juega-y-gana/Play.vue?vue&type=template&id=5f6bcf90&scoped=true&");
+/* harmony import */ var _Play_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Play.vue?vue&type=script&lang=js& */ "./resources/js/Pages/juega-y-gana/Play.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _Play_vue_vue_type_style_index_0_id_5f6bcf90_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Play.vue?vue&type=style&index=0&id=5f6bcf90&scoped=true&lang=scss& */ "./resources/js/Pages/juega-y-gana/Play.vue?vue&type=style&index=0&id=5f6bcf90&scoped=true&lang=scss&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _Play_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Play_vue_vue_type_template_id_5f6bcf90_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Play_vue_vue_type_template_id_5f6bcf90_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "5f6bcf90",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Pages/juega-y-gana/Play.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/juega-y-gana/Play.vue?vue&type=script&lang=js&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/Pages/juega-y-gana/Play.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Play_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./Play.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/juega-y-gana/Play.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Play_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/Pages/juega-y-gana/Play.vue?vue&type=style&index=0&id=5f6bcf90&scoped=true&lang=scss&":
+/*!************************************************************************************************************!*\
+  !*** ./resources/js/Pages/juega-y-gana/Play.vue?vue&type=style&index=0&id=5f6bcf90&scoped=true&lang=scss& ***!
+  \************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Play_vue_vue_type_style_index_0_id_5f6bcf90_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../node_modules/vue-loader/lib??vue-loader-options!./Play.vue?vue&type=style&index=0&id=5f6bcf90&scoped=true&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/juega-y-gana/Play.vue?vue&type=style&index=0&id=5f6bcf90&scoped=true&lang=scss&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Play_vue_vue_type_style_index_0_id_5f6bcf90_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Play_vue_vue_type_style_index_0_id_5f6bcf90_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Play_vue_vue_type_style_index_0_id_5f6bcf90_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Play_vue_vue_type_style_index_0_id_5f6bcf90_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Play_vue_vue_type_style_index_0_id_5f6bcf90_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/Pages/juega-y-gana/Play.vue?vue&type=template&id=5f6bcf90&scoped=true&":
+/*!*********************************************************************************************!*\
+  !*** ./resources/js/Pages/juega-y-gana/Play.vue?vue&type=template&id=5f6bcf90&scoped=true& ***!
+  \*********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Play_vue_vue_type_template_id_5f6bcf90_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./Play.vue?vue&type=template&id=5f6bcf90&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/juega-y-gana/Play.vue?vue&type=template&id=5f6bcf90&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Play_vue_vue_type_template_id_5f6bcf90_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Play_vue_vue_type_template_id_5f6bcf90_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
