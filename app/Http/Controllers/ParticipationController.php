@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Award;
 use App\Models\Code;
 use App\Models\Participation;
+use App\Models\Question;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -71,5 +72,26 @@ class ParticipationController extends Controller
         $participation->save();
 
         return redirect()->route('juega-y-gana.game', ['participation' => $participation->id]);
+    }
+
+    public function update(Request $request){
+        $this->validate($request, [
+            'participation_id' => 'required',
+            'question_id' => 'required'
+        ]);
+
+        $participation = Participation::find($request['participation_id']);
+        $question = Question::find($request['question_id']);
+
+        if (!$participation || !$question){
+            Throw ValidationException::withMessages(['NotFound' => 'Participacion o pregunta no encontrada']);
+        }
+
+        $timeInSeconds = Carbon::parse($participation->created_at)->diffInSeconds(Carbon::now());
+        $participation->time_in_seconds = $timeInSeconds;
+        $participation->score = $participation->score + $question->score;
+        $participation->save();
+
+        return response()->json(['status' => '200', 'message' => 'Participacion actualizada correctamente']);
     }
 }

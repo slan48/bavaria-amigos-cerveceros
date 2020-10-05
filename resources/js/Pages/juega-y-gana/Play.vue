@@ -1,8 +1,92 @@
 <template>
     <DefaultLayout>
         <div class="game-play-page">
-            <div class="container py-45px">
-                Estas en la página del juego y has registrado tu participacion, no puedes recargar la pagina
+            <div class="container pt-50px pb-25px">
+                <div class="relative w-8/12 mx-auto mb-35px">
+                    <div class="title-divider title-divider-left"></div>
+                    <h2 class="uppercase text-28px text-white font-bold text-center">Trivia</h2>
+                    <div class="title-divider title-divider-right"></div>
+                </div>
+
+                <template v-if="!gameFinished && allQuestions && allQuestions.length">
+                    <div class="w-6/12 mx-auto mb-30px">
+                        <div class="w-5/12 ml-auto">
+                            <div class="player-name-box">
+                                <img src="/img/avatar-blank.svg" alt="">
+                                {{ $page.user.name }}
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <div class="clock-container">
+                                <img src="/img/bg-clock.svg" alt="">
+                                <div class="absolute timer-circle-container">
+                                    <vue-circle
+                                        ref="vueCircle"
+                                        :progress="questionSecondsLeftPercentage"
+                                        :size="200"
+                                        :reverse="false"
+                                        line-cap="butt"
+                                        :fill="{ color: '#BE0811' }"
+                                        empty-fill="rgba(0, 0, 0, 0)"
+                                        :animation-start-value="0.0"
+                                        :start-angle="-1.6"
+                                        insert-mode="append"
+                                        :thickness="30"
+                                        :show-percent="false"
+                                    >
+                                    </vue-circle>
+                                </div>
+                                <div class="clock-counter">
+                                    <template v-if="minutesLeft != 0">
+                                        <p>0{{ minutesLeft }}</p>
+                                        <span>min</span>
+                                    </template>
+                                    <template v-else>
+                                        <p>{{ questionSecondsLeft }}</p>
+                                        <span>seg</span>
+                                    </template>
+                                </div>
+                            </div>
+
+                            <div class="bg-gray pt-25px pb-15px px-30px rounded-10px w-9/12 ml-auto mt-15px">
+                                <div class="w-8/12 ml-auto">
+                                    <p class="font-bold text-center text-32px leading-32px tracking-tighter mb-15px text-gray-dark uppercase">Pregunta {{ activeQuestion + 1 }} / {{ allQuestions.length }}</p>
+                                    <div class="rounded-10px overflow-hidden flex flex-wrap h-78px">
+                                        <p class="bg-primary text-white h-full w-8/12 flex justify-center items-center uppercase font-bold text-26px leading-26px tracking-tighter">Calificación</p>
+                                        <p class="bg-white text-primary h-full w-4/12 flex justify-center items-center uppercase font-bold text-30px leading-30px">{{ allQuestions[activeQuestion].score }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-and-answers-container w-8/12 mx-auto">
+                        <div class="question">
+                            <img src="/img/question-bg.svg" alt="">
+                            <p>{{ allQuestions[activeQuestion].question }}</p>
+                        </div>
+                        <div class="answers">
+                            <div class="answer" v-for="(answer, index) in allQuestions[activeQuestion].answers" @click="validateAnswerAndSave(allQuestions[activeQuestion], answer)">
+                                <img src="/img/answer-bg.svg" alt="">
+                                <img src="/img/answer-selected-bg.svg" alt="">
+                                <p>{{ ['A', 'B', 'C', 'D'][index] }}: {{ answer.answer }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+
+                <div v-else class="bg-white rounded-10px p-30px text-center w-8/12 mx-auto">
+                    <h2 class="text-primary text-30px text-center leading-30px font-bold mb-25px">Juego terminado</h2>
+                    <p class="text-gray-dark tracking-tighter mb-30px text-26px">¡Muchas gracias por haber participado!</p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <inertia-link href="/juega-y-gana" class="focus:outline-none block w-full rounded-10px bg-primary font-bold text-xl text-white uppercase py-3">Volver a jugar</inertia-link>
+                        </div>
+                        <div>
+                            <inertia-link href="/ganadores" class="focus:outline-none block w-full rounded-10px bg-primary font-bold text-xl text-white uppercase py-3">Ver ganadores</inertia-link>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </DefaultLayout>
@@ -10,39 +94,259 @@
 
 <script>
 import DefaultLayout from "../../Layouts/DefaultLayout";
+import VueCircle from 'vue2-circle-progress'
+import moment from 'moment';
 
 export default {
     components: {
-        DefaultLayout
+        DefaultLayout,
+        VueCircle
     },
     props: {
-        awards: Array
+        questions: Array,
+        participation: Object
     },
     data(){
         return {
-            code: {}
+            questionSecondsLeft: 299,
+            gameFinished: false,
+            activeQuestion: 0
         }
     },
-    methods: {
-        startParticipation(award_id){
-            this.$inertia.post('/participations', {
-                award_id: award_id,
-                user_id: this.$page.user.id,
-                code: this.code[award_id]
+    computed: {
+        questionSecondsLeftPercentage(){
+            return (this.questionSecondsLeft / 299) * 100
+        },
+        minutesLeft(){
+            return (moment.duration(this.questionSecondsLeft, 'seconds').asMinutes() + "").substring(0,1)
+        },
+        allQuestions(){
+            if (!(this.questions && this.questions.length)){
+                return []
+            }
+
+            return this.questions.map(question => {
+                return {
+                    ...question,
+                    answers: this.shuffleArray([
+                        {
+                            answer: question.correct_option,
+                            correct: true
+                        },
+                        {
+                            answer: question.incorrect_option_1,
+                            correct: false
+                        },
+                        {
+                            answer: question.incorrect_option_2,
+                            correct: false
+                        },
+                        {
+                            answer: question.incorrect_option_3,
+                            correct: false
+                        },
+                    ])
+                }
             })
+        },
+    },
+    methods: {
+        finishGame(){
+            this.gameFinished = true;
+        },
+        validateAnswerAndSave(answeredQuestion, answer){
+            if (!answer.correct){
+                this.finishGame();
+            } else{
+                axios.patch('/participations', {participation_id: this.participation.id, question_id: answeredQuestion.id})
+                .then(res => {
+                    this.goToNextQuestion();
+                })
+                .catch(console.log);
+            }
+        },
+        goToNextQuestion(){
+            if (this.activeQuestion === (this.allQuestions.length - 1)){
+                this.finishGame();
+            } else{
+                this.questionSecondsLeft = 299;
+                this.activeQuestion++
+            }
+        },
+        shuffleArray(array){
+            let arrayToSuffle = [...array];
+            for(let i = arrayToSuffle.length - 1; i > 0; i--){
+                const j = Math.floor(Math.random() * i)
+                const temp = arrayToSuffle[i]
+                arrayToSuffle[i] = arrayToSuffle[j]
+                arrayToSuffle[j] = temp
+            }
+            return arrayToSuffle;
         }
+    },
+    mounted() {
+        let interval = setInterval(() => {
+            this.questionSecondsLeft--;
+            this.$refs.vueCircle.updateProgress(this.questionSecondsLeftPercentage);
+
+            if (this.questionSecondsLeft === 0){
+                clearInterval(interval);
+                this.finishGame();
+            }
+        }, 1000)
     }
 }
 </script>
 
 <style scoped lang="scss">
 .game-play-page{
-    background-image: url('/img/bg-white.jpg');
+    background-image: url('/img/bg-game.jpg');
     background-size: cover;
     background-position: center;
+    min-height: calc(100vh - 123.92px);
 }
 
-img{
-    height: 140px;
+.title-divider{
+    width: calc(50% - 50px);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 1px;
+    background: #ffffff;
+
+    &.title-divider-left{
+        left: 0;
+    }
+
+    &.title-divider-right{
+        right: 0;
+    }
+}
+
+.player-name-box{
+    position: relative;
+    display: flex;
+    background: #F2F2F2;
+    @apply font-bold tracking-tighter;
+    border-radius: 10px;
+    color: #000;
+    font-size: 24px;
+    line-height: 24px;
+    text-transform: uppercase;
+    padding: 25px 10px 25px 61px;
+
+    img{
+        border-radius: 50%;
+        width: 77px;
+        height: 77px;
+        object-fit: cover;
+        position: absolute;
+        left: -31.5px;
+        top: 0;
+    }
+}
+
+.clock-container{
+    position: absolute;
+    left: -30px;
+    bottom: -30px;
+
+    img{
+        width: 300px;
+    }
+
+    .timer-circle-container{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        height: 200px;
+    }
+
+    .clock-counter{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        @apply bg-gray-dark;
+        border-radius: 50%;
+        width: 148px;
+        height: 148px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        p{
+            @apply font-bold;
+            display: block;
+            font-size: 90px;
+            line-height: 80px;
+            margin-bottom: 0;
+            color: #fff;
+        }
+
+        span{
+            display: block;
+            font-size: 24px;
+            color: #fff;
+            line-height: 24px;
+            margin-top: -10px;
+        }
+    }
+}
+
+.question-and-answers-container{
+    .question{
+        position: relative;
+
+        img{
+            width: 100%;
+        }
+
+        p{
+            position: absolute;
+            left: 50%;
+            text-align: center;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            width: 82%;
+            @apply text-primary;
+        }
+    }
+
+    .answers{
+        display: flex;
+        flex-wrap: wrap;
+
+        .answer{
+            margin-top: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            width: 50%;
+            position: relative;
+
+            img{
+                width: 100%;
+
+                &:nth-child(2){
+                    display: none;
+                }
+            }
+
+            p{
+                position: absolute;
+                color: #fff;
+                left: 63px;
+                text-align: left;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 24px;
+                width: 67%;
+            }
+        }
+    }
 }
 </style>

@@ -18,4 +18,7 @@ export default {
 </script>
 
 <style scoped>
+.default-layout{
+    min-height: 100vh;
+}
 </style>
