@@ -85,7 +85,7 @@
                         <p>1.5.La participación en la actividad implica la decisión del participante de obligarse por estos Bases y por las decisiones que tome Bavaria , las cuales tendrán carácter definitivo en todos los asuntos relacionados con la actividad.</p>
                     </div>
                     <div class="text-center mt-8">
-                        <a class="focus:outline-none inline-block rounded-10px bg-primary font-bold text-xl text-white uppercase px-5 py-3" href="#">
+                        <a class="focus:outline-none inline-block rounded-10px bg-primary font-bold text-xl text-white uppercase px-5 py-3" href="/sample.pdf" target="_blank">
                             Descargar
                         </a>
                     </div>

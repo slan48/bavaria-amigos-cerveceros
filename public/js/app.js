@@ -50918,7 +50918,7 @@ var render = function() {
                 {
                   staticClass:
                     "focus:outline-none inline-block rounded-10px bg-primary font-bold text-xl text-white uppercase px-5 py-3",
-                  attrs: { href: "#" }
+                  attrs: { href: "/sample.pdf", target: "_blank" }
                 },
                 [
                   _vm._v(
