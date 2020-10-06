@@ -2993,6 +2993,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -3224,6 +3228,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -3236,7 +3254,8 @@ __webpack_require__.r(__webpack_exports__);
         username: '',
         password: 'password',
         remember: false
-      }
+      },
+      modalActive: true
     };
   },
   methods: {
@@ -4411,6 +4430,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -4427,7 +4450,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     return {
       questionSecondsLeft: 299,
       gameFinished: false,
-      activeQuestion: 0
+      activeQuestion: 0,
+      interval: null
     };
   },
   computed: {
@@ -4467,19 +4491,23 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     finishGame: function finishGame() {
       this.gameFinished = true;
     },
-    validateAnswerAndSave: function validateAnswerAndSave(answeredQuestion, answer) {
+    validateAnswerAndSave: function validateAnswerAndSave(event, answeredQuestion, answer) {
       var _this2 = this;
 
-      if (!answer.correct) {
-        this.finishGame();
-      } else {
-        axios.patch('/participations', {
-          participation_id: this.participation.id,
-          question_id: answeredQuestion.id
-        }).then(function (res) {
-          _this2.goToNextQuestion();
-        })["catch"](console.log);
-      }
+      this.stopCounter();
+      event.currentTarget.classList.add('active');
+      setTimeout(function () {
+        if (!answer.correct) {
+          _this2.finishGame();
+        } else {
+          axios.patch('/participations', {
+            participation_id: _this2.participation.id,
+            question_id: answeredQuestion.id
+          }).then(function (res) {
+            _this2.goToNextQuestion();
+          })["catch"](console.log);
+        }
+      }, 1000);
     },
     goToNextQuestion: function goToNextQuestion() {
       if (this.activeQuestion === this.allQuestions.length - 1) {
@@ -4487,6 +4515,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       } else {
         this.questionSecondsLeft = 299;
         this.activeQuestion++;
+        this.startCounter();
       }
     },
     shuffleArray: function shuffleArray(array) {
@@ -4500,22 +4529,28 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
 
       return arrayToSuffle;
+    },
+    startCounter: function startCounter() {
+      var _this3 = this;
+
+      this.interval = setInterval(function () {
+        _this3.questionSecondsLeft--;
+
+        _this3.$refs.vueCircle.updateProgress(_this3.questionSecondsLeftPercentage);
+
+        if (_this3.questionSecondsLeft === 0) {
+          clearInterval(_this3.interval);
+
+          _this3.finishGame();
+        }
+      }, 1000);
+    },
+    stopCounter: function stopCounter() {
+      clearInterval(this.interval);
     }
   },
   mounted: function mounted() {
-    var _this3 = this;
-
-    var interval = setInterval(function () {
-      _this3.questionSecondsLeft--;
-
-      _this3.$refs.vueCircle.updateProgress(_this3.questionSecondsLeftPercentage);
-
-      if (_this3.questionSecondsLeft === 0) {
-        clearInterval(interval);
-
-        _this3.finishGame();
-      }
-    }, 1000);
+    this.startCounter();
   }
 });
 
@@ -4678,7 +4713,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".login-page[data-v-0004d9e0] {\n  background-image: url(\"/img/bg-home.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.divider[data-v-0004d9e0] {\n  width: 200%;\n  height: 1px;\n  background: #fff;\n  margin-top: 30px;\n  margin-bottom: 15px;\n  margin-right: 0;\n  margin-left: -100%;\n}\n.custom-text-with-shadow p[data-v-0004d9e0]:nth-child(1) {\n  top: -3px;\n  left: -2px;\n  pointer-events: none;\n}\n.custom-text-with-shadow p[data-v-0004d9e0]:nth-child(2) {\n  top: 1px;\n  left: -2px;\n  pointer-events: none;\n}\n.custom-text-with-shadow p[data-v-0004d9e0]:nth-child(3) {\n  top: -3px;\n  left: 2px;\n  pointer-events: none;\n}\n.custom-text-with-shadow p[data-v-0004d9e0]:nth-child(4) {\n  top: 1px;\n  left: 2px;\n  pointer-events: none;\n}\n.login-form-box[data-v-0004d9e0] {\n  background: rgba(0, 0, 0, 0.4);\n  border-radius: 10px;\n  border: 1px solid #fff;\n  padding: 50px 30px 30px;\n}\n.form-control[data-v-0004d9e0] {\n  border-radius: 10px;\n  width: 100%;\n  display: block;\n  font-size: 20px;\n  line-height: 24px;\n  padding: 5px 30px;\n}\n.form-control[data-v-0004d9e0]:focus {\n  outline: none;\n}\n.bavaria-custom-checkbox input[data-v-0004d9e0] {\n  position: absolute;\n  visibility: hidden;\n}\n.bavaria-custom-checkbox label[data-v-0004d9e0] {\n  display: flex;\n  align-items: center;\n}\n.bavaria-custom-checkbox .custom-checkbox-box[data-v-0004d9e0] {\n  width: 18px;\n  height: 18px;\n  margin-right: 10px;\n  border: 1px solid #fff;\n  position: relative;\n}\n.bavaria-custom-checkbox .custom-checkbox-icon[data-v-0004d9e0] {\n  display: none;\n  width: 15px;\n  position: absolute;\n  left: 4px;\n  top: -4px;\n}\n.bavaria-custom-checkbox input:checked ~ label .custom-checkbox-icon[data-v-0004d9e0] {\n  display: block;\n}\n", ""]);
+exports.push([module.i, ".login-page[data-v-0004d9e0] {\n  background-image: url(\"/img/bg-home.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.divider[data-v-0004d9e0] {\n  width: 200%;\n  height: 1px;\n  background: #fff;\n  margin-top: 30px;\n  margin-bottom: 15px;\n  margin-right: 0;\n  margin-left: -100%;\n}\n.custom-text-with-shadow p[data-v-0004d9e0]:nth-child(1) {\n  top: -3px;\n  left: -2px;\n  pointer-events: none;\n}\n.custom-text-with-shadow p[data-v-0004d9e0]:nth-child(2) {\n  top: 1px;\n  left: -2px;\n  pointer-events: none;\n}\n.custom-text-with-shadow p[data-v-0004d9e0]:nth-child(3) {\n  top: -3px;\n  left: 2px;\n  pointer-events: none;\n}\n.custom-text-with-shadow p[data-v-0004d9e0]:nth-child(4) {\n  top: 1px;\n  left: 2px;\n  pointer-events: none;\n}\n.login-form-box[data-v-0004d9e0] {\n  background: rgba(0, 0, 0, 0.4);\n  border-radius: 10px;\n  border: 1px solid #fff;\n  padding: 50px 30px 30px;\n}\n.form-control[data-v-0004d9e0] {\n  border-radius: 10px;\n  width: 100%;\n  display: block;\n  font-size: 20px;\n  line-height: 24px;\n  padding: 5px 30px;\n}\n.form-control[data-v-0004d9e0]:focus {\n  outline: none;\n}\n.bavaria-custom-checkbox input[data-v-0004d9e0] {\n  position: absolute;\n  visibility: hidden;\n}\n.bavaria-custom-checkbox label[data-v-0004d9e0] {\n  display: flex;\n  align-items: center;\n}\n.bavaria-custom-checkbox .custom-checkbox-box[data-v-0004d9e0] {\n  width: 18px;\n  height: 18px;\n  margin-right: 10px;\n  border: 1px solid #fff;\n  position: relative;\n}\n.bavaria-custom-checkbox .custom-checkbox-icon[data-v-0004d9e0] {\n  display: none;\n  width: 15px;\n  position: absolute;\n  left: 4px;\n  top: -4px;\n}\n.bavaria-custom-checkbox input:checked ~ label .custom-checkbox-icon[data-v-0004d9e0] {\n  display: block;\n}\niframe[data-v-0004d9e0] {\n  z-index: 5;\n  height: 450px;\n}\n.modal[data-v-0004d9e0] {\n  width: 100vw;\n  height: 100vh;\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 20;\n}\n.modal .modal-overlay[data-v-0004d9e0] {\n  width: 100%;\n  height: 100%;\n  --bg-opacity: 1;\n  background-color: #BE0811;\n  background-color: rgba(190, 8, 17, var(--bg-opacity));\n  opacity: 0.8;\n}\n.modal .modal-box[data-v-0004d9e0] {\n  max-width: 850px;\n  width: 90%;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n", ""]);
 
 // exports
 
@@ -4735,7 +4770,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".game-play-page[data-v-5f6bcf90] {\n  background-image: url(\"/img/bg-game.jpg\");\n  background-size: cover;\n  background-position: center;\n  min-height: calc(100vh - 123.92px);\n}\n.title-divider[data-v-5f6bcf90] {\n  width: calc(50% - 50px);\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  height: 1px;\n  background: #ffffff;\n}\n.title-divider.title-divider-left[data-v-5f6bcf90] {\n  left: 0;\n}\n.title-divider.title-divider-right[data-v-5f6bcf90] {\n  right: 0;\n}\n.player-name-box[data-v-5f6bcf90] {\n  position: relative;\n  display: flex;\n  background: #F2F2F2;\n  font-weight: 700;\n  letter-spacing: -0.05em;\n  border-radius: 10px;\n  color: #000;\n  font-size: 24px;\n  line-height: 24px;\n  text-transform: uppercase;\n  padding: 25px 10px 25px 61px;\n}\n.player-name-box img[data-v-5f6bcf90] {\n  border-radius: 50%;\n  width: 77px;\n  height: 77px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  position: absolute;\n  left: -31.5px;\n  top: 0;\n}\n.clock-container[data-v-5f6bcf90] {\n  position: absolute;\n  left: -30px;\n  bottom: -30px;\n}\n.clock-container img[data-v-5f6bcf90] {\n  width: 300px;\n}\n.clock-container .timer-circle-container[data-v-5f6bcf90] {\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  height: 200px;\n}\n.clock-container .clock-counter[data-v-5f6bcf90] {\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  text-align: center;\n  --bg-opacity: 1;\n  background-color: #666666;\n  background-color: rgba(102, 102, 102, var(--bg-opacity));\n  border-radius: 50%;\n  width: 148px;\n  height: 148px;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n.clock-container .clock-counter p[data-v-5f6bcf90] {\n  font-weight: 700;\n  display: block;\n  font-size: 90px;\n  line-height: 80px;\n  margin-bottom: 0;\n  color: #fff;\n}\n.clock-container .clock-counter span[data-v-5f6bcf90] {\n  display: block;\n  font-size: 24px;\n  color: #fff;\n  line-height: 24px;\n  margin-top: -10px;\n}\n.question-and-answers-container .question[data-v-5f6bcf90] {\n  position: relative;\n}\n.question-and-answers-container .question img[data-v-5f6bcf90] {\n  width: 100%;\n}\n.question-and-answers-container .question p[data-v-5f6bcf90] {\n  position: absolute;\n  left: 50%;\n  text-align: center;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  font-size: 24px;\n  width: 82%;\n  --text-opacity: 1;\n  color: #BE0811;\n  color: rgba(190, 8, 17, var(--text-opacity));\n}\n.question-and-answers-container .answers[data-v-5f6bcf90] {\n  display: flex;\n  flex-wrap: wrap;\n}\n.question-and-answers-container .answers .answer[data-v-5f6bcf90] {\n  margin-top: 10px;\n  margin-bottom: 10px;\n  cursor: pointer;\n  width: 50%;\n  position: relative;\n}\n.question-and-answers-container .answers .answer img[data-v-5f6bcf90] {\n  width: 100%;\n}\n.question-and-answers-container .answers .answer img[data-v-5f6bcf90]:nth-child(2) {\n  display: none;\n}\n.question-and-answers-container .answers .answer p[data-v-5f6bcf90] {\n  position: absolute;\n  color: #fff;\n  left: 63px;\n  text-align: left;\n  top: 50%;\n  transform: translateY(-50%);\n  font-size: 24px;\n  width: 67%;\n}\n", ""]);
+exports.push([module.i, ".game-play-page[data-v-5f6bcf90] {\n  background-image: url(\"/img/bg-game.jpg\");\n  background-size: cover;\n  background-position: center;\n  min-height: calc(100vh - 123.92px);\n}\n.title-divider[data-v-5f6bcf90] {\n  width: calc(50% - 50px);\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  height: 1px;\n  background: #ffffff;\n}\n.title-divider.title-divider-left[data-v-5f6bcf90] {\n  left: 0;\n}\n.title-divider.title-divider-right[data-v-5f6bcf90] {\n  right: 0;\n}\n.player-name-box[data-v-5f6bcf90] {\n  position: relative;\n  display: flex;\n  background: #F2F2F2;\n  font-weight: 700;\n  letter-spacing: -0.05em;\n  border-radius: 10px;\n  color: #000;\n  font-size: 24px;\n  line-height: 24px;\n  text-transform: uppercase;\n  padding: 25px 10px 25px 61px;\n}\n.player-name-box img[data-v-5f6bcf90] {\n  border-radius: 50%;\n  width: 77px;\n  height: 77px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  position: absolute;\n  left: -31.5px;\n  top: 0;\n}\n.clock-container[data-v-5f6bcf90] {\n  position: absolute;\n  left: -30px;\n  bottom: -30px;\n}\n.clock-container img[data-v-5f6bcf90] {\n  width: 300px;\n}\n.clock-container .timer-circle-container[data-v-5f6bcf90] {\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  height: 200px;\n}\n.clock-container .clock-counter[data-v-5f6bcf90] {\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  text-align: center;\n  --bg-opacity: 1;\n  background-color: #666666;\n  background-color: rgba(102, 102, 102, var(--bg-opacity));\n  border-radius: 50%;\n  width: 148px;\n  height: 148px;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n.clock-container .clock-counter p[data-v-5f6bcf90] {\n  font-weight: 700;\n  display: block;\n  font-size: 90px;\n  line-height: 80px;\n  margin-bottom: 0;\n  color: #fff;\n}\n.clock-container .clock-counter span[data-v-5f6bcf90] {\n  display: block;\n  font-size: 24px;\n  color: #fff;\n  line-height: 24px;\n  margin-top: -10px;\n}\n.question-and-answers-container[data-v-5f6bcf90] {\n  min-height: 241.36px;\n}\n.question-and-answers-container .question[data-v-5f6bcf90] {\n  position: relative;\n}\n.question-and-answers-container .question img[data-v-5f6bcf90] {\n  width: 100%;\n}\n.question-and-answers-container .question p[data-v-5f6bcf90] {\n  position: absolute;\n  left: 50%;\n  text-align: center;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  font-size: 24px;\n  width: 82%;\n  --text-opacity: 1;\n  color: #BE0811;\n  color: rgba(190, 8, 17, var(--text-opacity));\n}\n.question-and-answers-container .answers[data-v-5f6bcf90] {\n  display: flex;\n  flex-wrap: wrap;\n}\n.question-and-answers-container .answers .answer[data-v-5f6bcf90] {\n  margin-top: 10px;\n  margin-bottom: 10px;\n  cursor: pointer;\n  width: 50%;\n  position: relative;\n}\n.question-and-answers-container .answers .answer img[data-v-5f6bcf90] {\n  width: 100%;\n}\n.question-and-answers-container .answers .answer img[data-v-5f6bcf90]:nth-child(2) {\n  display: none;\n}\n.question-and-answers-container .answers .answer.active img[data-v-5f6bcf90]:nth-child(1) {\n  display: none;\n}\n.question-and-answers-container .answers .answer.active img[data-v-5f6bcf90]:nth-child(2) {\n  display: block;\n}\n.question-and-answers-container .answers .answer p[data-v-5f6bcf90] {\n  position: absolute;\n  color: #fff;\n  left: 63px;\n  text-align: left;\n  top: 50%;\n  transform: translateY(-50%);\n  font-size: 24px;\n  width: 67%;\n}\n.fade-enter-active[data-v-5f6bcf90], .fade-leave-active[data-v-5f6bcf90] {\n  transition: opacity .5s;\n}\n.fade-enter[data-v-5f6bcf90], .fade-leave-to[data-v-5f6bcf90] {\n  opacity: 0;\n}\n.slide-fade-enter-active[data-v-5f6bcf90] {\n  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);\n}\n.slide-fade-leave-active[data-v-5f6bcf90] {\n  transition: all .3s ease;\n}\n.slide-fade-enter[data-v-5f6bcf90] {\n  transform: translateX(10px);\n  opacity: 0;\n}\n.slide-fade-leave[data-v-5f6bcf90] {\n  transform: translateX(-10px);\n  opacity: 0;\n}\n", ""]);
 
 // exports
 
@@ -48403,7 +48438,15 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "default-layout" },
-    [_c("Header"), _vm._v(" "), _vm._t("default"), _vm._v(" "), _c("Footer")],
+    [
+      _c("Header"),
+      _vm._v(" "),
+      _vm._t("default"),
+      _vm._v(" "),
+      _c("Footer"),
+      _vm._v(" "),
+      _c("portal-target", { attrs: { name: "modal", multiple: "" } })
+    ],
     2
   )
 }
@@ -48741,261 +48784,340 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("DefaultLayout", [
-    _c("div", { staticClass: "login-page pt-50px pb-80px" }, [
-      _c("div", { staticClass: "container flex items-center" }, [
-        _c("div", { staticClass: "w-5/12 ml-auto" }, [
-          _c("img", {
-            staticClass: "block w-full",
-            attrs: { src: "/img/logo-amigos-cerveceros.svg", alt: "" }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "divider" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "custom-text-with-shadow relative" }, [
-            _c(
-              "p",
-              {
-                staticClass:
-                  "font-bold text-35px leading-35px text-white z-0 absolute w-full text-center"
-              },
-              [_vm._v("EL JUEGO EN EL QUE APRENDES")]
-            ),
+  return _c(
+    "DefaultLayout",
+    [
+      _c("div", { staticClass: "login-page pt-50px pb-80px" }, [
+        _c("div", { staticClass: "container flex items-center" }, [
+          _c("div", { staticClass: "w-5/12 ml-auto" }, [
+            _c("img", {
+              staticClass: "block w-full",
+              attrs: { src: "/img/logo-amigos-cerveceros.svg", alt: "" }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "divider" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "custom-text-with-shadow relative" }, [
+              _c(
+                "p",
+                {
+                  staticClass:
+                    "font-bold text-35px leading-35px text-white z-0 absolute w-full text-center"
+                },
+                [_vm._v("EL JUEGO EN EL QUE APRENDES")]
+              ),
+              _vm._v(" "),
+              _c(
+                "p",
+                {
+                  staticClass:
+                    "font-bold text-35px leading-35px text-white z-0 absolute w-full text-center"
+                },
+                [_vm._v("EL JUEGO EN EL QUE APRENDES")]
+              ),
+              _vm._v(" "),
+              _c(
+                "p",
+                {
+                  staticClass:
+                    "font-bold text-35px leading-35px text-white z-0 absolute w-full text-center"
+                },
+                [_vm._v("EL JUEGO EN EL QUE APRENDES")]
+              ),
+              _vm._v(" "),
+              _c(
+                "p",
+                {
+                  staticClass:
+                    "font-bold text-35px leading-35px text-white z-0 absolute w-full text-center"
+                },
+                [_vm._v("EL JUEGO EN EL QUE APRENDES")]
+              ),
+              _vm._v(" "),
+              _c(
+                "p",
+                {
+                  staticClass:
+                    "font-bold text-35px leading-33px text-black relative z-10 w-full text-center"
+                },
+                [_vm._v("EL JUEGO EN EL QUE APRENDES")]
+              )
+            ]),
             _vm._v(" "),
             _c(
               "p",
-              {
-                staticClass:
-                  "font-bold text-35px leading-35px text-white z-0 absolute w-full text-center"
-              },
-              [_vm._v("EL JUEGO EN EL QUE APRENDES")]
-            ),
-            _vm._v(" "),
-            _c(
-              "p",
-              {
-                staticClass:
-                  "font-bold text-35px leading-35px text-white z-0 absolute w-full text-center"
-              },
-              [_vm._v("EL JUEGO EN EL QUE APRENDES")]
-            ),
-            _vm._v(" "),
-            _c(
-              "p",
-              {
-                staticClass:
-                  "font-bold text-35px leading-35px text-white z-0 absolute w-full text-center"
-              },
-              [_vm._v("EL JUEGO EN EL QUE APRENDES")]
-            ),
-            _vm._v(" "),
-            _c(
-              "p",
-              {
-                staticClass:
-                  "font-bold text-35px leading-33px text-black relative z-10 w-full text-center"
-              },
-              [_vm._v("EL JUEGO EN EL QUE APRENDES")]
+              { staticClass: "text-white text-26px leading-35px text-center" },
+              [_vm._v("Y GANAS CON NUESTROS PRODUCTOS")]
             )
           ]),
           _vm._v(" "),
-          _c(
-            "p",
-            { staticClass: "text-white text-26px leading-35px text-center" },
-            [_vm._v("Y GANAS CON NUESTROS PRODUCTOS")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "w-4/12 mx-auto" }, [
-          _c("div", { staticClass: "login-form-box" }, [
-            _c(
-              "form",
-              {
-                staticClass: "text-center",
-                attrs: { action: "#" },
-                on: {
-                  submit: function($event) {
-                    $event.preventDefault()
-                    return _vm.login($event)
-                  }
-                }
-              },
-              [
-                _c(
-                  "p",
-                  {
-                    staticClass:
-                      "font-bold text-32px leading-34px text-white uppercase"
-                  },
-                  [_vm._v("Ingresa con tu ID")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "p",
-                  {
-                    staticClass:
-                      "text-white uppercase text-29px leading-34px mb-25px"
-                  },
-                  [_vm._v("A la plataforma")]
-                ),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.form.commercial_id,
-                      expression: "form.commercial_id"
-                    }
-                  ],
-                  staticClass: "form-control mb-5px placeholder-primary",
-                  attrs: { type: "text", placeholder: "ID COMERCIAL" },
-                  domProps: { value: _vm.form.commercial_id },
+          _c("div", { staticClass: "w-4/12 mx-auto" }, [
+            _c("div", { staticClass: "login-form-box" }, [
+              _c(
+                "form",
+                {
+                  staticClass: "text-center",
+                  attrs: { action: "#" },
                   on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.form, "commercial_id", $event.target.value)
+                    submit: function($event) {
+                      $event.preventDefault()
+                      return _vm.login($event)
                     }
                   }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
+                },
+                [
+                  _c(
+                    "p",
                     {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.form.username,
-                      expression: "form.username"
-                    }
-                  ],
-                  staticClass: "form-control placeholder-primary mb-10px",
-                  attrs: { type: "text", placeholder: "NOMBRE DE USUARIO" },
-                  domProps: { value: _vm.form.username },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.form, "username", $event.target.value)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c(
-                  "ul",
-                  { staticClass: "mb-10px" },
-                  _vm._l(_vm.$page.errors, function(error) {
-                    return _c("li", { staticClass: "text-left text-white" }, [
-                      _vm._v(_vm._s(error[0]))
-                    ])
-                  }),
-                  0
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "bavaria-custom-checkbox" }, [
+                      staticClass:
+                        "font-bold text-32px leading-34px text-white uppercase"
+                    },
+                    [_vm._v("Ingresa con tu ID")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    {
+                      staticClass:
+                        "text-white uppercase text-29px leading-34px mb-25px"
+                    },
+                    [_vm._v("A la plataforma")]
+                  ),
+                  _vm._v(" "),
                   _c("input", {
                     directives: [
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.form.remember,
-                        expression: "form.remember"
+                        value: _vm.form.commercial_id,
+                        expression: "form.commercial_id"
                       }
                     ],
-                    attrs: {
-                      type: "checkbox",
-                      name: "remember",
-                      id: "remember"
-                    },
-                    domProps: {
-                      checked: Array.isArray(_vm.form.remember)
-                        ? _vm._i(_vm.form.remember, null) > -1
-                        : _vm.form.remember
-                    },
+                    staticClass: "form-control mb-5px placeholder-primary",
+                    attrs: { type: "text", placeholder: "ID COMERCIAL" },
+                    domProps: { value: _vm.form.commercial_id },
                     on: {
-                      change: function($event) {
-                        var $$a = _vm.form.remember,
-                          $$el = $event.target,
-                          $$c = $$el.checked ? true : false
-                        if (Array.isArray($$a)) {
-                          var $$v = null,
-                            $$i = _vm._i($$a, $$v)
-                          if ($$el.checked) {
-                            $$i < 0 &&
-                              _vm.$set(_vm.form, "remember", $$a.concat([$$v]))
-                          } else {
-                            $$i > -1 &&
-                              _vm.$set(
-                                _vm.form,
-                                "remember",
-                                $$a.slice(0, $$i).concat($$a.slice($$i + 1))
-                              )
-                          }
-                        } else {
-                          _vm.$set(_vm.form, "remember", $$c)
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
                         }
+                        _vm.$set(_vm.form, "commercial_id", $event.target.value)
                       }
                     }
                   }),
                   _vm._v(" "),
-                  _c("label", { attrs: { for: "remember" } }, [
-                    _c("div", { staticClass: "custom-checkbox-box" }, [
-                      _c("img", {
-                        staticClass: "custom-checkbox-icon",
-                        attrs: {
-                          src: "/img/icons/icon-check-white.svg",
-                          alt: ""
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "p",
-                      { staticClass: "text-white text-18px leading-20px" },
-                      [_vm._v("Recordar mis datos")]
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "px-15px pt-30px flex" }, [
-                  _c("div", { staticClass: "w-1/2 pr-15px" }, [
-                    _c(
-                      "button",
+                  _c("input", {
+                    directives: [
                       {
-                        staticClass:
-                          "focus:outline-none block w-full rounded-10px bg-white font-bold text-xl text-primary uppercase py-3",
-                        attrs: { type: "submit" }
-                      },
-                      [_vm._v("Ingresar")]
-                    )
-                  ]),
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.username,
+                        expression: "form.username"
+                      }
+                    ],
+                    staticClass: "form-control placeholder-primary mb-10px",
+                    attrs: { type: "text", placeholder: "NOMBRE DE USUARIO" },
+                    domProps: { value: _vm.form.username },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.form, "username", $event.target.value)
+                      }
+                    }
+                  }),
                   _vm._v(" "),
                   _c(
-                    "div",
-                    { staticClass: "w-1/2 pl-15px" },
-                    [
+                    "ul",
+                    { staticClass: "mb-10px" },
+                    _vm._l(_vm.$page.errors, function(error) {
+                      return _c("li", { staticClass: "text-left text-white" }, [
+                        _vm._v(_vm._s(error[0]))
+                      ])
+                    }),
+                    0
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "bavaria-custom-checkbox" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.remember,
+                          expression: "form.remember"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        name: "remember",
+                        id: "remember"
+                      },
+                      domProps: {
+                        checked: Array.isArray(_vm.form.remember)
+                          ? _vm._i(_vm.form.remember, null) > -1
+                          : _vm.form.remember
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.form.remember,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = null,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 &&
+                                _vm.$set(
+                                  _vm.form,
+                                  "remember",
+                                  $$a.concat([$$v])
+                                )
+                            } else {
+                              $$i > -1 &&
+                                _vm.$set(
+                                  _vm.form,
+                                  "remember",
+                                  $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                                )
+                            }
+                          } else {
+                            _vm.$set(_vm.form, "remember", $$c)
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: "remember" } }, [
+                      _c("div", { staticClass: "custom-checkbox-box" }, [
+                        _c("img", {
+                          staticClass: "custom-checkbox-icon",
+                          attrs: {
+                            src: "/img/icons/icon-check-white.svg",
+                            alt: ""
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
                       _c(
-                        "InertiaLink",
+                        "p",
+                        { staticClass: "text-white text-18px leading-20px" },
+                        [_vm._v("Recordar mis datos")]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "px-15px pt-30px flex" }, [
+                    _c("div", { staticClass: "w-1/2 pr-15px" }, [
+                      _c(
+                        "button",
                         {
                           staticClass:
                             "focus:outline-none block w-full rounded-10px bg-white font-bold text-xl text-primary uppercase py-3",
-                          attrs: { href: "/registro" }
+                          attrs: { type: "submit" }
                         },
-                        [_vm._v("Registrarse")]
+                        [_vm._v("Ingresar")]
                       )
-                    ],
-                    1
-                  )
-                ])
-              ]
-            )
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "w-1/2 pl-15px" },
+                      [
+                        _c(
+                          "InertiaLink",
+                          {
+                            staticClass:
+                              "focus:outline-none block w-full rounded-10px bg-white font-bold text-xl text-primary uppercase py-3",
+                            attrs: { href: "/registro" }
+                          },
+                          [_vm._v("Registrarse")]
+                        )
+                      ],
+                      1
+                    )
+                  ])
+                ]
+              )
+            ])
           ])
         ])
+      ]),
+      _vm._v(" "),
+      _c("portal", { attrs: { to: "modal" } }, [
+        _vm.modalActive
+          ? _c("div", { staticClass: "modal" }, [
+              _c("div", {
+                staticClass: "modal-overlay",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.modalActive = false
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "modal-box relative" }, [
+                _c(
+                  "h2",
+                  {
+                    staticClass:
+                      "uppercase text-28px text-white text-center tracking-tighter"
+                  },
+                  [
+                    _vm._v(
+                      "¿CÓMO PARTICIPAR EN EL PROGRAMA DE INCENTIVOS AMIGOS CERVECEROS?"
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c("iframe", {
+                  staticClass:
+                    "relative w-full rounded-10px border-4 border-gray",
+                  attrs: {
+                    src:
+                      "https://www.youtube.com/embed/a3ICNMQW7Ok?autoplay=1&controls=0",
+                    frameborder: "0",
+                    allow:
+                      "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+                    allowfullscreen: ""
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass:
+                      "absolute right-20px bottom-20px z-10 focus:outline-none inline-block rounded-10px bg-white font-bold text-xl text-primary uppercase p-3 flex items-center",
+                    attrs: { type: "button" },
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        _vm.modalActive = false
+                      }
+                    }
+                  },
+                  [
+                    _vm._v(
+                      "\n                    Saltar video\n                    "
+                    ),
+                    _c("img", {
+                      staticClass: "ml-6px h-6",
+                      attrs: {
+                        src: "/img/icons/icon-arrow-right-red.svg",
+                        alt: ""
+                      }
+                    })
+                  ]
+                )
+              ])
+            ])
+          : _vm._e()
       ])
-    ])
-  ])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -51165,63 +51287,88 @@ var render = function() {
                     staticClass: "question-and-answers-container w-8/12 mx-auto"
                   },
                   [
-                    _c("div", { staticClass: "question" }, [
-                      _c("img", {
-                        attrs: { src: "/img/question-bg.svg", alt: "" }
-                      }),
-                      _vm._v(" "),
-                      _c("p", [
-                        _vm._v(
-                          _vm._s(_vm.allQuestions[_vm.activeQuestion].question)
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
                     _c(
-                      "div",
-                      { staticClass: "answers" },
-                      _vm._l(
-                        _vm.allQuestions[_vm.activeQuestion].answers,
-                        function(answer, index) {
-                          return _c(
-                            "div",
-                            {
-                              staticClass: "answer",
-                              on: {
-                                click: function($event) {
-                                  return _vm.validateAnswerAndSave(
-                                    _vm.allQuestions[_vm.activeQuestion],
-                                    answer
-                                  )
-                                }
-                              }
-                            },
-                            [
+                      "transition",
+                      { attrs: { name: "slide-fade", appear: "" } },
+                      [
+                        _c(
+                          "div",
+                          {
+                            key: _vm.allQuestions[_vm.activeQuestion].question,
+                            staticClass: "question-and-answers-container-inner"
+                          },
+                          [
+                            _c("div", { staticClass: "question" }, [
                               _c("img", {
-                                attrs: { src: "/img/answer-bg.svg", alt: "" }
-                              }),
-                              _vm._v(" "),
-                              _c("img", {
-                                attrs: {
-                                  src: "/img/answer-selected-bg.svg",
-                                  alt: ""
-                                }
+                                attrs: { src: "/img/question-bg.svg", alt: "" }
                               }),
                               _vm._v(" "),
                               _c("p", [
                                 _vm._v(
-                                  _vm._s(["A", "B", "C", "D"][index]) +
-                                    ": " +
-                                    _vm._s(answer.answer)
+                                  _vm._s(
+                                    _vm.allQuestions[_vm.activeQuestion]
+                                      .question
+                                  )
                                 )
                               ])
-                            ]
-                          )
-                        }
-                      ),
-                      0
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "answers" },
+                              _vm._l(
+                                _vm.allQuestions[_vm.activeQuestion].answers,
+                                function(answer, index) {
+                                  return _c(
+                                    "div",
+                                    {
+                                      staticClass: "answer",
+                                      on: {
+                                        click: function($event) {
+                                          return _vm.validateAnswerAndSave(
+                                            $event,
+                                            _vm.allQuestions[
+                                              _vm.activeQuestion
+                                            ],
+                                            answer
+                                          )
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c("img", {
+                                        attrs: {
+                                          src: "/img/answer-bg.svg",
+                                          alt: ""
+                                        }
+                                      }),
+                                      _vm._v(" "),
+                                      _c("img", {
+                                        attrs: {
+                                          src: "/img/answer-selected-bg.svg",
+                                          alt: ""
+                                        }
+                                      }),
+                                      _vm._v(" "),
+                                      _c("p", [
+                                        _vm._v(
+                                          _vm._s(["A", "B", "C", "D"][index]) +
+                                            ": " +
+                                            _vm._s(answer.answer)
+                                        )
+                                      ])
+                                    ]
+                                  )
+                                }
+                              ),
+                              0
+                            )
+                          ]
+                        )
+                      ]
                     )
-                  ]
+                  ],
+                  1
                 )
               ]
             : _c(

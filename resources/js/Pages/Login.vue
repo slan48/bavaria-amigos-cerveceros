@@ -49,6 +49,20 @@
                 </div>
             </div>
         </div>
+
+        <portal to="modal">
+            <div class="modal" v-if="modalActive">
+                <div class="modal-overlay" @click.prevent="modalActive = false"></div>
+                <div class="modal-box relative">
+                    <h2 class="uppercase text-28px text-white text-center tracking-tighter">¿CÓMO PARTICIPAR EN EL PROGRAMA DE INCENTIVOS AMIGOS CERVECEROS?</h2>
+                    <iframe class="relative w-full rounded-10px border-4 border-gray" src="https://www.youtube.com/embed/a3ICNMQW7Ok?autoplay=1&controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <button @click.prevent="modalActive = false" type="button" class="absolute right-20px bottom-20px z-10 focus:outline-none inline-block rounded-10px bg-white font-bold text-xl text-primary uppercase p-3 flex items-center">
+                        Saltar video
+                        <img class="ml-6px h-6" src="/img/icons/icon-arrow-right-red.svg" alt="">
+                    </button>
+                </div>
+            </div>
+        </portal>
     </DefaultLayout>
 </template>
 
@@ -66,7 +80,8 @@ export default {
                 username: '',
                 password: 'password',
                 remember: false
-            }
+            },
+            modalActive: true
         }
     },
     methods: {
@@ -171,6 +186,36 @@ export default {
                 display: block;
             }
         }
+    }
+}
+
+iframe{
+    z-index: 5;
+    height: 450px;
+}
+
+.modal{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+
+    .modal-overlay{
+        width: 100%;
+        height: 100%;
+        @apply bg-primary;
+        opacity: 0.8;
+    }
+
+    .modal-box{
+        max-width: 850px;
+        width: 90%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }
 </style>

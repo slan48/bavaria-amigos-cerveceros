@@ -61,17 +61,21 @@
                     </div>
 
                     <div class="question-and-answers-container w-8/12 mx-auto">
-                        <div class="question">
-                            <img src="/img/question-bg.svg" alt="">
-                            <p>{{ allQuestions[activeQuestion].question }}</p>
-                        </div>
-                        <div class="answers">
-                            <div class="answer" v-for="(answer, index) in allQuestions[activeQuestion].answers" @click="validateAnswerAndSave(allQuestions[activeQuestion], answer)">
-                                <img src="/img/answer-bg.svg" alt="">
-                                <img src="/img/answer-selected-bg.svg" alt="">
-                                <p>{{ ['A', 'B', 'C', 'D'][index] }}: {{ answer.answer }}</p>
+                        <transition name="slide-fade" appear>
+                            <div class="question-and-answers-container-inner" :key="allQuestions[activeQuestion].question">
+                                <div class="question">
+                                    <img src="/img/question-bg.svg" alt="">
+                                    <p>{{ allQuestions[activeQuestion].question }}</p>
+                                </div>
+                                <div class="answers">
+                                    <div class="answer" v-for="(answer, index) in allQuestions[activeQuestion].answers" @click="validateAnswerAndSave($event, allQuestions[activeQuestion], answer)">
+                                        <img src="/img/answer-bg.svg" alt="">
+                                        <img src="/img/answer-selected-bg.svg" alt="">
+                                        <p>{{ ['A', 'B', 'C', 'D'][index] }}: {{ answer.answer }}</p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        </transition>
                     </div>
                 </template>
 
@@ -110,7 +114,8 @@ export default {
         return {
             questionSecondsLeft: 299,
             gameFinished: false,
-            activeQuestion: 0
+            activeQuestion: 0,
+            interval: null
         }
     },
     computed: {
@@ -154,23 +159,28 @@ export default {
         finishGame(){
             this.gameFinished = true;
         },
-        validateAnswerAndSave(answeredQuestion, answer){
-            if (!answer.correct){
-                this.finishGame();
-            } else{
-                axios.patch('/participations', {participation_id: this.participation.id, question_id: answeredQuestion.id})
-                .then(res => {
-                    this.goToNextQuestion();
-                })
-                .catch(console.log);
-            }
+        validateAnswerAndSave(event, answeredQuestion, answer){
+            this.stopCounter();
+            event.currentTarget.classList.add('active');
+            setTimeout(() => {
+                if (!answer.correct){
+                    this.finishGame();
+                } else{
+                    axios.patch('/participations', {participation_id: this.participation.id, question_id: answeredQuestion.id})
+                    .then(res => {
+                        this.goToNextQuestion();
+                    })
+                    .catch(console.log);
+                }
+            }, 1000);
         },
         goToNextQuestion(){
             if (this.activeQuestion === (this.allQuestions.length - 1)){
                 this.finishGame();
             } else{
                 this.questionSecondsLeft = 299;
-                this.activeQuestion++
+                this.activeQuestion++;
+                this.startCounter();
             }
         },
         shuffleArray(array){
@@ -182,18 +192,24 @@ export default {
                 arrayToSuffle[j] = temp
             }
             return arrayToSuffle;
+        },
+        startCounter(){
+            this.interval = setInterval(() => {
+                this.questionSecondsLeft--;
+                this.$refs.vueCircle.updateProgress(this.questionSecondsLeftPercentage);
+
+                if (this.questionSecondsLeft === 0){
+                    clearInterval(this.interval);
+                    this.finishGame();
+                }
+            }, 1000)
+        },
+        stopCounter(){
+            clearInterval(this.interval);
         }
     },
     mounted() {
-        let interval = setInterval(() => {
-            this.questionSecondsLeft--;
-            this.$refs.vueCircle.updateProgress(this.questionSecondsLeftPercentage);
-
-            if (this.questionSecondsLeft === 0){
-                clearInterval(interval);
-                this.finishGame();
-            }
-        }, 1000)
+        this.startCounter();
     }
 }
 </script>
@@ -298,6 +314,8 @@ export default {
 }
 
 .question-and-answers-container{
+    min-height: 241.36px;
+
     .question{
         position: relative;
 
@@ -336,6 +354,18 @@ export default {
                 }
             }
 
+            &.active{
+                img{
+                    &:nth-child(1){
+                        display: none;
+                    }
+
+                    &:nth-child(2){
+                        display: block;
+                    }
+                }
+            }
+
             p{
                 position: absolute;
                 color: #fff;
@@ -348,5 +378,29 @@ export default {
             }
         }
     }
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+}
+
+.slide-fade-enter-active {
+    transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-leave-active {
+    transition: all .3s ease;
+}
+.slide-fade-enter
+    /* .slide-fade-leave-active below version 2.1.8 */ {
+    transform: translateX(10px);
+    opacity: 0;
+}
+.slide-fade-leave
+    /* .slide-fade-leave-active below version 2.1.8 */ {
+    transform: translateX(-10px);
+    opacity: 0;
 }
 </style>

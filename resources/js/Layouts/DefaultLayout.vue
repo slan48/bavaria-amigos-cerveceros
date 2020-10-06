@@ -3,6 +3,10 @@
         <Header />
         <slot />
         <Footer />
+        
+        <!-- Modal Portal -->
+        <portal-target name="modal" multiple>
+        </portal-target>
     </div>
 </template>
 
