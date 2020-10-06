@@ -24,7 +24,7 @@
                             <input v-model="form.username" class="form-control placeholder-primary mb-10px" type="text" placeholder="NOMBRE DE USUARIO">
 
                             <ul class="mb-10px">
-                                <li class="text-left text-white" v-for="error in $page.errors">{{ error[0] }}</li>
+                                <li class="text-left text-yellow-300" v-for="error in $page.errors">{{ error[0] }}</li>
                             </ul>
 
                             <div class="bavaria-custom-checkbox">

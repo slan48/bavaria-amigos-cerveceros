@@ -48932,9 +48932,11 @@ var render = function() {
                     "ul",
                     { staticClass: "mb-10px" },
                     _vm._l(_vm.$page.errors, function(error) {
-                      return _c("li", { staticClass: "text-left text-white" }, [
-                        _vm._v(_vm._s(error[0]))
-                      ])
+                      return _c(
+                        "li",
+                        { staticClass: "text-left text-yellow-300" },
+                        [_vm._v(_vm._s(error[0]))]
+                      )
                     }),
                     0
                   ),
@@ -50460,9 +50462,11 @@ var render = function() {
                 ),
                 _vm._v(" "),
                 _vm.$page.errors.birthday
-                  ? _c("p", { staticClass: "text-white text-center mt-10px" }, [
-                      _vm._v(_vm._s(_vm.$page.errors.birthday[0]))
-                    ])
+                  ? _c(
+                      "p",
+                      { staticClass: "text-yellow-300 text-center mt-10px" },
+                      [_vm._v(_vm._s(_vm.$page.errors.birthday[0]))]
+                    )
                   : _vm._e()
               ]),
               _vm._v(" "),
@@ -50515,7 +50519,9 @@ var render = function() {
                 _vm.$page.errors.name
                   ? _c(
                       "p",
-                      { staticClass: "text-white text-left mt-5px mb-10px" },
+                      {
+                        staticClass: "text-yellow-300 text-left mt-5px mb-10px"
+                      },
                       [_vm._v(_vm._s(_vm.$page.errors.name[0]))]
                     )
                   : _vm._e(),
@@ -50546,7 +50552,9 @@ var render = function() {
                 _vm.$page.errors.dni
                   ? _c(
                       "p",
-                      { staticClass: "text-white text-left mt-5px mb-10px" },
+                      {
+                        staticClass: "text-yellow-300 text-left mt-5px mb-10px"
+                      },
                       [_vm._v(_vm._s(_vm.$page.errors.dni[0]))]
                     )
                   : _vm._e(),
@@ -50577,7 +50585,9 @@ var render = function() {
                 _vm.$page.errors.phone
                   ? _c(
                       "p",
-                      { staticClass: "text-white text-left mt-5px mb-10px" },
+                      {
+                        staticClass: "text-yellow-300 text-left mt-5px mb-10px"
+                      },
                       [_vm._v(_vm._s(_vm.$page.errors.phone[0]))]
                     )
                   : _vm._e(),
@@ -50608,7 +50618,9 @@ var render = function() {
                 _vm.$page.errors.email
                   ? _c(
                       "p",
-                      { staticClass: "text-white text-left mt-5px mb-10px" },
+                      {
+                        staticClass: "text-yellow-300 text-left mt-5px mb-10px"
+                      },
                       [_vm._v(_vm._s(_vm.$page.errors.email[0]))]
                     )
                   : _vm._e(),
@@ -50639,7 +50651,9 @@ var render = function() {
                 _vm.$page.errors.commercial_id
                   ? _c(
                       "p",
-                      { staticClass: "text-white text-left mt-5px mb-10px" },
+                      {
+                        staticClass: "text-yellow-300 text-left mt-5px mb-10px"
+                      },
                       [_vm._v(_vm._s(_vm.$page.errors.commercial_id[0]))]
                     )
                   : _vm._e(),
@@ -50689,7 +50703,9 @@ var render = function() {
                 _vm.$page.errors.username
                   ? _c(
                       "p",
-                      { staticClass: "text-white text-left mt-5px mb-10px" },
+                      {
+                        staticClass: "text-yellow-300 text-left mt-5px mb-10px"
+                      },
                       [_vm._v(_vm._s(_vm.$page.errors.username[0]))]
                     )
                   : _vm._e(),
@@ -50764,9 +50780,11 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _vm.$page.errors.acceptTerms
-                  ? _c("p", { staticClass: "text-white text-center mb-10px" }, [
-                      _vm._v(_vm._s(_vm.$page.errors.acceptTerms[0]))
-                    ])
+                  ? _c(
+                      "p",
+                      { staticClass: "text-yellow-300 text-center mb-10px" },
+                      [_vm._v(_vm._s(_vm.$page.errors.acceptTerms[0]))]
+                    )
                   : _vm._e(),
                 _vm._v(" "),
                 _c("div", { staticClass: "bavaria-custom-checkbox" }, [

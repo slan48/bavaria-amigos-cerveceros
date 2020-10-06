@@ -11,7 +11,7 @@
                                 <the-mask mask="##" v-model="month" type="text" class="mx-5px w-63px rounded-10px text-20px leading-24px py-5px placeholder-gray text-center focus:outline-none" placeholder="MES" />
                                 <the-mask mask="####" v-model="year" type="text" class="w-75px rounded-10px text-20px leading-24px py-5px placeholder-gray text-center focus:outline-none" placeholder="AÑO" />
                             </div>
-                            <p class="text-white text-center mt-10px" v-if="$page.errors.birthday">{{ $page.errors.birthday[0] }}</p>
+                            <p class="text-yellow-300 text-center mt-10px" v-if="$page.errors.birthday">{{ $page.errors.birthday[0] }}</p>
                         </div>
 
                         <div class="register-form-box">
@@ -19,20 +19,20 @@
                             <p class="text-white uppercase text-20px leading-24px mb-25px tracking-tighter">INGRESA TUS DATOS PARA ACCEDER<br>A LA PLATAFORMA</p>
 
                             <input v-model="form.name" class="form-control tracking-tighter w-full mb-5px placeholder-primary" type="text" placeholder="NOMBRE">
-                            <p class="text-white text-left mt-5px mb-10px" v-if="$page.errors.name">{{ $page.errors.name[0] }}</p>
+                            <p class="text-yellow-300 text-left mt-5px mb-10px" v-if="$page.errors.name">{{ $page.errors.name[0] }}</p>
                             <input v-model="form.dni" class="form-control tracking-tighter w-full mb-5px placeholder-primary" type="text" placeholder="CÉDULA">
-                            <p class="text-white text-left mt-5px mb-10px" v-if="$page.errors.dni">{{ $page.errors.dni[0] }}</p>
+                            <p class="text-yellow-300 text-left mt-5px mb-10px" v-if="$page.errors.dni">{{ $page.errors.dni[0] }}</p>
                             <input v-model="form.phone" class="form-control tracking-tighter w-full mb-5px placeholder-primary" type="text" placeholder="TELÉFONO">
-                            <p class="text-white text-left mt-5px mb-10px" v-if="$page.errors.phone">{{ $page.errors.phone[0] }}</p>
+                            <p class="text-yellow-300 text-left mt-5px mb-10px" v-if="$page.errors.phone">{{ $page.errors.phone[0] }}</p>
                             <input v-model="form.email" class="form-control tracking-tighter w-full mb-5px placeholder-primary" type="text" placeholder="E-MAIL">
-                            <p class="text-white text-left mt-5px mb-10px" v-if="$page.errors.email">{{ $page.errors.email[0] }}</p>
+                            <p class="text-yellow-300 text-left mt-5px mb-10px" v-if="$page.errors.email">{{ $page.errors.email[0] }}</p>
                             <input v-model="form.commercial_id" class="form-control tracking-tighter w-full mb-5px placeholder-primary" type="text" placeholder="ID COMERCIAL">
-                            <p class="text-white text-left mt-5px mb-10px" v-if="$page.errors.commercial_id">{{ $page.errors.commercial_id[0] }}</p>
+                            <p class="text-yellow-300 text-left mt-5px mb-10px" v-if="$page.errors.commercial_id">{{ $page.errors.commercial_id[0] }}</p>
                             <div class="relative">
                                 <input v-model="form.username" class="form-control tracking-tighter w-full placeholder-primary mb-10px" type="text" placeholder="NOMBRE DE USUARIO">
                                 <span v-show="!form.username.length" class="absolute text-gray-dark text-14px extra-placeholder tracking-tighter">Min 8 caracteres</span>
                             </div>
-                            <p class="text-white text-left mt-5px mb-10px" v-if="$page.errors.username">{{ $page.errors.username[0] }}</p>
+                            <p class="text-yellow-300 text-left mt-5px mb-10px" v-if="$page.errors.username">{{ $page.errors.username[0] }}</p>
 
                             <div class="bavaria-custom-checkbox">
                                 <input type="checkbox" name="remember" id="acceptTerms" v-model="form.acceptTerms">
@@ -43,7 +43,7 @@
                                     <p class="text-white text-18px leading-20px">Aceptar términos y condiciones</p>
                                 </label>
                             </div>
-                            <p class="text-white text-center mb-10px" v-if="$page.errors.acceptTerms">{{ $page.errors.acceptTerms[0] }}</p>
+                            <p class="text-yellow-300 text-center mb-10px" v-if="$page.errors.acceptTerms">{{ $page.errors.acceptTerms[0] }}</p>
 
                             <div class="bavaria-custom-checkbox">
                                 <input type="checkbox" name="remember" id="remember" v-model="form.remember">
