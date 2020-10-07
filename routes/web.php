@@ -29,12 +29,14 @@ Route::middleware(['auth:sanctum'])->group(function (){
     Route::get('/juega-y-gana', [PlayController::class, 'Instructions'])->name('juega-y-gana');
     Route::get('/juega-y-gana/juego/{participation}', [PlayController::class, 'game'])->name('juega-y-gana.game');
 
-    Route::post('/participations', [ParticipationController::class, 'create'])->name('participations.create');
-    Route::patch('/participations', [ParticipationController::class, 'update'])->name('participations.update');
+    Route::get('/ganadores', [ParticipationController::class, 'show'])->name('participations.show');
 
     Route::get('/perfil', function () {
         return Inertia\Inertia::render('Profile/Show');
     })->name('perfil');
+
+    Route::post('/participations', [ParticipationController::class, 'create'])->name('participations.create');
+    Route::patch('/participations', [ParticipationController::class, 'update'])->name('participations.update');
 });
 
 // Fortify custom routes

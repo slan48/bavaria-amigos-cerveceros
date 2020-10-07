@@ -10,10 +10,34 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Validation\ValidationException;
+use Inertia\Inertia;
 use function GuzzleHttp\Psr7\uri_for;
 
 class ParticipationController extends Controller
 {
+    public function show(){
+        $winnersByAward = [];
+        if (env('SHOW_WINNERS', 'false') == 'true'){
+            $startOfMonth = Carbon::now()->startOfMonth()->toDateTimeString();
+            $endOfMonth = Carbon::now()->endOfMonth()->toDateTimeString();
+            $participations = Participation::whereBetween('created_at', [$startOfMonth, $endOfMonth])->with('user')->orderBy('score', 'desc')->orderBy('time_in_seconds', 'asc')->get();
+            $awards = Award::all(['id', 'name', 'image_path']);
+
+            foreach ($awards as $award){
+                $participationsFiltered = $participations->filter(function ($participation) use ($award){
+                    return $participation->award_id === $award->id;
+                })->values();
+
+                $winnersByAward[] = [
+                    'award' => $award,
+                    'participations' => $participationsFiltered
+                ];
+            }
+        }
+
+        return Inertia::render('Winners', ['winnersByAward' => $winnersByAward]);
+    }
+
     public function create(Request $request){
         $this->validate($request, [
             'award_id' => 'required',
