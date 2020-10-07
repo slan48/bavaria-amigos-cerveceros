@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
@@ -28,13 +29,9 @@ Route::middleware(['auth:sanctum'])->group(function (){
 
     Route::get('/juega-y-gana', [PlayController::class, 'Instructions'])->name('juega-y-gana');
     Route::get('/juega-y-gana/juego/{participation}', [PlayController::class, 'game'])->name('juega-y-gana.game');
+    Route::get('/perfil', [UserController::class, 'profile'])->name('perfil');
 
     Route::get('/ganadores', [ParticipationController::class, 'show'])->name('participations.show');
-
-    Route::get('/perfil', function () {
-        return Inertia\Inertia::render('Profile/Show');
-    })->name('perfil');
-
     Route::post('/participations', [ParticipationController::class, 'create'])->name('participations.create');
     Route::patch('/participations', [ParticipationController::class, 'update'])->name('participations.update');
 });
