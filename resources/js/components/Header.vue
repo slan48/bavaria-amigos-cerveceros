@@ -16,7 +16,7 @@
                         <InertiaLink :class="{ 'active': $page.currentRouteName === 'juega-y-gana' }" class="text-20px leading-24px font-bold uppercase block text-center py-10px px-15px border-l border-gray" href="/juega-y-gana">Juega y gana</InertiaLink>
                     </li>
                     <li>
-                        <InertiaLink :class="{ 'active': $page.currentRouteName === 'ganadores' }" class="text-20px leading-24px font-bold uppercase block text-center py-10px px-15px border-l border-r border-gray" href="/ganadores">Ganadores</InertiaLink>
+                        <InertiaLink :class="{ 'active': $page.currentRouteName === 'participations.show' }" class="text-20px leading-24px font-bold uppercase block text-center py-10px px-15px border-l border-r border-gray" href="/ganadores">Ganadores</InertiaLink>
                     </li>
                 </ul>
             </nav>

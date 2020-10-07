@@ -63,9 +63,26 @@
             </div>
         </div>
         <div class="winners-page-closed" v-else>
-            <div class="container py-45px">
-                <h2 class="font-bold text-28px text-primary text-center uppercase">RANKING DE GANADORES</h2>
-                <p class="text-center text-gray-dark text-18px mb-25px -mt-2">Recuerda que puedes ingresar máximo dos códigos por premio</p>
+            <div class="container flex">
+                <div class="w-5/12 ml-auto pb-40px pt-80px">
+                    <div class="pr-25px">
+                        <img class="block w-full" src="/img/logo-amigos-cerveceros.svg" alt="">
+                    </div>
+                    <div class="divider"></div>
+                    <div class="custom-text-with-shadow relative">
+                        <p class="font-bold text-35px leading-35px text-white z-0 absolute w-full text-center">EL JUEGO EN EL QUE APRENDES</p>
+                        <p class="font-bold text-35px leading-35px text-white z-0 absolute w-full text-center">EL JUEGO EN EL QUE APRENDES</p>
+                        <p class="font-bold text-35px leading-35px text-white z-0 absolute w-full text-center">EL JUEGO EN EL QUE APRENDES</p>
+                        <p class="font-bold text-35px leading-35px text-white z-0 absolute w-full text-center">EL JUEGO EN EL QUE APRENDES</p>
+                        <p class="font-bold text-35px leading-33px text-black relative z-10 w-full text-center">EL JUEGO EN EL QUE APRENDES</p>
+                    </div>
+                    <p class="text-white text-26px leading-35px text-center">Y GANAS CON NUESTROS PRODUCTOS</p>
+                </div>
+                <div class="w-6/12 pl-80px pr-30px py-100px bg-white relative flex flex-wrap items-center content-center">
+                    <h3 class="text-primary text-30px text-left leading-30px font-bold mb-40px w-full">RANKING DE GANADORES</h3>
+                    <p class="text-gray-dark tracking-tighter text-28px w-full mb-35px">Podrás conocer el ranking de ganadores y tu posición dentro de él, al finalizar cada mes.</p>
+                    <p class="text-gray-dark tracking-tighter text-28px w-full">Los ganadores de cada premio serán contactados por nuestra torre de control, para indicarles como y cuando recibir su premio.</p>
+                </div>
             </div>
         </div>
     </DefaultLayout>
@@ -281,6 +298,43 @@ export default {
                 }
             }
         }
+    }
+}
+
+.winners-page-closed{
+    background-image: url('/img/bg-home.jpg');
+    background-size: cover;
+    background-position: center;
+
+    .divider{
+        width: 200%;
+        height: 1px;
+        background: #fff;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        margin-right: 0;
+        margin-left: -100%;
+    }
+
+    .custom-text-with-shadow p:nth-child(1){
+        top: -3px;
+        left: -2px;
+        pointer-events: none;
+    }
+    .custom-text-with-shadow p:nth-child(2){
+        top: 1px;
+        left: -2px;
+        pointer-events: none;
+    }
+    .custom-text-with-shadow p:nth-child(3){
+        top: -3px;
+        left: 2px;
+        pointer-events: none;
+    }
+    .custom-text-with-shadow p:nth-child(4){
+        top: 1px;
+        left: 2px;
+        pointer-events: none;
     }
 }
 
