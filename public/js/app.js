@@ -48992,7 +48992,7 @@ var render = function() {
             "p",
             {
               staticClass:
-                "text-center tracking-tighter text-white text-26px leading-30px"
+                "text-center tracking-tighter text-white text-24px leading-30px"
             },
             [
               _vm._v(
