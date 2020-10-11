@@ -35,7 +35,7 @@ class ParticipationController extends Controller
             }
         }
 
-        return Inertia::render('Winners', ['winnersByAward' => $winnersByAward]);
+        return Inertia::render('Winners', ['winnersByAward' => $winnersByAward, 'currentMonth' => Carbon::now()->monthName]);
     }
 
     public function create(Request $request){

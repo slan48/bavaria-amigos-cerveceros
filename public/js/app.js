@@ -4518,7 +4518,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     DefaultLayout: _Layouts_DefaultLayout__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   props: {
-    winnersByAward: Array
+    winnersByAward: Array,
+    currentMonth: String
   },
   data: function data() {
     return {
@@ -51857,7 +51858,7 @@ var render = function() {
                 staticClass:
                   "font-bold text-28px text-primary text-center uppercase mb-40px"
               },
-              [_vm._v("RANKING DE GANADORES")]
+              [_vm._v("RANKING DE GANADORES " + _vm._s(_vm.currentMonth))]
             ),
             _vm._v(" "),
             _c("div", { staticClass: "flex flex-wrap px-30px" }, [

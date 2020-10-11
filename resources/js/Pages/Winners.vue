@@ -2,7 +2,7 @@
     <DefaultLayout>
         <div class="winners-page-open" v-if="winnersByAward && winnersByAward.length">
             <div class="container py-45px">
-                <h2 class="font-bold text-28px text-primary text-center uppercase mb-40px">RANKING DE GANADORES</h2>
+                <h2 class="font-bold text-28px text-primary text-center uppercase mb-40px">RANKING DE GANADORES {{ currentMonth }}</h2>
 
                 <div class="flex flex-wrap px-30px">
                     <div class="w-8/12 pr-15px">
@@ -97,7 +97,8 @@ export default {
         DefaultLayout
     },
     props: {
-        winnersByAward: Array
+        winnersByAward: Array,
+        currentMonth: String
     },
     data(){
         return {
