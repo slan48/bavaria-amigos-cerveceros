@@ -6,7 +6,7 @@
                     <img class="block w-full" src="/img/logo-amigos-cerveceros.svg" alt="">
                     <div class="divider"></div>
                     <p class="text-center text-white text-30px leading-30px font-bold">Felicitaciones ya eres parte de nuestro</p>
-                    <p class="text-center tracking-tighter text-white text-26px leading-30px">programa de incentivos amigos cerveceros, cumple tus metas y podrás ganar fabulosos premios.</p>
+                    <p class="text-center tracking-tighter text-white text-26px leading-30px">programa de incentivos AMIGOS CERVECEROS, cumple tus metas y podrás ganar fabulosos premios.</p>
                 </div>
 
                 <div class="w-6/12 pt-50px pb-10px pt-55px px-30px bg-white relative ml-auto">

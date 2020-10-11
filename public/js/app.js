@@ -48996,7 +48996,7 @@ var render = function() {
             },
             [
               _vm._v(
-                "programa de incentivos amigos cerveceros, cumple tus metas y podrás ganar fabulosos premios."
+                "programa de incentivos AMIGOS CERVECEROS, cumple tus metas y podrás ganar fabulosos premios."
               )
             ]
           )
@@ -51773,7 +51773,7 @@ var render = function() {
               _vm._v(" "),
               _c("p", [
                 _vm._v(
-                  "1.1 Antes de participar en la presente promoción denominada “Plataforma Amigos Cerveceros”, se deberá dar lectura íntegra a los siguientes términos y condiciones (las “Bases” o los “Términos y Condiciones”), entenderlos y aceptar cumplir totalmente con los mismos. La participación en la actividad se entiende como aceptación de los términos y condiciones."
+                  "1.1 Antes de participar en la presente promoción denominada “Plataforma AMIGOS CERVECEROS”, se deberá dar lectura íntegra a los siguientes términos y condiciones (las “Bases” o los “Términos y Condiciones”), entenderlos y aceptar cumplir totalmente con los mismos. La participación en la actividad se entiende como aceptación de los términos y condiciones."
                 )
               ]),
               _vm._v(" "),

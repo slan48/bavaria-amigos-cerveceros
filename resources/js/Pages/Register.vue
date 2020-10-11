@@ -72,7 +72,7 @@
 
                         <p>GENERALIDADES DE LA ACTIVIDAD</p>
 
-                        <p>1.1 Antes de participar en la presente promoción denominada “Plataforma Amigos Cerveceros”, se deberá dar lectura íntegra a los siguientes términos y condiciones (las “Bases” o los “Términos y Condiciones”), entenderlos y aceptar cumplir totalmente con los mismos. La participación en la actividad se entiende como aceptación de los términos y condiciones.</p>
+                        <p>1.1 Antes de participar en la presente promoción denominada “Plataforma AMIGOS CERVECEROS”, se deberá dar lectura íntegra a los siguientes términos y condiciones (las “Bases” o los “Términos y Condiciones”), entenderlos y aceptar cumplir totalmente con los mismos. La participación en la actividad se entiende como aceptación de los términos y condiciones.</p>
 
                         <p>1.2. Así mismo, el participante acepta haber leído y entendido el Aviso de Privacidad para el tratamiento de datos personales y autoriza el uso de sus datos para efectos de la promoción en los términos que más adelante se indica.</p>
 
