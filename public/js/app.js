@@ -4381,6 +4381,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       axios.get('/sanctum/csrf-cookie').then(function (response) {
         _this.$inertia.post('/register', _objectSpread(_objectSpread({}, _this.form), {}, {
+          name: _this.form.name.trim(),
           birthday: _this.birthday
         }));
       });
@@ -51338,406 +51339,411 @@ var render = function() {
                   : _vm._e()
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "register-form-box" }, [
-                _c(
-                  "p",
-                  {
-                    staticClass:
-                      "font-bold text-32px leading-34px text-white uppercase"
-                  },
-                  [_vm._v("Regístrate ahora")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "p",
-                  {
-                    staticClass:
-                      "text-white uppercase text-20px leading-24px mb-25px tracking-tighter"
-                  },
-                  [
-                    _vm._v("INGRESA TUS DATOS PARA ACCEDER"),
-                    _c("br"),
-                    _vm._v("A LA PLATAFORMA")
-                  ]
-                ),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
+              _c(
+                "div",
+                { staticClass: "register-form-box" },
+                [
+                  _c(
+                    "p",
                     {
-                      name: "model",
-                      rawName: "v-model",
+                      staticClass:
+                        "font-bold text-32px leading-34px text-white uppercase"
+                    },
+                    [_vm._v("Regístrate ahora")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    {
+                      staticClass:
+                        "text-white uppercase text-20px leading-24px mb-25px tracking-tighter"
+                    },
+                    [
+                      _vm._v("INGRESA TUS DATOS PARA ACCEDER"),
+                      _c("br"),
+                      _vm._v("A LA PLATAFORMA")
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("the-mask", {
+                    staticClass:
+                      "form-control tracking-tighter w-full mb-5px placeholder-primary",
+                    attrs: {
+                      tokens: { S: { pattern: /[a-zA-Z ]/ } },
+                      mask:
+                        "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS",
+                      type: "text",
+                      placeholder: "NOMBRE"
+                    },
+                    model: {
                       value: _vm.form.name,
+                      callback: function($$v) {
+                        _vm.$set(_vm.form, "name", $$v)
+                      },
                       expression: "form.name"
                     }
-                  ],
-                  staticClass:
-                    "form-control tracking-tighter w-full mb-5px placeholder-primary",
-                  attrs: { type: "text", placeholder: "NOMBRE" },
-                  domProps: { value: _vm.form.name },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.form, "name", $event.target.value)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _vm.$page.errors.name
-                  ? _c(
-                      "p",
-                      {
-                        staticClass: "text-yellow-300 text-left mt-5px mb-10px"
-                      },
-                      [_vm._v(_vm._s(_vm.$page.errors.name[0]))]
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
+                  }),
+                  _vm._v(" "),
+                  _vm.$page.errors.name
+                    ? _c(
+                        "p",
+                        {
+                          staticClass:
+                            "text-yellow-300 text-left mt-5px mb-10px"
+                        },
+                        [_vm._v(_vm._s(_vm.$page.errors.name[0]))]
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c("the-mask", {
+                    staticClass:
+                      "form-control tracking-tighter w-full mb-5px placeholder-primary",
+                    attrs: {
+                      mask: "##########",
+                      type: "text",
+                      placeholder: "CÉDULA"
+                    },
+                    model: {
                       value: _vm.form.dni,
+                      callback: function($$v) {
+                        _vm.$set(_vm.form, "dni", $$v)
+                      },
                       expression: "form.dni"
                     }
-                  ],
-                  staticClass:
-                    "form-control tracking-tighter w-full mb-5px placeholder-primary",
-                  attrs: { type: "text", placeholder: "CÉDULA" },
-                  domProps: { value: _vm.form.dni },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.form, "dni", $event.target.value)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _vm.$page.errors.dni
-                  ? _c(
-                      "p",
-                      {
-                        staticClass: "text-yellow-300 text-left mt-5px mb-10px"
-                      },
-                      [_vm._v(_vm._s(_vm.$page.errors.dni[0]))]
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.form.phone,
-                      expression: "form.phone"
-                    }
-                  ],
-                  staticClass:
-                    "form-control tracking-tighter w-full mb-5px placeholder-primary",
-                  attrs: { type: "text", placeholder: "TELÉFONO" },
-                  domProps: { value: _vm.form.phone },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.form, "phone", $event.target.value)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _vm.$page.errors.phone
-                  ? _c(
-                      "p",
-                      {
-                        staticClass: "text-yellow-300 text-left mt-5px mb-10px"
-                      },
-                      [_vm._v(_vm._s(_vm.$page.errors.phone[0]))]
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.form.email,
-                      expression: "form.email"
-                    }
-                  ],
-                  staticClass:
-                    "form-control tracking-tighter w-full mb-5px placeholder-primary",
-                  attrs: { type: "text", placeholder: "E-MAIL" },
-                  domProps: { value: _vm.form.email },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.form, "email", $event.target.value)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _vm.$page.errors.email
-                  ? _c(
-                      "p",
-                      {
-                        staticClass: "text-yellow-300 text-left mt-5px mb-10px"
-                      },
-                      [_vm._v(_vm._s(_vm.$page.errors.email[0]))]
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.form.commercial_id,
-                      expression: "form.commercial_id"
-                    }
-                  ],
-                  staticClass:
-                    "form-control tracking-tighter w-full mb-5px placeholder-primary",
-                  attrs: { type: "text", placeholder: "ID COMERCIAL" },
-                  domProps: { value: _vm.form.commercial_id },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.form, "commercial_id", $event.target.value)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _vm.$page.errors.commercial_id
-                  ? _c(
-                      "p",
-                      {
-                        staticClass: "text-yellow-300 text-left mt-5px mb-10px"
-                      },
-                      [_vm._v(_vm._s(_vm.$page.errors.commercial_id[0]))]
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                _c("div", { staticClass: "relative" }, [
+                  }),
+                  _vm._v(" "),
+                  _vm.$page.errors.dni
+                    ? _c(
+                        "p",
+                        {
+                          staticClass:
+                            "text-yellow-300 text-left mt-5px mb-10px"
+                        },
+                        [_vm._v(_vm._s(_vm.$page.errors.dni[0]))]
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
                   _c("input", {
                     directives: [
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.form.username,
-                        expression: "form.username"
+                        value: _vm.form.phone,
+                        expression: "form.phone"
                       }
                     ],
                     staticClass:
-                      "form-control tracking-tighter w-full placeholder-primary mb-10px",
-                    attrs: { type: "text", placeholder: "NOMBRE DE USUARIO" },
-                    domProps: { value: _vm.form.username },
+                      "form-control tracking-tighter w-full mb-5px placeholder-primary",
+                    attrs: { type: "text", placeholder: "TELÉFONO" },
+                    domProps: { value: _vm.form.phone },
                     on: {
                       input: function($event) {
                         if ($event.target.composing) {
                           return
                         }
-                        _vm.$set(_vm.form, "username", $event.target.value)
+                        _vm.$set(_vm.form, "phone", $event.target.value)
                       }
                     }
                   }),
                   _vm._v(" "),
-                  _c(
-                    "span",
-                    {
+                  _vm.$page.errors.phone
+                    ? _c(
+                        "p",
+                        {
+                          staticClass:
+                            "text-yellow-300 text-left mt-5px mb-10px"
+                        },
+                        [_vm._v(_vm._s(_vm.$page.errors.phone[0]))]
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.email,
+                        expression: "form.email"
+                      }
+                    ],
+                    staticClass:
+                      "form-control tracking-tighter w-full mb-5px placeholder-primary",
+                    attrs: { type: "text", placeholder: "E-MAIL" },
+                    domProps: { value: _vm.form.email },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.form, "email", $event.target.value)
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _vm.$page.errors.email
+                    ? _c(
+                        "p",
+                        {
+                          staticClass:
+                            "text-yellow-300 text-left mt-5px mb-10px"
+                        },
+                        [_vm._v(_vm._s(_vm.$page.errors.email[0]))]
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.commercial_id,
+                        expression: "form.commercial_id"
+                      }
+                    ],
+                    staticClass:
+                      "form-control tracking-tighter w-full mb-5px placeholder-primary",
+                    attrs: { type: "text", placeholder: "ID COMERCIAL" },
+                    domProps: { value: _vm.form.commercial_id },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.form, "commercial_id", $event.target.value)
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _vm.$page.errors.commercial_id
+                    ? _c(
+                        "p",
+                        {
+                          staticClass:
+                            "text-yellow-300 text-left mt-5px mb-10px"
+                        },
+                        [_vm._v(_vm._s(_vm.$page.errors.commercial_id[0]))]
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "relative" }, [
+                    _c("input", {
                       directives: [
                         {
-                          name: "show",
-                          rawName: "v-show",
-                          value: !_vm.form.username.length,
-                          expression: "!form.username.length"
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.username,
+                          expression: "form.username"
                         }
                       ],
                       staticClass:
-                        "absolute text-gray-dark text-14px extra-placeholder tracking-tighter"
-                    },
-                    [_vm._v("Min 8 caracteres")]
-                  )
-                ]),
-                _vm._v(" "),
-                _vm.$page.errors.username
-                  ? _c(
-                      "p",
+                        "form-control tracking-tighter w-full placeholder-primary mb-10px",
+                      attrs: { type: "text", placeholder: "NOMBRE DE USUARIO" },
+                      domProps: { value: _vm.form.username },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.form, "username", $event.target.value)
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "span",
                       {
-                        staticClass: "text-yellow-300 text-left mt-5px mb-10px"
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: !_vm.form.username.length,
+                            expression: "!form.username.length"
+                          }
+                        ],
+                        staticClass:
+                          "absolute text-gray-dark text-14px extra-placeholder tracking-tighter"
                       },
-                      [_vm._v(_vm._s(_vm.$page.errors.username[0]))]
+                      [_vm._v("Min 8 caracteres")]
                     )
-                  : _vm._e(),
-                _vm._v(" "),
-                _c("div", { staticClass: "bavaria-custom-checkbox" }, [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.form.acceptTerms,
-                        expression: "form.acceptTerms"
-                      }
-                    ],
-                    attrs: {
-                      type: "checkbox",
-                      name: "remember",
-                      id: "acceptTerms"
-                    },
-                    domProps: {
-                      checked: Array.isArray(_vm.form.acceptTerms)
-                        ? _vm._i(_vm.form.acceptTerms, null) > -1
-                        : _vm.form.acceptTerms
-                    },
-                    on: {
-                      change: function($event) {
-                        var $$a = _vm.form.acceptTerms,
-                          $$el = $event.target,
-                          $$c = $$el.checked ? true : false
-                        if (Array.isArray($$a)) {
-                          var $$v = null,
-                            $$i = _vm._i($$a, $$v)
-                          if ($$el.checked) {
-                            $$i < 0 &&
-                              _vm.$set(
-                                _vm.form,
-                                "acceptTerms",
-                                $$a.concat([$$v])
-                              )
-                          } else {
-                            $$i > -1 &&
-                              _vm.$set(
-                                _vm.form,
-                                "acceptTerms",
-                                $$a.slice(0, $$i).concat($$a.slice($$i + 1))
-                              )
-                          }
-                        } else {
-                          _vm.$set(_vm.form, "acceptTerms", $$c)
-                        }
-                      }
-                    }
-                  }),
+                  ]),
                   _vm._v(" "),
-                  _c("label", { attrs: { for: "acceptTerms" } }, [
-                    _c("div", { staticClass: "custom-checkbox-box" }, [
-                      _c("img", {
-                        staticClass: "custom-checkbox-icon",
-                        attrs: {
-                          src: "/img/icons/icon-check-white.svg",
-                          alt: ""
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "p",
-                      { staticClass: "text-white text-18px leading-20px" },
-                      [_vm._v("Aceptar términos y condiciones")]
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _vm.$page.errors.acceptTerms
-                  ? _c(
-                      "p",
-                      { staticClass: "text-yellow-300 text-center mb-10px" },
-                      [_vm._v(_vm._s(_vm.$page.errors.acceptTerms[0]))]
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                _c("div", { staticClass: "bavaria-custom-checkbox" }, [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.form.remember,
-                        expression: "form.remember"
-                      }
-                    ],
-                    attrs: {
-                      type: "checkbox",
-                      name: "remember",
-                      id: "remember"
-                    },
-                    domProps: {
-                      checked: Array.isArray(_vm.form.remember)
-                        ? _vm._i(_vm.form.remember, null) > -1
-                        : _vm.form.remember
-                    },
-                    on: {
-                      change: function($event) {
-                        var $$a = _vm.form.remember,
-                          $$el = $event.target,
-                          $$c = $$el.checked ? true : false
-                        if (Array.isArray($$a)) {
-                          var $$v = null,
-                            $$i = _vm._i($$a, $$v)
-                          if ($$el.checked) {
-                            $$i < 0 &&
-                              _vm.$set(_vm.form, "remember", $$a.concat([$$v]))
-                          } else {
-                            $$i > -1 &&
-                              _vm.$set(
-                                _vm.form,
-                                "remember",
-                                $$a.slice(0, $$i).concat($$a.slice($$i + 1))
-                              )
-                          }
-                        } else {
-                          _vm.$set(_vm.form, "remember", $$c)
-                        }
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("label", { attrs: { for: "remember" } }, [
-                    _c("div", { staticClass: "custom-checkbox-box" }, [
-                      _c("img", {
-                        staticClass: "custom-checkbox-icon",
-                        attrs: {
-                          src: "/img/icons/icon-check-white.svg",
-                          alt: ""
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "p",
-                      { staticClass: "text-white text-18px leading-20px" },
-                      [_vm._v("Recordar mis datos")]
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "px-15px pt-15px flex justify-center" },
-                  [
-                    _c("div", { staticClass: "w-1/2 pr-15px" }, [
-                      _c(
-                        "button",
+                  _vm.$page.errors.username
+                    ? _c(
+                        "p",
                         {
                           staticClass:
-                            "focus:outline-none block w-full rounded-10px bg-white font-bold text-xl text-primary uppercase py-3",
-                          attrs: { type: "submit" }
+                            "text-yellow-300 text-left mt-5px mb-10px"
                         },
-                        [_vm._v("Ingresar")]
+                        [_vm._v(_vm._s(_vm.$page.errors.username[0]))]
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "bavaria-custom-checkbox" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.acceptTerms,
+                          expression: "form.acceptTerms"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        name: "remember",
+                        id: "acceptTerms"
+                      },
+                      domProps: {
+                        checked: Array.isArray(_vm.form.acceptTerms)
+                          ? _vm._i(_vm.form.acceptTerms, null) > -1
+                          : _vm.form.acceptTerms
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.form.acceptTerms,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = null,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 &&
+                                _vm.$set(
+                                  _vm.form,
+                                  "acceptTerms",
+                                  $$a.concat([$$v])
+                                )
+                            } else {
+                              $$i > -1 &&
+                                _vm.$set(
+                                  _vm.form,
+                                  "acceptTerms",
+                                  $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                                )
+                            }
+                          } else {
+                            _vm.$set(_vm.form, "acceptTerms", $$c)
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: "acceptTerms" } }, [
+                      _c("div", { staticClass: "custom-checkbox-box" }, [
+                        _c("img", {
+                          staticClass: "custom-checkbox-icon",
+                          attrs: {
+                            src: "/img/icons/icon-check-white.svg",
+                            alt: ""
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "p",
+                        { staticClass: "text-white text-18px leading-20px" },
+                        [_vm._v("Aceptar términos y condiciones")]
                       )
                     ])
-                  ]
-                )
-              ])
+                  ]),
+                  _vm._v(" "),
+                  _vm.$page.errors.acceptTerms
+                    ? _c(
+                        "p",
+                        { staticClass: "text-yellow-300 text-center mb-10px" },
+                        [_vm._v(_vm._s(_vm.$page.errors.acceptTerms[0]))]
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "bavaria-custom-checkbox" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.remember,
+                          expression: "form.remember"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        name: "remember",
+                        id: "remember"
+                      },
+                      domProps: {
+                        checked: Array.isArray(_vm.form.remember)
+                          ? _vm._i(_vm.form.remember, null) > -1
+                          : _vm.form.remember
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.form.remember,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = null,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 &&
+                                _vm.$set(
+                                  _vm.form,
+                                  "remember",
+                                  $$a.concat([$$v])
+                                )
+                            } else {
+                              $$i > -1 &&
+                                _vm.$set(
+                                  _vm.form,
+                                  "remember",
+                                  $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                                )
+                            }
+                          } else {
+                            _vm.$set(_vm.form, "remember", $$c)
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: "remember" } }, [
+                      _c("div", { staticClass: "custom-checkbox-box" }, [
+                        _c("img", {
+                          staticClass: "custom-checkbox-icon",
+                          attrs: {
+                            src: "/img/icons/icon-check-white.svg",
+                            alt: ""
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "p",
+                        { staticClass: "text-white text-18px leading-20px" },
+                        [_vm._v("Recordar mis datos")]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "px-15px pt-15px flex justify-center" },
+                    [
+                      _c("div", { staticClass: "w-1/2 pr-15px" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "focus:outline-none block w-full rounded-10px bg-white font-bold text-xl text-primary uppercase py-3",
+                            attrs: { type: "submit" }
+                          },
+                          [_vm._v("Ingresar")]
+                        )
+                      ])
+                    ]
+                  )
+                ],
+                1
+              )
             ]
           )
         ]),

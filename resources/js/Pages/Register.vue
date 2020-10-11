@@ -18,9 +18,9 @@
                             <p class="font-bold text-32px leading-34px text-white uppercase">Regístrate ahora</p>
                             <p class="text-white uppercase text-20px leading-24px mb-25px tracking-tighter">INGRESA TUS DATOS PARA ACCEDER<br>A LA PLATAFORMA</p>
 
-                            <input v-model="form.name" class="form-control tracking-tighter w-full mb-5px placeholder-primary" type="text" placeholder="NOMBRE">
+                            <the-mask :tokens="{'S': {pattern: /[a-zA-Z ]/}}" mask="SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS" v-model="form.name" class="form-control tracking-tighter w-full mb-5px placeholder-primary" type="text" placeholder="NOMBRE" />
                             <p class="text-yellow-300 text-left mt-5px mb-10px" v-if="$page.errors.name">{{ $page.errors.name[0] }}</p>
-                            <input v-model="form.dni" class="form-control tracking-tighter w-full mb-5px placeholder-primary" type="text" placeholder="CÉDULA">
+                            <the-mask mask="##########" v-model="form.dni" class="form-control tracking-tighter w-full mb-5px placeholder-primary" type="text" placeholder="CÉDULA" />
                             <p class="text-yellow-300 text-left mt-5px mb-10px" v-if="$page.errors.dni">{{ $page.errors.dni[0] }}</p>
                             <input v-model="form.phone" class="form-control tracking-tighter w-full mb-5px placeholder-primary" type="text" placeholder="TELÉFONO">
                             <p class="text-yellow-300 text-left mt-5px mb-10px" v-if="$page.errors.phone">{{ $page.errors.phone[0] }}</p>
@@ -141,7 +141,7 @@ export default {
     methods: {
         register(){
             axios.get('/sanctum/csrf-cookie').then(response => {
-                this.$inertia.post('/register', {...this.form, birthday: this.birthday})
+                this.$inertia.post('/register', {...this.form, name: this.form.name.trim(), birthday: this.birthday})
             });
         }
     }
