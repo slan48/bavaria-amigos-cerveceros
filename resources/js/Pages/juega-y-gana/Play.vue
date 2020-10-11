@@ -178,7 +178,7 @@ export default {
             if (this.activeQuestion === (this.allQuestions.length - 1)){
                 this.finishGame();
             } else{
-                this.questionSecondsLeft = 299;
+                // this.questionSecondsLeft = 299;
                 this.activeQuestion++;
                 this.startCounter();
             }

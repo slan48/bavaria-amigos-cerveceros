@@ -4852,7 +4852,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       if (this.activeQuestion === this.allQuestions.length - 1) {
         this.finishGame();
       } else {
-        this.questionSecondsLeft = 299;
+        // this.questionSecondsLeft = 299;
         this.activeQuestion++;
         this.startCounter();
       }
