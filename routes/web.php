@@ -4,6 +4,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
+use Laravel\Fortify\Http\Controllers\ProfileInformationController;
 use Laravel\Fortify\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PlayController;
@@ -63,4 +64,8 @@ Route::group(['middleware' => config('fortify.middleware', ['web'])], function (
         Route::post('/register', [RegisteredUserController::class, 'store'])
             ->middleware(['guest']);
     }
+
+    // Update avatar...
+    Route::put('/user/avatar', [UserController::class, 'updateAvatar'])
+        ->middleware(['auth']);
 });

@@ -7,8 +7,10 @@
                 <div class="flex flex-wrap">
                     <div class="w-4/12 mx-auto">
                         <div class="bg-primary pt-20px px-30px pb-10px rounded-t-10px">
-                            <div class="avatar-container">
-                                <img :src="user.profile_photo_path ? user.profile_photo_path : '/img/avatar-blank.svg'" alt="">
+                            <input type="file" class="hidden" ref="photo" @change="updatePhotoPreview">
+                            <div class="avatar-container" @click.prevent="selectNewPhoto">
+                                <img v-show="!photoPreview" :src="user.profile_photo_path ? user.profile_photo_path : '/img/avatar-blank.svg'" alt="">
+                                <div v-show="photoPreview" class="block rounded-full w-full h-full" :style="'background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url(\'' + photoPreview + '\');'"></div>
                             </div>
                             <div class="mb-7px text-left py-4px px-7px bg-white uppercase rounded-10px tracking-tighter flex flex-wrap items-center">
                                 <div class="w-5/12 uppercase text-gray-dark py-2px border-r border-gray text-center font-bold">Nombre</div>
@@ -100,7 +102,15 @@ export default {
     data(){
         return {
             moment: moment,
-            code: {}
+            code: {},
+            photoPreview: null,
+            form: this.$inertia.form({
+                '_method': 'PUT',
+                photo: null,
+            }, {
+                bag: 'updateProfileInformation',
+                resetOnSuccess: false,
+            }),
         }
     },
     computed: {
@@ -125,7 +135,27 @@ export default {
                 user_id: this.$page.user.id,
                 code: this.code[award_id]
             }, {preserveScroll: true})
-        }
+        },
+        selectNewPhoto() {
+            this.$refs.photo.click();
+        },
+        updatePhotoPreview() {
+            if (this.$refs.photo) {
+                this.form.photo = this.$refs.photo.files[0]
+            }
+
+            this.form.post('/user/avatar', {
+                preserveScroll: true
+            }).then(() => {
+                const reader = new FileReader();
+
+                reader.onload = (e) => {
+                    this.photoPreview = e.target.result;
+                };
+
+                reader.readAsDataURL(this.$refs.photo.files[0]);
+            });
+        },
     }
 }
 </script>
@@ -258,5 +288,13 @@ export default {
     border: 5px solid;
     margin: 0 auto 10px;
     @apply border-gray-light;
+    cursor: pointer;
+
+    img{
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+    }
 }
 </style>

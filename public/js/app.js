@@ -3382,6 +3382,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -3396,7 +3398,15 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
   data: function data() {
     return {
       moment: moment__WEBPACK_IMPORTED_MODULE_1___default.a,
-      code: {}
+      code: {},
+      photoPreview: null,
+      form: this.$inertia.form({
+        '_method': 'PUT',
+        photo: null
+      }, {
+        bag: 'updateProfileInformation',
+        resetOnSuccess: false
+      })
     };
   },
   computed: {
@@ -3423,6 +3433,28 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         code: this.code[award_id]
       }, {
         preserveScroll: true
+      });
+    },
+    selectNewPhoto: function selectNewPhoto() {
+      this.$refs.photo.click();
+    },
+    updatePhotoPreview: function updatePhotoPreview() {
+      var _this = this;
+
+      if (this.$refs.photo) {
+        this.form.photo = this.$refs.photo.files[0];
+      }
+
+      this.form.post('/user/avatar', {
+        preserveScroll: true
+      }).then(function () {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+          _this.photoPreview = e.target.result;
+        };
+
+        reader.readAsDataURL(_this.$refs.photo.files[0]);
       });
     }
   }
@@ -5072,7 +5104,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".winners-page-open[data-v-1bdc34e0] {\n  background-image: url(\"/img/bg-white.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.played-games[data-v-1bdc34e0] {\n  position: relative;\n}\n.played-games .played-games-header[data-v-1bdc34e0] {\n  display: flex;\n  flex-wrap: wrap;\n}\n.played-games .played-games-header > div[data-v-1bdc34e0] {\n  width: 20%;\n  border-left: 1px solid #BE0811;\n  border-top: 1px solid #BE0811;\n  text-align: center;\n  font-size: 18px;\n  font-weight: bold;\n  --text-opacity: 1;\n  color: #666666;\n  color: rgba(102, 102, 102, var(--text-opacity));\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n.played-games .played-games-header > div[data-v-1bdc34e0]:nth-child(1) {\n  width: 14%;\n}\n.played-games .played-games-header > div[data-v-1bdc34e0]:nth-child(2) {\n  width: 26%;\n}\n.played-games .played-games-header > div[data-v-1bdc34e0]:nth-child(3) {\n  width: 23%;\n}\n.played-games .played-games-header > div[data-v-1bdc34e0]:nth-child(4) {\n  width: 17%;\n}\n.played-games .played-games-header > div[data-v-1bdc34e0]:nth-child(5) {\n  width: 20%;\n}\n.played-games .played-games-header > div[data-v-1bdc34e0]:last-child {\n  border-right: 1px solid #BE0811;\n}\n.played-games .played-games-body[data-v-1bdc34e0] {\n  border-bottom: 1px solid;\n  --border-opacity: 1;\n  border-color: #BE0811;\n  border-color: rgba(190, 8, 17, var(--border-opacity));\n  position: relative;\n  max-height: 171px;\n  overflow-y: auto;\n  overflow-x: auto;\n}\n.played-games .played-games-body.no-results[data-v-1bdc34e0] {\n  border: none;\n}\n.played-games .played-games-body .played-games-body-row[data-v-1bdc34e0] {\n  position: relative;\n  display: flex;\n  flex-wrap: wrap;\n}\n.played-games .played-games-body .played-games-body-row[data-v-1bdc34e0]:nth-child(odd) {\n  background: #F8D9DA;\n}\n.played-games .played-games-body .played-games-body-row:nth-child(odd) .played-games-body-row-index[data-v-1bdc34e0] {\n  background: #F8D9DA;\n}\n.played-games .played-games-body .played-games-body-row[data-v-1bdc34e0]:nth-child(even) {\n  background: #fff;\n}\n.played-games .played-games-body .played-games-body-row .played-games-body-row-index[data-v-1bdc34e0] {\n  position: absolute;\n  height: 100%;\n  width: 30px;\n  left: -30px;\n  top: 0;\n  border-left: 1px solid;\n  --text-opacity: 1;\n  color: #666666;\n  color: rgba(102, 102, 102, var(--text-opacity));\n  font-weight: 700;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  --border-opacity: 1;\n  border-color: #BE0811;\n  border-color: rgba(190, 8, 17, var(--border-opacity));\n}\n.played-games .played-games-body .played-games-body-row > div[data-v-1bdc34e0] {\n  border-left: 1px solid;\n  --text-opacity: 1;\n  color: #666666;\n  color: rgba(102, 102, 102, var(--text-opacity));\n  font-weight: 700;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 5px;\n  padding-bottom: 5px;\n  text-align: left;\n  --border-opacity: 1;\n  border-color: #BE0811;\n  border-color: rgba(190, 8, 17, var(--border-opacity));\n  text-align: center;\n}\n.played-games .played-games-body .played-games-body-row > div[data-v-1bdc34e0]:nth-child(1) {\n  width: 14%;\n}\n.played-games .played-games-body .played-games-body-row > div[data-v-1bdc34e0]:nth-child(2) {\n  width: 26%;\n}\n.played-games .played-games-body .played-games-body-row > div[data-v-1bdc34e0]:nth-child(3) {\n  width: 23%;\n}\n.played-games .played-games-body .played-games-body-row > div[data-v-1bdc34e0]:nth-child(4) {\n  width: 17%;\n}\n.played-games .played-games-body .played-games-body-row > div[data-v-1bdc34e0]:nth-child(5) {\n  width: 20%;\n  border-right: 1px solid;\n  --border-opacity: 1;\n  border-color: #BE0811;\n  border-color: rgba(190, 8, 17, var(--border-opacity));\n}\n.avatar-container[data-v-1bdc34e0] {\n  width: 160px;\n  height: 160px;\n  border-radius: 50%;\n  border: 5px solid;\n  margin: 0 auto 10px;\n  --border-opacity: 1;\n  border-color: #CCCCCC;\n  border-color: rgba(204, 204, 204, var(--border-opacity));\n}\n", ""]);
+exports.push([module.i, ".winners-page-open[data-v-1bdc34e0] {\n  background-image: url(\"/img/bg-white.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.played-games[data-v-1bdc34e0] {\n  position: relative;\n}\n.played-games .played-games-header[data-v-1bdc34e0] {\n  display: flex;\n  flex-wrap: wrap;\n}\n.played-games .played-games-header > div[data-v-1bdc34e0] {\n  width: 20%;\n  border-left: 1px solid #BE0811;\n  border-top: 1px solid #BE0811;\n  text-align: center;\n  font-size: 18px;\n  font-weight: bold;\n  --text-opacity: 1;\n  color: #666666;\n  color: rgba(102, 102, 102, var(--text-opacity));\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n.played-games .played-games-header > div[data-v-1bdc34e0]:nth-child(1) {\n  width: 14%;\n}\n.played-games .played-games-header > div[data-v-1bdc34e0]:nth-child(2) {\n  width: 26%;\n}\n.played-games .played-games-header > div[data-v-1bdc34e0]:nth-child(3) {\n  width: 23%;\n}\n.played-games .played-games-header > div[data-v-1bdc34e0]:nth-child(4) {\n  width: 17%;\n}\n.played-games .played-games-header > div[data-v-1bdc34e0]:nth-child(5) {\n  width: 20%;\n}\n.played-games .played-games-header > div[data-v-1bdc34e0]:last-child {\n  border-right: 1px solid #BE0811;\n}\n.played-games .played-games-body[data-v-1bdc34e0] {\n  border-bottom: 1px solid;\n  --border-opacity: 1;\n  border-color: #BE0811;\n  border-color: rgba(190, 8, 17, var(--border-opacity));\n  position: relative;\n  max-height: 171px;\n  overflow-y: auto;\n  overflow-x: auto;\n}\n.played-games .played-games-body.no-results[data-v-1bdc34e0] {\n  border: none;\n}\n.played-games .played-games-body .played-games-body-row[data-v-1bdc34e0] {\n  position: relative;\n  display: flex;\n  flex-wrap: wrap;\n}\n.played-games .played-games-body .played-games-body-row[data-v-1bdc34e0]:nth-child(odd) {\n  background: #F8D9DA;\n}\n.played-games .played-games-body .played-games-body-row:nth-child(odd) .played-games-body-row-index[data-v-1bdc34e0] {\n  background: #F8D9DA;\n}\n.played-games .played-games-body .played-games-body-row[data-v-1bdc34e0]:nth-child(even) {\n  background: #fff;\n}\n.played-games .played-games-body .played-games-body-row .played-games-body-row-index[data-v-1bdc34e0] {\n  position: absolute;\n  height: 100%;\n  width: 30px;\n  left: -30px;\n  top: 0;\n  border-left: 1px solid;\n  --text-opacity: 1;\n  color: #666666;\n  color: rgba(102, 102, 102, var(--text-opacity));\n  font-weight: 700;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  --border-opacity: 1;\n  border-color: #BE0811;\n  border-color: rgba(190, 8, 17, var(--border-opacity));\n}\n.played-games .played-games-body .played-games-body-row > div[data-v-1bdc34e0] {\n  border-left: 1px solid;\n  --text-opacity: 1;\n  color: #666666;\n  color: rgba(102, 102, 102, var(--text-opacity));\n  font-weight: 700;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 5px;\n  padding-bottom: 5px;\n  text-align: left;\n  --border-opacity: 1;\n  border-color: #BE0811;\n  border-color: rgba(190, 8, 17, var(--border-opacity));\n  text-align: center;\n}\n.played-games .played-games-body .played-games-body-row > div[data-v-1bdc34e0]:nth-child(1) {\n  width: 14%;\n}\n.played-games .played-games-body .played-games-body-row > div[data-v-1bdc34e0]:nth-child(2) {\n  width: 26%;\n}\n.played-games .played-games-body .played-games-body-row > div[data-v-1bdc34e0]:nth-child(3) {\n  width: 23%;\n}\n.played-games .played-games-body .played-games-body-row > div[data-v-1bdc34e0]:nth-child(4) {\n  width: 17%;\n}\n.played-games .played-games-body .played-games-body-row > div[data-v-1bdc34e0]:nth-child(5) {\n  width: 20%;\n  border-right: 1px solid;\n  --border-opacity: 1;\n  border-color: #BE0811;\n  border-color: rgba(190, 8, 17, var(--border-opacity));\n}\n.avatar-container[data-v-1bdc34e0] {\n  width: 160px;\n  height: 160px;\n  border-radius: 50%;\n  border: 5px solid;\n  margin: 0 auto 10px;\n  --border-opacity: 1;\n  border-color: #CCCCCC;\n  border-color: rgba(204, 204, 204, var(--border-opacity));\n  cursor: pointer;\n}\n.avatar-container img[data-v-1bdc34e0] {\n  width: 100%;\n  height: 100%;\n  border-radius: 50%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n", ""]);
 
 // exports
 
@@ -49601,16 +49633,59 @@ var render = function() {
                 staticClass: "bg-primary pt-20px px-30px pb-10px rounded-t-10px"
               },
               [
-                _c("div", { staticClass: "avatar-container" }, [
-                  _c("img", {
-                    attrs: {
-                      src: _vm.user.profile_photo_path
-                        ? _vm.user.profile_photo_path
-                        : "/img/avatar-blank.svg",
-                      alt: ""
+                _c("input", {
+                  ref: "photo",
+                  staticClass: "hidden",
+                  attrs: { type: "file" },
+                  on: { change: _vm.updatePhotoPreview }
+                }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "avatar-container",
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.selectNewPhoto($event)
+                      }
                     }
-                  })
-                ]),
+                  },
+                  [
+                    _c("img", {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: !_vm.photoPreview,
+                          expression: "!photoPreview"
+                        }
+                      ],
+                      attrs: {
+                        src: _vm.user.profile_photo_path
+                          ? _vm.user.profile_photo_path
+                          : "/img/avatar-blank.svg",
+                        alt: ""
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("div", {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.photoPreview,
+                          expression: "photoPreview"
+                        }
+                      ],
+                      staticClass: "block rounded-full w-full h-full",
+                      style:
+                        "background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url('" +
+                        _vm.photoPreview +
+                        "');"
+                    })
+                  ]
+                ),
                 _vm._v(" "),
                 _c(
                   "div",
@@ -53075,7 +53150,14 @@ var render = function() {
         _vm.$page.user
           ? _c("div", { staticClass: "user-menu" }, [
               _c("div", { staticClass: "user-menu-toggle" }, [
-                _c("img", { attrs: { src: "/img/avatar-blank.svg", alt: "" } }),
+                _c("img", {
+                  attrs: {
+                    src: _vm.$page.user.profile_photo_path
+                      ? _vm.$page.user.profile_photo_path
+                      : "/img/avatar-blank.svg",
+                    alt: ""
+                  }
+                }),
                 _vm._v(
                   "\n                " +
                     _vm._s(_vm.$page.user.name) +

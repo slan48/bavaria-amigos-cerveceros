@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 
 class UserController extends Controller
@@ -41,5 +42,28 @@ class UserController extends Controller
         }
 
         return Inertia::render('Profile', ['awardsWithParticipations' => $awardsWithParticipations, 'participations' => $participations]);
+    }
+
+    public function updateAvatar(Request $request){
+        $user = Auth::user();
+        if ($request->hasFile('photo')) {
+            //  Let's do everything here
+            if ($request->file('photo')->isValid()) {
+                //
+                $validated = $request->validate([
+                    'photo' => 'mimes:jpeg,png|max:1014',
+                ]);
+                $path = $request->file('photo')->store('avatars');
+
+                if ($user->profile_photo_path){
+                    Storage::delete($user->profile_photo_path);
+                }
+
+                $user->profile_photo_path = $path;
+                $user->save();
+                return redirect()->route('perfil');
+            }
+        }
+        abort(500, 'Could not upload photo :(');
     }
 }

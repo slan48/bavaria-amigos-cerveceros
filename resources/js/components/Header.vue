@@ -22,7 +22,7 @@
             </nav>
             <div v-if="$page.user" class="user-menu">
                 <div class="user-menu-toggle">
-                    <img src="/img/avatar-blank.svg" alt="">
+                    <img :src="$page.user.profile_photo_path ? $page.user.profile_photo_path : '/img/avatar-blank.svg'" alt="">
                     {{ $page.user.name }}
                 </div>
                 <ul>
