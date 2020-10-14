@@ -19,23 +19,23 @@
                         <InertiaLink :class="{ 'active': $page.currentRouteName === 'participations.show' }" class="text-20px leading-24px font-bold uppercase block text-center py-10px px-15px border-l border-r border-gray" href="/ganadores">Ganadores</InertiaLink>
                     </li>
                 </ul>
-                <div class="menu-mobile-toggle-button w-25px h-16px ml-auto flex flex-col justify-between md:hidden" @click.prevent="showMobileMenu = !showMobileMenu">
+                <div id="mobileMenuToggleButton" class="menu-mobile-toggle-button w-25px h-16px ml-auto flex flex-col justify-between md:hidden" @click.prevent="showMobileMenu = !showMobileMenu">
                     <div class="bg-black mb-2px h-2px w-full"></div>
                     <div class="bg-black mb-2px h-2px w-full"></div>
                     <div class="bg-black h-2px w-full"></div>
                 </div>
-                <ul class="w-full md:hidden bg-white absolute top-42px left-0 z-10" v-if="showMobileMenu">
+                <ul class="w-full md:hidden bg-white absolute top-42px left-0 z-10" v-if="showMobileMenu" id="mobileMenu">
                     <li @click.prevent="showMobileMenu = false">
-                        <InertiaLink :class="{ 'active': $page.currentRouteName === 'home' }" class="text-20px leading-24px font-bold uppercase block text-center py-10px px-15px border-l border-gray" href="/">Inicio</InertiaLink>
+                        <InertiaLink :class="{ 'active': $page.currentRouteName === 'home' }" class="text-20px leading-24px font-bold uppercase block text-center py-10px px-15px md:border-l border-gray" href="/">Inicio</InertiaLink>
                     </li>
                     <li @click.prevent="showMobileMenu = false">
-                        <InertiaLink :class="{ 'active': $page.currentRouteName === 'como-participar' }" class="text-20px leading-24px font-bold uppercase block text-center py-10px px-15px border-l border-gray" href="/como-participar">Cómo participar</InertiaLink>
+                        <InertiaLink :class="{ 'active': $page.currentRouteName === 'como-participar' }" class="text-20px leading-24px font-bold uppercase block text-center py-10px px-15px md:border-l border-gray" href="/como-participar">Cómo participar</InertiaLink>
                     </li>
                     <li @click.prevent="showMobileMenu = false">
-                        <InertiaLink :class="{ 'active': $page.currentRouteName === 'juega-y-gana' }" class="text-20px leading-24px font-bold uppercase block text-center py-10px px-15px border-l border-gray" href="/juega-y-gana">Juega y gana</InertiaLink>
+                        <InertiaLink :class="{ 'active': $page.currentRouteName === 'juega-y-gana' }" class="text-20px leading-24px font-bold uppercase block text-center py-10px px-15px md:border-l border-gray" href="/juega-y-gana">Juega y gana</InertiaLink>
                     </li>
                     <li @click.prevent="showMobileMenu = false">
-                        <InertiaLink :class="{ 'active': $page.currentRouteName === 'participations.show' }" class="text-20px leading-24px font-bold uppercase block text-center py-10px px-15px border-l border-r border-gray" href="/ganadores">Ganadores</InertiaLink>
+                        <InertiaLink :class="{ 'active': $page.currentRouteName === 'participations.show' }" class="text-20px leading-24px font-bold uppercase block text-center py-10px px-15px md:border-l md:border-r border-gray" href="/ganadores">Ganadores</InertiaLink>
                     </li>
                 </ul>
             </nav>
@@ -73,6 +73,13 @@ export default {
             })
         },
     },
+    mounted() {
+        document.addEventListener('click', (event) => {
+            if (!event.target.closest("#mobileMenu") && !event.target.closest('#mobileMenuToggleButton')){
+                this.showMobileMenu = false;
+            }
+        })
+    }
 }
 </script>
 

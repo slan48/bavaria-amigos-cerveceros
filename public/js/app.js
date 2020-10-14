@@ -5054,6 +5054,15 @@ __webpack_require__.r(__webpack_exports__);
         window.location = '/';
       });
     }
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    document.addEventListener('click', function (event) {
+      if (!event.target.closest("#mobileMenu") && !event.target.closest('#mobileMenuToggleButton')) {
+        _this.showMobileMenu = false;
+      }
+    });
   }
 });
 
@@ -53224,6 +53233,7 @@ var render = function() {
             {
               staticClass:
                 "menu-mobile-toggle-button w-25px h-16px ml-auto flex flex-col justify-between md:hidden",
+              attrs: { id: "mobileMenuToggleButton" },
               on: {
                 click: function($event) {
                   $event.preventDefault()
@@ -53245,7 +53255,8 @@ var render = function() {
                 "ul",
                 {
                   staticClass:
-                    "w-full md:hidden bg-white absolute top-42px left-0 z-10"
+                    "w-full md:hidden bg-white absolute top-42px left-0 z-10",
+                  attrs: { id: "mobileMenu" }
                 },
                 [
                   _c(
@@ -53263,7 +53274,7 @@ var render = function() {
                         "InertiaLink",
                         {
                           staticClass:
-                            "text-20px leading-24px font-bold uppercase block text-center py-10px px-15px border-l border-gray",
+                            "text-20px leading-24px font-bold uppercase block text-center py-10px px-15px md:border-l border-gray",
                           class: {
                             active: _vm.$page.currentRouteName === "home"
                           },
@@ -53290,7 +53301,7 @@ var render = function() {
                         "InertiaLink",
                         {
                           staticClass:
-                            "text-20px leading-24px font-bold uppercase block text-center py-10px px-15px border-l border-gray",
+                            "text-20px leading-24px font-bold uppercase block text-center py-10px px-15px md:border-l border-gray",
                           class: {
                             active:
                               _vm.$page.currentRouteName === "como-participar"
@@ -53318,7 +53329,7 @@ var render = function() {
                         "InertiaLink",
                         {
                           staticClass:
-                            "text-20px leading-24px font-bold uppercase block text-center py-10px px-15px border-l border-gray",
+                            "text-20px leading-24px font-bold uppercase block text-center py-10px px-15px md:border-l border-gray",
                           class: {
                             active:
                               _vm.$page.currentRouteName === "juega-y-gana"
@@ -53346,7 +53357,7 @@ var render = function() {
                         "InertiaLink",
                         {
                           staticClass:
-                            "text-20px leading-24px font-bold uppercase block text-center py-10px px-15px border-l border-r border-gray",
+                            "text-20px leading-24px font-bold uppercase block text-center py-10px px-15px md:border-l md:border-r border-gray",
                           class: {
                             active:
                               _vm.$page.currentRouteName ===
