@@ -1,8 +1,8 @@
 <template>
     <DefaultLayout>
         <div class="register-page">
-            <div class="container flex">
-                <div class="w-4/12 pt-50px pb-30px mx-auto">
+            <div class="container flex flex-wrap px-15px lg:px-0">
+                <div class="w-full lg:w-4/12 pt-50px pb-30px mx-auto">
                     <form class="text-center" action="#" @submit.prevent="register">
                         <p class="text-30px leading-30px mb-8px text-white uppercase tracking-tighter">Fecha de nacimiento</p>
                         <div class="mb-30px">
@@ -64,7 +64,7 @@
                     </form>
                 </div>
 
-                <div class="w-6/12 pt-50px pb-45px px-90px bg-white relative">
+                <div class="lg:w-6/12 pt-50px pb-45px px-30px md:px-90px bg-white relative -mx-15px lg:mx-0">
                     <img class="block w-6/12 mx-auto mb-25px" src="/img/logo-amigos-cerveceros.svg" alt="">
                     <h4 class="text-center text-primary uppercase text-20px leading-24px">Términos y condiciones</h4>
                     <div class="terms-box">

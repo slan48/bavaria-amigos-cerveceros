@@ -51376,8 +51376,8 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("DefaultLayout", [
     _c("div", { staticClass: "register-page" }, [
-      _c("div", { staticClass: "container flex" }, [
-        _c("div", { staticClass: "w-4/12 pt-50px pb-30px mx-auto" }, [
+      _c("div", { staticClass: "container flex flex-wrap px-15px lg:px-0" }, [
+        _c("div", { staticClass: "w-full lg:w-4/12 pt-50px pb-30px mx-auto" }, [
           _c(
             "form",
             {
@@ -51867,7 +51867,10 @@ var render = function() {
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "w-6/12 pt-50px pb-45px px-90px bg-white relative" },
+          {
+            staticClass:
+              "lg:w-6/12 pt-50px pb-45px px-30px md:px-90px bg-white relative -mx-15px lg:mx-0"
+          },
           [
             _c("img", {
               staticClass: "block w-6/12 mx-auto mb-25px",
