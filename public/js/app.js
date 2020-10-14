@@ -5023,7 +5023,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      showMobileMenu: false
+    };
+  },
   methods: {
     logout: function logout() {
       axios.post('/logout').then(function (response) {
@@ -5085,7 +5109,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".login-page[data-v-0004d9e0] {\n  background-image: url(\"/img/bg-home.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.divider[data-v-0004d9e0] {\n  width: 200%;\n  height: 1px;\n  background: #fff;\n  margin-top: 30px;\n  margin-bottom: 15px;\n  margin-right: 0;\n  margin-left: -100%;\n}\n.custom-text-with-shadow p[data-v-0004d9e0]:nth-child(1) {\n  top: -3px;\n  left: -2px;\n  pointer-events: none;\n}\n.custom-text-with-shadow p[data-v-0004d9e0]:nth-child(2) {\n  top: 1px;\n  left: -2px;\n  pointer-events: none;\n}\n.custom-text-with-shadow p[data-v-0004d9e0]:nth-child(3) {\n  top: -3px;\n  left: 2px;\n  pointer-events: none;\n}\n.custom-text-with-shadow p[data-v-0004d9e0]:nth-child(4) {\n  top: 1px;\n  left: 2px;\n  pointer-events: none;\n}\n.login-form-box[data-v-0004d9e0] {\n  background: rgba(0, 0, 0, 0.4);\n  border-radius: 10px;\n  border: 1px solid #fff;\n  padding: 50px 30px 30px;\n}\n.form-control[data-v-0004d9e0] {\n  border-radius: 10px;\n  width: 100%;\n  display: block;\n  font-size: 20px;\n  line-height: 24px;\n  padding: 5px 30px;\n}\n.form-control[data-v-0004d9e0]:focus {\n  outline: none;\n}\n.bavaria-custom-checkbox input[data-v-0004d9e0] {\n  position: absolute;\n  visibility: hidden;\n}\n.bavaria-custom-checkbox label[data-v-0004d9e0] {\n  display: flex;\n  align-items: center;\n}\n.bavaria-custom-checkbox .custom-checkbox-box[data-v-0004d9e0] {\n  width: 18px;\n  height: 18px;\n  margin-right: 10px;\n  border: 1px solid #fff;\n  position: relative;\n}\n.bavaria-custom-checkbox .custom-checkbox-icon[data-v-0004d9e0] {\n  display: none;\n  width: 15px;\n  position: absolute;\n  left: 4px;\n  top: -4px;\n}\n.bavaria-custom-checkbox input:checked ~ label .custom-checkbox-icon[data-v-0004d9e0] {\n  display: block;\n}\niframe[data-v-0004d9e0] {\n  z-index: 5;\n  height: 450px;\n}\n.modal[data-v-0004d9e0] {\n  width: 100vw;\n  height: 100vh;\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 20;\n}\n.modal .modal-overlay[data-v-0004d9e0] {\n  width: 100%;\n  height: 100%;\n  --bg-opacity: 1;\n  background-color: #BE0811;\n  background-color: rgba(190, 8, 17, var(--bg-opacity));\n  opacity: 0.8;\n}\n.modal .modal-box[data-v-0004d9e0] {\n  max-width: 850px;\n  width: 90%;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n", ""]);
+exports.push([module.i, ".login-page[data-v-0004d9e0] {\n  background-image: url(\"/img/bg-home.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.divider[data-v-0004d9e0] {\n  height: 1px;\n  background: #fff;\n  margin-top: 30px;\n  margin-bottom: 15px;\n  margin-right: 0;\n  margin-left: 0;\n  width: 100%;\n}\n@media (min-width: 768px) {\n.divider[data-v-0004d9e0] {\n    width: 200%;\n    margin-left: -100%;\n}\n}\n.custom-text-with-shadow p[data-v-0004d9e0]:nth-child(1) {\n  top: -2px;\n  left: -2px;\n  pointer-events: none;\n}\n@media (min-width: 768px) {\n.custom-text-with-shadow p[data-v-0004d9e0]:nth-child(1) {\n    top: -3px;\n}\n}\n.custom-text-with-shadow p[data-v-0004d9e0]:nth-child(2) {\n  top: 2px;\n  left: -2px;\n  pointer-events: none;\n}\n@media (min-width: 768px) {\n.custom-text-with-shadow p[data-v-0004d9e0]:nth-child(2) {\n    top: 1px;\n}\n}\n.custom-text-with-shadow p[data-v-0004d9e0]:nth-child(3) {\n  top: -2px;\n  left: 2px;\n  pointer-events: none;\n}\n@media (min-width: 768px) {\n.custom-text-with-shadow p[data-v-0004d9e0]:nth-child(3) {\n    top: -3px;\n}\n}\n.custom-text-with-shadow p[data-v-0004d9e0]:nth-child(4) {\n  top: 2px;\n  left: 2px;\n  pointer-events: none;\n}\n@media (min-width: 768px) {\n.custom-text-with-shadow p[data-v-0004d9e0]:nth-child(4) {\n    top: 1px;\n}\n}\n.login-form-box[data-v-0004d9e0] {\n  background: rgba(0, 0, 0, 0.4);\n  border-radius: 10px;\n  border: 1px solid #fff;\n  padding: 50px 30px 30px;\n}\n.form-control[data-v-0004d9e0] {\n  border-radius: 10px;\n  width: 100%;\n  display: block;\n  font-size: 20px;\n  line-height: 24px;\n  padding: 5px 30px;\n}\n.form-control[data-v-0004d9e0]:focus {\n  outline: none;\n}\n.bavaria-custom-checkbox input[data-v-0004d9e0] {\n  position: absolute;\n  visibility: hidden;\n}\n.bavaria-custom-checkbox label[data-v-0004d9e0] {\n  display: flex;\n  align-items: center;\n}\n.bavaria-custom-checkbox .custom-checkbox-box[data-v-0004d9e0] {\n  width: 18px;\n  height: 18px;\n  margin-right: 10px;\n  border: 1px solid #fff;\n  position: relative;\n}\n.bavaria-custom-checkbox .custom-checkbox-icon[data-v-0004d9e0] {\n  display: none;\n  width: 15px;\n  position: absolute;\n  left: 4px;\n  top: -4px;\n}\n.bavaria-custom-checkbox input:checked ~ label .custom-checkbox-icon[data-v-0004d9e0] {\n  display: block;\n}\niframe[data-v-0004d9e0] {\n  z-index: 5;\n  height: 450px;\n}\n.modal[data-v-0004d9e0] {\n  width: 100vw;\n  height: 100vh;\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 20;\n}\n.modal .modal-overlay[data-v-0004d9e0] {\n  width: 100%;\n  height: 100%;\n  --bg-opacity: 1;\n  background-color: #BE0811;\n  background-color: rgba(190, 8, 17, var(--bg-opacity));\n  opacity: 0.8;\n}\n.modal .modal-box[data-v-0004d9e0] {\n  max-width: 850px;\n  width: 90%;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n", ""]);
 
 // exports
 
@@ -5199,7 +5223,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "header[data-v-1f42fb90] {\n  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);\n}\n.logo[data-v-1f42fb90] {\n  width: 170px;\n  height: 160px;\n}\n.main-menu-container li[data-v-1f42fb90] {\n  text-align: center;\n  min-width: 160px;\n}\n.main-menu-container li a.active[data-v-1f42fb90] {\n  --bg-opacity: 1;\n  background-color: #BE0811;\n  background-color: rgba(190, 8, 17, var(--bg-opacity));\n  --text-opacity: 1;\n  color: #ffffff;\n  color: rgba(255, 255, 255, var(--text-opacity));\n  margin-top: -15px;\n  margin-bottom: -15px;\n  height: 74px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.user-menu[data-v-1f42fb90] {\n  position: absolute;\n  right: 0;\n  top: 15px;\n  z-index: 2;\n}\n.user-menu .user-menu-toggle[data-v-1f42fb90] {\n  display: flex;\n  --bg-opacity: 1;\n  background-color: #BE0811;\n  background-color: rgba(190, 8, 17, var(--bg-opacity));\n  font-weight: 700;\n  letter-spacing: -0.05em;\n  border-radius: 10px;\n  color: #fff;\n  font-size: 20px;\n  line-height: 24px;\n  text-transform: uppercase;\n  padding: 8px 10px 8px 39px;\n}\n.user-menu .user-menu-toggle img[data-v-1f42fb90] {\n  border-radius: 50%;\n  width: 41px;\n  height: 41px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  position: absolute;\n  left: -10px;\n  top: 0;\n}\n.user-menu ul[data-v-1f42fb90] {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  width: 100%;\n  display: none;\n}\n.user-menu ul li[data-v-1f42fb90] {\n  margin-top: 5px;\n  --bg-opacity: 1;\n  background-color: #B3B3B3;\n  background-color: rgba(179, 179, 179, var(--bg-opacity));\n  font-weight: 700;\n  text-align: center;\n  letter-spacing: -0.05em;\n  border-radius: 10px;\n  color: #fff;\n  font-size: 20px;\n  line-height: 24px;\n  text-transform: uppercase;\n  padding: 8px 10px;\n}\n.user-menu:hover ul[data-v-1f42fb90] {\n  display: block;\n}\n", ""]);
+exports.push([module.i, "header[data-v-1f42fb90] {\n  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);\n}\n.logo[data-v-1f42fb90] {\n  width: 91px;\n  height: 91px;\n}\n@media (min-width: 768px) {\n.logo[data-v-1f42fb90] {\n    width: 120px;\n    height: 120px;\n}\n}\n@media (min-width: 1024px) {\n.logo[data-v-1f42fb90] {\n    width: 170px;\n    height: 160px;\n}\n}\n.main-menu-container li[data-v-1f42fb90] {\n  text-align: center;\n}\n@media (min-width: 1024px) {\n.main-menu-container li[data-v-1f42fb90] {\n    min-width: 160px;\n}\n}\n.main-menu-container li a.active[data-v-1f42fb90] {\n  --bg-opacity: 1;\n  background-color: #BE0811;\n  background-color: rgba(190, 8, 17, var(--bg-opacity));\n  --text-opacity: 1;\n  color: #ffffff;\n  color: rgba(255, 255, 255, var(--text-opacity));\n  margin-top: -15px;\n  margin-bottom: -15px;\n  height: 74px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.user-menu[data-v-1f42fb90] {\n  position: absolute;\n  right: 0;\n  top: 15px;\n  z-index: 2;\n}\n.user-menu .user-menu-toggle[data-v-1f42fb90] {\n  display: flex;\n  --bg-opacity: 1;\n  background-color: #BE0811;\n  background-color: rgba(190, 8, 17, var(--bg-opacity));\n  font-weight: 700;\n  letter-spacing: -0.05em;\n  border-radius: 10px;\n  color: #fff;\n  font-size: 20px;\n  line-height: 24px;\n  text-transform: uppercase;\n  padding: 8px 10px 8px 39px;\n}\n.user-menu .user-menu-toggle img[data-v-1f42fb90] {\n  border-radius: 50%;\n  width: 41px;\n  height: 41px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  position: absolute;\n  left: -10px;\n  top: 0;\n}\n.user-menu ul[data-v-1f42fb90] {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  width: 100%;\n  display: none;\n}\n.user-menu ul li[data-v-1f42fb90] {\n  margin-top: 5px;\n  --bg-opacity: 1;\n  background-color: #B3B3B3;\n  background-color: rgba(179, 179, 179, var(--bg-opacity));\n  font-weight: 700;\n  text-align: center;\n  letter-spacing: -0.05em;\n  border-radius: 10px;\n  color: #fff;\n  font-size: 20px;\n  line-height: 24px;\n  text-transform: uppercase;\n  padding: 8px 10px;\n}\n.user-menu:hover ul[data-v-1f42fb90] {\n  display: block;\n}\n", ""]);
 
 // exports
 
@@ -49258,263 +49282,280 @@ var render = function() {
     "DefaultLayout",
     [
       _c("div", { staticClass: "login-page pt-50px pb-80px" }, [
-        _c("div", { staticClass: "container flex items-center" }, [
-          _c("div", { staticClass: "w-5/12 ml-auto" }, [
-            _c("img", {
-              staticClass: "block w-full",
-              attrs: { src: "/img/logo-amigos-cerveceros.svg", alt: "" }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "divider" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "custom-text-with-shadow relative" }, [
-              _c(
-                "p",
-                {
-                  staticClass:
-                    "font-bold text-35px leading-35px text-white z-0 absolute w-full text-center"
-                },
-                [_vm._v("EL JUEGO EN EL QUE APRENDES")]
-              ),
-              _vm._v(" "),
-              _c(
-                "p",
-                {
-                  staticClass:
-                    "font-bold text-35px leading-35px text-white z-0 absolute w-full text-center"
-                },
-                [_vm._v("EL JUEGO EN EL QUE APRENDES")]
-              ),
-              _vm._v(" "),
-              _c(
-                "p",
-                {
-                  staticClass:
-                    "font-bold text-35px leading-35px text-white z-0 absolute w-full text-center"
-                },
-                [_vm._v("EL JUEGO EN EL QUE APRENDES")]
-              ),
-              _vm._v(" "),
-              _c(
-                "p",
-                {
-                  staticClass:
-                    "font-bold text-35px leading-35px text-white z-0 absolute w-full text-center"
-                },
-                [_vm._v("EL JUEGO EN EL QUE APRENDES")]
-              ),
-              _vm._v(" "),
-              _c(
-                "p",
-                {
-                  staticClass:
-                    "font-bold text-35px leading-33px text-black relative z-10 w-full text-center"
-                },
-                [_vm._v("EL JUEGO EN EL QUE APRENDES")]
-              )
-            ]),
-            _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "container flex items-center flex-wrap px-15px md:px-0"
+          },
+          [
             _c(
-              "p",
-              { staticClass: "text-white text-26px leading-35px text-center" },
-              [_vm._v("Y GANAS CON NUESTROS PRODUCTOS")]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "w-4/12 mx-auto" }, [
-            _c("div", { staticClass: "login-form-box" }, [
-              _c(
-                "form",
-                {
-                  staticClass: "text-center",
-                  attrs: { action: "#" },
-                  on: {
-                    submit: function($event) {
-                      $event.preventDefault()
-                      return _vm.login($event)
-                    }
-                  }
-                },
-                [
+              "div",
+              { staticClass: "w-full md:w-5/12 ml-auto mb-15px md:mb-0" },
+              [
+                _c("img", {
+                  staticClass: "block w-full",
+                  attrs: { src: "/img/logo-amigos-cerveceros.svg", alt: "" }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "divider" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "custom-text-with-shadow relative" }, [
                   _c(
                     "p",
                     {
                       staticClass:
-                        "font-bold text-32px leading-34px text-white uppercase"
+                        "font-bold text-22px leading-22px md:text-35px md:leading-35px text-white z-0 absolute w-full text-center"
                     },
-                    [_vm._v("Ingresa con tu ID")]
+                    [_vm._v("EL JUEGO EN EL QUE APRENDES")]
                   ),
                   _vm._v(" "),
                   _c(
                     "p",
                     {
                       staticClass:
-                        "text-white uppercase text-29px leading-34px mb-25px"
+                        "font-bold text-22px leading-22px md:text-35px md:leading-35px text-white z-0 absolute w-full text-center"
                     },
-                    [_vm._v("A la plataforma")]
+                    [_vm._v("EL JUEGO EN EL QUE APRENDES")]
                   ),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.form.commercial_id,
-                        expression: "form.commercial_id"
-                      }
-                    ],
-                    staticClass: "form-control mb-5px placeholder-primary",
-                    attrs: { type: "text", placeholder: "ID COMERCIAL" },
-                    domProps: { value: _vm.form.commercial_id },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.form, "commercial_id", $event.target.value)
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.form.username,
-                        expression: "form.username"
-                      }
-                    ],
-                    staticClass: "form-control placeholder-primary mb-10px",
-                    attrs: { type: "text", placeholder: "NOMBRE DE USUARIO" },
-                    domProps: { value: _vm.form.username },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.form, "username", $event.target.value)
-                      }
-                    }
-                  }),
                   _vm._v(" "),
                   _c(
-                    "ul",
-                    { staticClass: "mb-10px" },
-                    _vm._l(_vm.$page.errors, function(error) {
-                      return _c(
-                        "li",
-                        { staticClass: "text-left text-yellow-300" },
-                        [_vm._v(_vm._s(error[0]))]
-                      )
-                    }),
-                    0
+                    "p",
+                    {
+                      staticClass:
+                        "font-bold text-22px leading-22px md:text-35px md:leading-35px text-white z-0 absolute w-full text-center"
+                    },
+                    [_vm._v("EL JUEGO EN EL QUE APRENDES")]
                   ),
                   _vm._v(" "),
-                  _c("div", { staticClass: "bavaria-custom-checkbox" }, [
+                  _c(
+                    "p",
+                    {
+                      staticClass:
+                        "font-bold text-22px leading-22px md:text-35px md:leading-35px text-white z-0 absolute w-full text-center"
+                    },
+                    [_vm._v("EL JUEGO EN EL QUE APRENDES")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    {
+                      staticClass:
+                        "font-bold text-22px leading-22px md:text-35px md:leading-33px text-black relative z-10 w-full text-center"
+                    },
+                    [_vm._v("EL JUEGO EN EL QUE APRENDES")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c(
+                  "p",
+                  {
+                    staticClass:
+                      "text-white text-22px leading-22px md:text-26px md:leading-35px text-center"
+                  },
+                  [_vm._v("Y GANAS CON NUESTROS PRODUCTOS")]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "w-full md:w-6/12 lg:w-4/12 mx-auto" }, [
+              _c("div", { staticClass: "login-form-box" }, [
+                _c(
+                  "form",
+                  {
+                    staticClass: "text-center",
+                    attrs: { action: "#" },
+                    on: {
+                      submit: function($event) {
+                        $event.preventDefault()
+                        return _vm.login($event)
+                      }
+                    }
+                  },
+                  [
+                    _c(
+                      "p",
+                      {
+                        staticClass:
+                          "font-bold text-32px leading-34px text-white uppercase"
+                      },
+                      [_vm._v("Ingresa con tu ID")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "p",
+                      {
+                        staticClass:
+                          "text-white uppercase text-29px leading-34px mb-25px"
+                      },
+                      [_vm._v("A la plataforma")]
+                    ),
+                    _vm._v(" "),
                     _c("input", {
                       directives: [
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.form.remember,
-                          expression: "form.remember"
+                          value: _vm.form.commercial_id,
+                          expression: "form.commercial_id"
                         }
                       ],
-                      attrs: {
-                        type: "checkbox",
-                        name: "remember",
-                        id: "remember"
-                      },
-                      domProps: {
-                        checked: Array.isArray(_vm.form.remember)
-                          ? _vm._i(_vm.form.remember, null) > -1
-                          : _vm.form.remember
-                      },
+                      staticClass: "form-control mb-5px placeholder-primary",
+                      attrs: { type: "text", placeholder: "ID COMERCIAL" },
+                      domProps: { value: _vm.form.commercial_id },
                       on: {
-                        change: function($event) {
-                          var $$a = _vm.form.remember,
-                            $$el = $event.target,
-                            $$c = $$el.checked ? true : false
-                          if (Array.isArray($$a)) {
-                            var $$v = null,
-                              $$i = _vm._i($$a, $$v)
-                            if ($$el.checked) {
-                              $$i < 0 &&
-                                _vm.$set(
-                                  _vm.form,
-                                  "remember",
-                                  $$a.concat([$$v])
-                                )
-                            } else {
-                              $$i > -1 &&
-                                _vm.$set(
-                                  _vm.form,
-                                  "remember",
-                                  $$a.slice(0, $$i).concat($$a.slice($$i + 1))
-                                )
-                            }
-                          } else {
-                            _vm.$set(_vm.form, "remember", $$c)
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
                           }
+                          _vm.$set(
+                            _vm.form,
+                            "commercial_id",
+                            $event.target.value
+                          )
                         }
                       }
                     }),
                     _vm._v(" "),
-                    _c("label", { attrs: { for: "remember" } }, [
-                      _c("div", { staticClass: "custom-checkbox-box" }, [
-                        _c("img", {
-                          staticClass: "custom-checkbox-icon",
-                          attrs: {
-                            src: "/img/icons/icon-check-white.svg",
-                            alt: ""
-                          }
-                        })
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "p",
-                        { staticClass: "text-white text-18px leading-20px" },
-                        [_vm._v("Recordar mis datos")]
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "px-15px pt-30px flex" }, [
-                    _c("div", { staticClass: "w-1/2 pr-15px" }, [
-                      _c(
-                        "button",
+                    _c("input", {
+                      directives: [
                         {
-                          staticClass:
-                            "focus:outline-none block w-full rounded-10px bg-white font-bold text-xl text-primary uppercase py-3",
-                          attrs: { type: "submit" }
-                        },
-                        [_vm._v("Ingresar")]
-                      )
-                    ]),
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.username,
+                          expression: "form.username"
+                        }
+                      ],
+                      staticClass: "form-control placeholder-primary mb-10px",
+                      attrs: { type: "text", placeholder: "NOMBRE DE USUARIO" },
+                      domProps: { value: _vm.form.username },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.form, "username", $event.target.value)
+                        }
+                      }
+                    }),
                     _vm._v(" "),
                     _c(
-                      "div",
-                      { staticClass: "w-1/2 pl-15px" },
-                      [
+                      "ul",
+                      { staticClass: "mb-10px" },
+                      _vm._l(_vm.$page.errors, function(error) {
+                        return _c(
+                          "li",
+                          { staticClass: "text-left text-yellow-300" },
+                          [_vm._v(_vm._s(error[0]))]
+                        )
+                      }),
+                      0
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "bavaria-custom-checkbox" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.remember,
+                            expression: "form.remember"
+                          }
+                        ],
+                        attrs: {
+                          type: "checkbox",
+                          name: "remember",
+                          id: "remember"
+                        },
+                        domProps: {
+                          checked: Array.isArray(_vm.form.remember)
+                            ? _vm._i(_vm.form.remember, null) > -1
+                            : _vm.form.remember
+                        },
+                        on: {
+                          change: function($event) {
+                            var $$a = _vm.form.remember,
+                              $$el = $event.target,
+                              $$c = $$el.checked ? true : false
+                            if (Array.isArray($$a)) {
+                              var $$v = null,
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 &&
+                                  _vm.$set(
+                                    _vm.form,
+                                    "remember",
+                                    $$a.concat([$$v])
+                                  )
+                              } else {
+                                $$i > -1 &&
+                                  _vm.$set(
+                                    _vm.form,
+                                    "remember",
+                                    $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                                  )
+                              }
+                            } else {
+                              _vm.$set(_vm.form, "remember", $$c)
+                            }
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("label", { attrs: { for: "remember" } }, [
+                        _c("div", { staticClass: "custom-checkbox-box" }, [
+                          _c("img", {
+                            staticClass: "custom-checkbox-icon",
+                            attrs: {
+                              src: "/img/icons/icon-check-white.svg",
+                              alt: ""
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
                         _c(
-                          "InertiaLink",
+                          "p",
+                          { staticClass: "text-white text-18px leading-20px" },
+                          [_vm._v("Recordar mis datos")]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "md:px-15px pt-30px flex" }, [
+                      _c("div", { staticClass: "w-1/2 pr-15px" }, [
+                        _c(
+                          "button",
                           {
                             staticClass:
                               "focus:outline-none block w-full rounded-10px bg-white font-bold text-xl text-primary uppercase py-3",
-                            attrs: { href: "/registro" }
+                            attrs: { type: "submit" }
                           },
-                          [_vm._v("Registrarse")]
+                          [_vm._v("Ingresar")]
                         )
-                      ],
-                      1
-                    )
-                  ])
-                ]
-              )
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-1/2 pl-15px" },
+                        [
+                          _c(
+                            "InertiaLink",
+                            {
+                              staticClass:
+                                "focus:outline-none block w-full rounded-10px bg-white font-bold text-xl text-primary uppercase py-3",
+                              attrs: { href: "/registro" }
+                            },
+                            [_vm._v("Registrarse")]
+                          )
+                        ],
+                        1
+                      )
+                    ])
+                  ]
+                )
+              ])
             ])
-          ])
-        ])
+          ]
+        )
       ]),
       _vm._v(" "),
       _c("portal", { attrs: { to: "modal" } }, [
@@ -49535,7 +49576,7 @@ var render = function() {
                   "h2",
                   {
                     staticClass:
-                      "uppercase text-28px text-white text-center tracking-tighter"
+                      "uppercase text-28px leading-28px md:leading-normal text-white text-center tracking-tighter"
                   },
                   [
                     _vm._v(
@@ -52926,98 +52967,124 @@ var staticRenderFns = [
         "div",
         {
           staticClass:
-            "container px-30px flex justify-between items-center py-8px"
+            "container px-15px lg:px-30px flex justify-center lg:justify-between items-center py-15px lg:py-8px flex-wrap lg:flex-no-wrap"
         },
         [
-          _c("div", { staticClass: "w-6/12 flex items-center" }, [
-            _c(
-              "div",
-              { staticClass: "border-r border-primary mr-10px pr-10px w-50px" },
-              [
-                _c("img", {
-                  staticClass: "block w-full",
-                  attrs: { src: "/img/icons/icon-bavaria-red.svg", alt: "" }
-                })
-              ]
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "flex items-center" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "inline-flex lg:w-6/12 lg:flex items-center justify-center lg:justify-start"
+            },
+            [
               _c(
-                "p",
-                { staticClass: "text-12px leading-12px font-bold mr-15px" },
+                "div",
+                {
+                  staticClass: "border-r border-primary mr-10px pr-10px w-50px"
+                },
                 [
-                  _vm._v("Orgullosamente"),
-                  _c("br"),
-                  _vm._v("parte de A-BInBev")
+                  _c("img", {
+                    staticClass: "block w-full",
+                    attrs: { src: "/img/icons/icon-bavaria-red.svg", alt: "" }
+                  })
                 ]
               ),
               _vm._v(" "),
-              _c("p", { staticClass: "text-27px leading-32px font-bold" }, [
-                _vm._v("TAP INTO YOUR BEER")
-              ])
-            ])
-          ]),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "block lg:flex items-center flex-wrap lg:flex-no-wrap"
+                },
+                [
+                  _c(
+                    "p",
+                    { staticClass: "text-12px leading-12px font-bold mr-15px" },
+                    [
+                      _vm._v("Orgullosamente"),
+                      _c("br"),
+                      _vm._v("parte de A-BInBev")
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-27px leading-32px font-bold" }, [
+                    _vm._v("TAP INTO YOUR BEER")
+                  ])
+                ]
+              )
+            ]
+          ),
           _vm._v(" "),
-          _c("div", { staticClass: "w-6/12 flex items-center justify-end" }, [
-            _c(
-              "p",
-              { staticClass: "uppercase font-bold text-14px leading-17px" },
-              [_vm._v("Síguenos")]
-            ),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass: "block w-72px px-24px border-r border-primary",
-                attrs: { href: "#" }
-              },
-              [
-                _c("img", {
-                  staticClass: "w-full block h-24px",
-                  attrs: { src: "/img/icons/icon-instagram-red.svg", alt: "" }
-                })
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass: "block w-72px px-24px border-r border-primary",
-                attrs: { href: "#" }
-              },
-              [
-                _c("img", {
-                  staticClass: "w-full block h-24px",
-                  attrs: { src: "/img/icons/icon-facebook-red.svg", alt: "" }
-                })
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass: "block w-72px px-24px border-r border-primary",
-                attrs: { href: "#" }
-              },
-              [
-                _c("img", {
-                  staticClass: "w-full block h-24px",
-                  attrs: { src: "/img/icons/icon-pinterest-red.svg", alt: "" }
-                })
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "a",
-              { staticClass: "block w-72px px-24px", attrs: { href: "#" } },
-              [
-                _c("img", {
-                  staticClass: "w-full block h-24px",
-                  attrs: { src: "/img/icons/icon-message-red.svg", alt: "" }
-                })
-              ]
-            )
-          ])
+          _c(
+            "div",
+            {
+              staticClass:
+                "w-full lg:w-6/12 flex items-center justify-center lg:justify-end mt-15px lg:mt-0 flex-wrap lg:flex-no-wrap"
+            },
+            [
+              _c(
+                "p",
+                {
+                  staticClass:
+                    "uppercase font-bold text-14px leading-17px w-full lg:w-auto text-center lg:text-left mb-15px lg:mb-0"
+                },
+                [_vm._v("Síguenos")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "block w-72px px-24px border-r border-primary",
+                  attrs: { href: "#" }
+                },
+                [
+                  _c("img", {
+                    staticClass: "w-full block h-24px",
+                    attrs: { src: "/img/icons/icon-instagram-red.svg", alt: "" }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "block w-72px px-24px border-r border-primary",
+                  attrs: { href: "#" }
+                },
+                [
+                  _c("img", {
+                    staticClass: "w-full block h-24px",
+                    attrs: { src: "/img/icons/icon-facebook-red.svg", alt: "" }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "block w-72px px-24px border-r border-primary",
+                  attrs: { href: "#" }
+                },
+                [
+                  _c("img", {
+                    staticClass: "w-full block h-24px",
+                    attrs: { src: "/img/icons/icon-pinterest-red.svg", alt: "" }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                { staticClass: "block w-72px px-24px", attrs: { href: "#" } },
+                [
+                  _c("img", {
+                    staticClass: "w-full block h-24px",
+                    attrs: { src: "/img/icons/icon-message-red.svg", alt: "" }
+                  })
+                ]
+              )
+            ]
+          )
         ]
       )
     ])
@@ -53047,18 +53114,18 @@ var render = function() {
   return _c("header", { staticClass: "z-10 bg-white" }, [
     _c(
       "div",
-      { staticClass: "container relative h-full" },
+      { staticClass: "container lg:relative h-full px-15px md:px-0" },
       [
         _c(
           "inertia-link",
           {
             staticClass:
-              "logo rounded-full bg-white absolute left-0 top-0 block",
+              "logo rounded-full bg-white absolute left-0 top-0 block z-20",
             attrs: { href: "/" }
           },
           [
             _c("img", {
-              staticClass: "w-9/12 block mx-auto mt-5",
+              staticClass: "w-9/12 block mx-auto mt-12px md:mt-5",
               attrs: { src: "/img/logo-amigos-cerveceros.svg", alt: "" }
             })
           ]
@@ -53067,7 +53134,10 @@ var render = function() {
         _c("nav", { staticClass: "main-menu-container h-full py-15px" }, [
           _c(
             "ul",
-            { staticClass: "flex justify-center items-center mx-auto h-full" },
+            {
+              staticClass:
+                "hidden md:flex justify-center items-center mx-auto h-full"
+            },
             [
               _c(
                 "li",
@@ -53144,7 +53214,151 @@ var render = function() {
                 1
               )
             ]
-          )
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "menu-mobile-toggle-button w-25px h-16px ml-auto flex flex-col justify-between md:hidden",
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  _vm.showMobileMenu = !_vm.showMobileMenu
+                }
+              }
+            },
+            [
+              _c("div", { staticClass: "bg-black mb-2px h-2px w-full" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "bg-black mb-2px h-2px w-full" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "bg-black h-2px w-full" })
+            ]
+          ),
+          _vm._v(" "),
+          _vm.showMobileMenu
+            ? _c(
+                "ul",
+                {
+                  staticClass:
+                    "w-full md:hidden bg-white absolute top-42px left-0 z-10"
+                },
+                [
+                  _c(
+                    "li",
+                    {
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.showMobileMenu = false
+                        }
+                      }
+                    },
+                    [
+                      _c(
+                        "InertiaLink",
+                        {
+                          staticClass:
+                            "text-20px leading-24px font-bold uppercase block text-center py-10px px-15px border-l border-gray",
+                          class: {
+                            active: _vm.$page.currentRouteName === "home"
+                          },
+                          attrs: { href: "/" }
+                        },
+                        [_vm._v("Inicio")]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "li",
+                    {
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.showMobileMenu = false
+                        }
+                      }
+                    },
+                    [
+                      _c(
+                        "InertiaLink",
+                        {
+                          staticClass:
+                            "text-20px leading-24px font-bold uppercase block text-center py-10px px-15px border-l border-gray",
+                          class: {
+                            active:
+                              _vm.$page.currentRouteName === "como-participar"
+                          },
+                          attrs: { href: "/como-participar" }
+                        },
+                        [_vm._v("Cómo participar")]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "li",
+                    {
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.showMobileMenu = false
+                        }
+                      }
+                    },
+                    [
+                      _c(
+                        "InertiaLink",
+                        {
+                          staticClass:
+                            "text-20px leading-24px font-bold uppercase block text-center py-10px px-15px border-l border-gray",
+                          class: {
+                            active:
+                              _vm.$page.currentRouteName === "juega-y-gana"
+                          },
+                          attrs: { href: "/juega-y-gana" }
+                        },
+                        [_vm._v("Juega y gana")]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "li",
+                    {
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.showMobileMenu = false
+                        }
+                      }
+                    },
+                    [
+                      _c(
+                        "InertiaLink",
+                        {
+                          staticClass:
+                            "text-20px leading-24px font-bold uppercase block text-center py-10px px-15px border-l border-r border-gray",
+                          class: {
+                            active:
+                              _vm.$page.currentRouteName ===
+                              "participations.show"
+                          },
+                          attrs: { href: "/ganadores" }
+                        },
+                        [_vm._v("Ganadores")]
+                      )
+                    ],
+                    1
+                  )
+                ]
+              )
+            : _vm._e()
         ]),
         _vm._v(" "),
         _vm.$page.user
