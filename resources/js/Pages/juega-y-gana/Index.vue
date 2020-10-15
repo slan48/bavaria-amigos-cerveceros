@@ -2,12 +2,12 @@
     <DefaultLayout>
         <div class="play-and-win-instructions-page">
             <div class="container py-45px">
-                <h2 class="font-bold text-24px text-primary text-center uppercase">INGRESA TUS CÓDIGOS, JUEGA Y GANA ESPECTACULARES PREMIOS</h2>
-                <p class="text-center text-gray-dark text-18px mb-25px -mt-2">Recuerda que puedes ingresar máximo dos códigos por premio</p>
+                <h2 class="font-bold text-24px text-primary text-center uppercase lg:leading-normal leading-none">INGRESA TUS CÓDIGOS, JUEGA Y GANA ESPECTACULARES PREMIOS</h2>
+                <p class="text-center text-gray-dark text-18px mb-25px lg:-mt-2">Recuerda que puedes ingresar máximo dos códigos por premio</p>
 
                 <div class="awards-box">
                     <h3 class="bg-primary tracking-tighter text-white uppercase text-27px py-5px text-center rounded-t-10px">Premios octubre</h3>
-                    <div class="grid grid-cols-3 gap-5px pt-5px" v-if="awards && awards.length">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5px pt-5px" v-if="awards && awards.length">
                         <div class="bg-white p-10px relative" v-for="award in awards">
                             <div class="flex flex-wrap items-end">
                                 <div class="w-1/4">

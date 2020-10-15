@@ -4806,6 +4806,23 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -5213,7 +5230,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".game-play-page[data-v-5f6bcf90] {\n  background-image: url(\"/img/bg-game.jpg\");\n  background-size: cover;\n  background-position: center;\n  min-height: calc(100vh - 123.92px);\n}\n.title-divider[data-v-5f6bcf90] {\n  width: calc(50% - 50px);\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  height: 1px;\n  background: #ffffff;\n}\n.title-divider.title-divider-left[data-v-5f6bcf90] {\n  left: 0;\n}\n.title-divider.title-divider-right[data-v-5f6bcf90] {\n  right: 0;\n}\n.player-name-box[data-v-5f6bcf90] {\n  position: relative;\n  display: flex;\n  background: #F2F2F2;\n  font-weight: 700;\n  letter-spacing: -0.05em;\n  border-radius: 10px;\n  color: #000;\n  font-size: 24px;\n  line-height: 24px;\n  text-transform: uppercase;\n  padding: 25px 10px 25px 61px;\n}\n.player-name-box img[data-v-5f6bcf90] {\n  border-radius: 50%;\n  width: 77px;\n  height: 77px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  position: absolute;\n  left: -31.5px;\n  top: 0;\n}\n.clock-container[data-v-5f6bcf90] {\n  position: absolute;\n  left: -30px;\n  bottom: -30px;\n}\n.clock-container img[data-v-5f6bcf90] {\n  width: 300px;\n}\n.clock-container .timer-circle-container[data-v-5f6bcf90] {\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  height: 200px;\n}\n.clock-container .clock-counter[data-v-5f6bcf90] {\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  text-align: center;\n  --bg-opacity: 1;\n  background-color: #666666;\n  background-color: rgba(102, 102, 102, var(--bg-opacity));\n  border-radius: 50%;\n  width: 148px;\n  height: 148px;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n.clock-container .clock-counter p[data-v-5f6bcf90] {\n  font-weight: 700;\n  display: block;\n  font-size: 90px;\n  line-height: 80px;\n  margin-bottom: 0;\n  color: #fff;\n}\n.clock-container .clock-counter span[data-v-5f6bcf90] {\n  display: block;\n  font-size: 24px;\n  color: #fff;\n  line-height: 24px;\n  margin-top: -10px;\n}\n.question-and-answers-container[data-v-5f6bcf90] {\n  min-height: 241.36px;\n}\n.question-and-answers-container .question[data-v-5f6bcf90] {\n  position: relative;\n}\n.question-and-answers-container .question img[data-v-5f6bcf90] {\n  width: 100%;\n}\n.question-and-answers-container .question p[data-v-5f6bcf90] {\n  position: absolute;\n  left: 50%;\n  text-align: center;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  font-size: 24px;\n  width: 82%;\n  --text-opacity: 1;\n  color: #BE0811;\n  color: rgba(190, 8, 17, var(--text-opacity));\n}\n.question-and-answers-container .answers[data-v-5f6bcf90] {\n  display: flex;\n  flex-wrap: wrap;\n}\n.question-and-answers-container .answers .answer[data-v-5f6bcf90] {\n  margin-top: 10px;\n  margin-bottom: 10px;\n  cursor: pointer;\n  width: 50%;\n  position: relative;\n}\n.question-and-answers-container .answers .answer img[data-v-5f6bcf90] {\n  width: 100%;\n}\n.question-and-answers-container .answers .answer img[data-v-5f6bcf90]:nth-child(2) {\n  display: none;\n}\n.question-and-answers-container .answers .answer.active img[data-v-5f6bcf90]:nth-child(1) {\n  display: none;\n}\n.question-and-answers-container .answers .answer.active img[data-v-5f6bcf90]:nth-child(2) {\n  display: block;\n}\n.question-and-answers-container .answers .answer p[data-v-5f6bcf90] {\n  position: absolute;\n  color: #fff;\n  left: 63px;\n  text-align: left;\n  top: 50%;\n  transform: translateY(-50%);\n  font-size: 24px;\n  width: 67%;\n}\n.fade-enter-active[data-v-5f6bcf90], .fade-leave-active[data-v-5f6bcf90] {\n  transition: opacity .5s;\n}\n.fade-enter[data-v-5f6bcf90], .fade-leave-to[data-v-5f6bcf90] {\n  opacity: 0;\n}\n.slide-fade-enter-active[data-v-5f6bcf90] {\n  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);\n}\n.slide-fade-leave-active[data-v-5f6bcf90] {\n  transition: all .3s ease;\n}\n.slide-fade-enter[data-v-5f6bcf90] {\n  transform: translateX(10px);\n  opacity: 0;\n}\n.slide-fade-leave[data-v-5f6bcf90] {\n  transform: translateX(-10px);\n  opacity: 0;\n}\n", ""]);
+exports.push([module.i, ".game-play-page[data-v-5f6bcf90] {\n  background-image: url(\"/img/bg-game.jpg\");\n  background-size: cover;\n  background-position: center;\n  min-height: calc(100vh - 123.92px);\n}\n.title-divider[data-v-5f6bcf90] {\n  width: calc(50% - 50px);\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  height: 1px;\n  background: #ffffff;\n}\n.title-divider.title-divider-left[data-v-5f6bcf90] {\n  left: 0;\n}\n.title-divider.title-divider-right[data-v-5f6bcf90] {\n  right: 0;\n}\n.player-name-box[data-v-5f6bcf90] {\n  position: relative;\n  display: flex;\n  background: #F2F2F2;\n  font-weight: 700;\n  letter-spacing: -0.05em;\n  border-radius: 10px;\n  color: #000;\n  font-size: 24px;\n  line-height: 24px;\n  text-transform: uppercase;\n  padding: 25px 10px 25px 61px;\n}\n.player-name-box img[data-v-5f6bcf90] {\n  border-radius: 50%;\n  width: 77px;\n  height: 77px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  position: absolute;\n  left: -31.5px;\n  top: 0;\n}\n.clock-container[data-v-5f6bcf90] {\n  position: absolute;\n  top: 0;\n}\n@media (min-width: 1024px) {\n.clock-container[data-v-5f6bcf90] {\n    top: auto;\n    left: -30px;\n    bottom: -30px;\n    height: 300px;\n}\n}\n.clock-container img[data-v-5f6bcf90] {\n  width: 155px;\n}\n@media (min-width: 1024px) {\n.clock-container img[data-v-5f6bcf90] {\n    width: 300px;\n}\n}\n.clock-container .timer-circle-container[data-v-5f6bcf90] {\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  height: 100px;\n}\n@media (min-width: 1024px) {\n.clock-container .timer-circle-container[data-v-5f6bcf90] {\n    height: 200px;\n}\n}\n.clock-container .clock-counter[data-v-5f6bcf90] {\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  text-align: center;\n  --bg-opacity: 1;\n  background-color: #666666;\n  background-color: rgba(102, 102, 102, var(--bg-opacity));\n  border-radius: 50%;\n  width: 82px;\n  height: 82px;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n@media (min-width: 1024px) {\n.clock-container .clock-counter[data-v-5f6bcf90] {\n    width: 148px;\n    height: 148px;\n}\n}\n.clock-container .clock-counter p[data-v-5f6bcf90] {\n  font-weight: 700;\n  display: block;\n  font-size: 44px;\n  line-height: 53px;\n  margin-bottom: 0;\n  color: #fff;\n}\n@media (min-width: 1024px) {\n.clock-container .clock-counter p[data-v-5f6bcf90] {\n    font-size: 90px;\n    line-height: 80px;\n}\n}\n.clock-container .clock-counter span[data-v-5f6bcf90] {\n  display: block;\n  font-size: 24px;\n  color: #fff;\n  line-height: 24px;\n  margin-top: -10px;\n}\n.question-and-answers-container[data-v-5f6bcf90] {\n  min-height: 241.36px;\n}\n.question-and-answers-container .question[data-v-5f6bcf90] {\n  position: relative;\n}\n.question-and-answers-container .question img[data-v-5f6bcf90] {\n  width: 100%;\n}\n.question-and-answers-container .question p[data-v-5f6bcf90] {\n  position: absolute;\n  left: 50%;\n  text-align: center;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  font-size: 16px;\n  width: 82%;\n  --text-opacity: 1;\n  color: #BE0811;\n  color: rgba(190, 8, 17, var(--text-opacity));\n}\n@media (min-width: 1024px) {\n.question-and-answers-container .question p[data-v-5f6bcf90] {\n    font-size: 24px;\n}\n}\n.question-and-answers-container .answers[data-v-5f6bcf90] {\n  display: flex;\n  flex-wrap: wrap;\n}\n.question-and-answers-container .answers .answer[data-v-5f6bcf90] {\n  margin-top: 10px;\n  cursor: pointer;\n  width: 100%;\n  position: relative;\n}\n@media (min-width: 768px) {\n.question-and-answers-container .answers .answer[data-v-5f6bcf90] {\n    margin-bottom: 10px;\n    width: 50%;\n}\n}\n.question-and-answers-container .answers .answer img[data-v-5f6bcf90] {\n  width: 100%;\n}\n.question-and-answers-container .answers .answer img[data-v-5f6bcf90]:nth-child(2) {\n  display: none;\n}\n.question-and-answers-container .answers .answer.active img[data-v-5f6bcf90]:nth-child(1) {\n  display: none;\n}\n.question-and-answers-container .answers .answer.active img[data-v-5f6bcf90]:nth-child(2) {\n  display: block;\n}\n.question-and-answers-container .answers .answer p[data-v-5f6bcf90] {\n  position: absolute;\n  color: #fff;\n  left: 63px;\n  text-align: left;\n  top: 50%;\n  transform: translateY(-50%);\n  font-size: 16px;\n  width: 67%;\n}\n@media (min-width: 1024px) {\n.question-and-answers-container .answers .answer p[data-v-5f6bcf90] {\n    font-size: 24px;\n}\n}\n.fade-enter-active[data-v-5f6bcf90], .fade-leave-active[data-v-5f6bcf90] {\n  transition: opacity .5s;\n}\n.fade-enter[data-v-5f6bcf90], .fade-leave-to[data-v-5f6bcf90] {\n  opacity: 0;\n}\n.slide-fade-enter-active[data-v-5f6bcf90] {\n  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);\n}\n.slide-fade-leave-active[data-v-5f6bcf90] {\n  transition: all .3s ease;\n}\n.slide-fade-enter[data-v-5f6bcf90] {\n  transform: translateX(10px);\n  opacity: 0;\n}\n.slide-fade-leave[data-v-5f6bcf90] {\n  transform: translateX(-10px);\n  opacity: 0;\n}\n", ""]);
 
 // exports
 
@@ -52489,14 +52506,16 @@ var render = function() {
           "h2",
           {
             staticClass:
-              "font-bold text-24px text-primary text-center uppercase"
+              "font-bold text-24px text-primary text-center uppercase lg:leading-normal leading-none"
           },
           [_vm._v("INGRESA TUS CÓDIGOS, JUEGA Y GANA ESPECTACULARES PREMIOS")]
         ),
         _vm._v(" "),
         _c(
           "p",
-          { staticClass: "text-center text-gray-dark text-18px mb-25px -mt-2" },
+          {
+            staticClass: "text-center text-gray-dark text-18px mb-25px lg:-mt-2"
+          },
           [_vm._v("Recuerda que puedes ingresar máximo dos códigos por premio")]
         ),
         _vm._v(" "),
@@ -52513,7 +52532,10 @@ var render = function() {
           _vm.awards && _vm.awards.length
             ? _c(
                 "div",
-                { staticClass: "grid grid-cols-3 gap-5px pt-5px" },
+                {
+                  staticClass:
+                    "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5px pt-5px"
+                },
                 _vm._l(_vm.awards, function(award) {
                   return _c(
                     "div",
@@ -52659,9 +52681,9 @@ var render = function() {
     _c("div", { staticClass: "game-play-page" }, [
       _c(
         "div",
-        { staticClass: "container pt-50px pb-25px" },
+        { staticClass: "container pt-50px pb-25px px-15px xl:px-0" },
         [
-          _c("div", { staticClass: "relative w-8/12 mx-auto mb-35px" }, [
+          _c("div", { staticClass: "relative xl:w-8/12 mx-auto mb-35px" }, [
             _c("div", { staticClass: "title-divider title-divider-left" }),
             _vm._v(" "),
             _c(
@@ -52678,8 +52700,8 @@ var render = function() {
           _vm._v(" "),
           !_vm.gameFinished && _vm.allQuestions && _vm.allQuestions.length
             ? [
-                _c("div", { staticClass: "w-6/12 mx-auto mb-30px" }, [
-                  _c("div", { staticClass: "w-5/12 ml-auto" }, [
+                _c("div", { staticClass: "xl:w-6/12 mx-auto mb-30px" }, [
+                  _c("div", { staticClass: "lg:w-5/12 w-11/12 ml-auto" }, [
                     _c("div", { staticClass: "player-name-box" }, [
                       _c("img", {
                         attrs: { src: "/img/avatar-blank.svg", alt: "" }
@@ -52700,13 +52722,43 @@ var render = function() {
                       _vm._v(" "),
                       _c(
                         "div",
-                        { staticClass: "absolute timer-circle-container" },
+                        {
+                          staticClass:
+                            "absolute timer-circle-container hidden lg:block"
+                        },
                         [
                           _c("vue-circle", {
                             ref: "vueCircle",
                             attrs: {
                               progress: _vm.questionSecondsLeftPercentage,
                               size: 200,
+                              reverse: false,
+                              "line-cap": "butt",
+                              fill: { color: "#BE0811" },
+                              "empty-fill": "rgba(0, 0, 0, 0)",
+                              "animation-start-value": 0.0,
+                              "start-angle": -1.6,
+                              "insert-mode": "append",
+                              thickness: 30,
+                              "show-percent": false
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "absolute timer-circle-container lg:hidden"
+                        },
+                        [
+                          _c("vue-circle", {
+                            ref: "vueCircle",
+                            attrs: {
+                              progress: _vm.questionSecondsLeftPercentage,
+                              size: 100,
                               reverse: false,
                               "line-cap": "butt",
                               fill: { color: "#BE0811" },
@@ -52750,59 +52802,67 @@ var render = function() {
                       "div",
                       {
                         staticClass:
-                          "bg-gray pt-25px pb-15px px-30px rounded-10px w-9/12 ml-auto mt-15px"
+                          "bg-gray pt-25px pb-15px px-15px lg:px-30px rounded-10px w-9/12 md:w-11/12 lg:w-10/12 xl:w-9/12 ml-auto mt-15px"
                       },
                       [
-                        _c("div", { staticClass: "w-8/12 ml-auto" }, [
-                          _c(
-                            "p",
-                            {
-                              staticClass:
-                                "font-bold text-center text-32px leading-32px tracking-tighter mb-15px text-gray-dark uppercase"
-                            },
-                            [
-                              _vm._v(
-                                "Pregunta " +
-                                  _vm._s(_vm.activeQuestion + 1) +
-                                  " / " +
-                                  _vm._s(_vm.allQuestions.length)
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass:
-                                "rounded-10px overflow-hidden flex flex-wrap h-78px"
-                            },
-                            [
-                              _c(
-                                "p",
-                                {
-                                  staticClass:
-                                    "bg-primary text-white h-full w-8/12 flex justify-center items-center uppercase font-bold text-26px leading-26px tracking-tighter"
-                                },
-                                [_vm._v("Calificación")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "p",
-                                {
-                                  staticClass:
-                                    "bg-white text-primary h-full w-4/12 flex justify-center items-center uppercase font-bold text-30px leading-30px"
-                                },
-                                [
-                                  _vm._v(
-                                    _vm._s(
-                                      _vm.allQuestions[_vm.activeQuestion].score
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "w-9/12 md:w-10/12 lg:w-9/12 lg:w-8/12 ml-auto"
+                          },
+                          [
+                            _c(
+                              "p",
+                              {
+                                staticClass:
+                                  "font-bold text-center text-22px lg:text-32px leading-22px lg:leading-32px tracking-tighter mb-15px text-gray-dark uppercase"
+                              },
+                              [
+                                _vm._v(
+                                  "Pregunta " +
+                                    _vm._s(_vm.activeQuestion + 1) +
+                                    " / " +
+                                    _vm._s(_vm.allQuestions.length)
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "rounded-10px overflow-hidden flex flex-wrap h-78px"
+                              },
+                              [
+                                _c(
+                                  "p",
+                                  {
+                                    staticClass:
+                                      "bg-primary text-white h-full w-8/12 flex justify-center items-center uppercase font-bold text-18px lg:text-26px leading-26px tracking-tighter"
+                                  },
+                                  [_vm._v("Calificación")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "p",
+                                  {
+                                    staticClass:
+                                      "bg-white text-primary h-full w-4/12 flex justify-center items-center uppercase font-bold text-18px lg:text-30px leading-30px"
+                                  },
+                                  [
+                                    _vm._v(
+                                      _vm._s(
+                                        _vm.allQuestions[_vm.activeQuestion]
+                                          .score
+                                      )
                                     )
-                                  )
-                                ]
-                              )
-                            ]
-                          )
-                        ])
+                                  ]
+                                )
+                              ]
+                            )
+                          ]
+                        )
                       ]
                     )
                   ])
@@ -52811,7 +52871,8 @@ var render = function() {
                 _c(
                   "div",
                   {
-                    staticClass: "question-and-answers-container w-8/12 mx-auto"
+                    staticClass:
+                      "question-and-answers-container lg:w-8/12 mx-auto"
                   },
                   [
                     _c(
@@ -52902,7 +52963,7 @@ var render = function() {
                 "div",
                 {
                   staticClass:
-                    "bg-white rounded-10px p-30px text-center w-8/12 mx-auto"
+                    "bg-white rounded-10px p-30px text-center w-full lg:w-8/12 mx-auto"
                 },
                 [
                   _c(
@@ -53400,7 +53461,7 @@ var render = function() {
                 _c("img", {
                   attrs: {
                     src: _vm.$page.user.profile_photo_path
-                      ? _vm.$page.user.profile_photo_path
+                      ? "/" + _vm.$page.user.profile_photo_path
                       : "/img/avatar-blank.svg",
                     alt: ""
                   }

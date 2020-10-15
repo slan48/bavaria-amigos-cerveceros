@@ -1,16 +1,16 @@
 <template>
     <DefaultLayout>
         <div class="game-play-page">
-            <div class="container pt-50px pb-25px">
-                <div class="relative w-8/12 mx-auto mb-35px">
+            <div class="container pt-50px pb-25px px-15px xl:px-0">
+                <div class="relative xl:w-8/12 mx-auto mb-35px">
                     <div class="title-divider title-divider-left"></div>
                     <h2 class="uppercase text-28px text-white font-bold text-center">Trivia</h2>
                     <div class="title-divider title-divider-right"></div>
                 </div>
 
                 <template v-if="!gameFinished && allQuestions && allQuestions.length">
-                    <div class="w-6/12 mx-auto mb-30px">
-                        <div class="w-5/12 ml-auto">
+                    <div class="xl:w-6/12 mx-auto mb-30px">
+                        <div class="lg:w-5/12 w-11/12 ml-auto">
                             <div class="player-name-box">
                                 <img src="/img/avatar-blank.svg" alt="">
                                 {{ $page.user.name }}
@@ -19,11 +19,28 @@
                         <div class="relative">
                             <div class="clock-container">
                                 <img src="/img/bg-clock.svg" alt="">
-                                <div class="absolute timer-circle-container">
+                                <div class="absolute timer-circle-container hidden lg:block">
                                     <vue-circle
                                         ref="vueCircle"
                                         :progress="questionSecondsLeftPercentage"
                                         :size="200"
+                                        :reverse="false"
+                                        line-cap="butt"
+                                        :fill="{ color: '#BE0811' }"
+                                        empty-fill="rgba(0, 0, 0, 0)"
+                                        :animation-start-value="0.0"
+                                        :start-angle="-1.6"
+                                        insert-mode="append"
+                                        :thickness="30"
+                                        :show-percent="false"
+                                    >
+                                    </vue-circle>
+                                </div>
+                                <div class="absolute timer-circle-container lg:hidden">
+                                    <vue-circle
+                                        ref="vueCircle"
+                                        :progress="questionSecondsLeftPercentage"
+                                        :size="100"
                                         :reverse="false"
                                         line-cap="butt"
                                         :fill="{ color: '#BE0811' }"
@@ -48,19 +65,19 @@
                                 </div>
                             </div>
 
-                            <div class="bg-gray pt-25px pb-15px px-30px rounded-10px w-9/12 ml-auto mt-15px">
-                                <div class="w-8/12 ml-auto">
-                                    <p class="font-bold text-center text-32px leading-32px tracking-tighter mb-15px text-gray-dark uppercase">Pregunta {{ activeQuestion + 1 }} / {{ allQuestions.length }}</p>
+                            <div class="bg-gray pt-25px pb-15px px-15px lg:px-30px rounded-10px w-9/12 md:w-11/12 lg:w-10/12 xl:w-9/12 ml-auto mt-15px">
+                                <div class="w-9/12 md:w-10/12 lg:w-9/12 lg:w-8/12 ml-auto">
+                                    <p class="font-bold text-center text-22px lg:text-32px leading-22px lg:leading-32px tracking-tighter mb-15px text-gray-dark uppercase">Pregunta {{ activeQuestion + 1 }} / {{ allQuestions.length }}</p>
                                     <div class="rounded-10px overflow-hidden flex flex-wrap h-78px">
-                                        <p class="bg-primary text-white h-full w-8/12 flex justify-center items-center uppercase font-bold text-26px leading-26px tracking-tighter">Calificación</p>
-                                        <p class="bg-white text-primary h-full w-4/12 flex justify-center items-center uppercase font-bold text-30px leading-30px">{{ allQuestions[activeQuestion].score }}</p>
+                                        <p class="bg-primary text-white h-full w-8/12 flex justify-center items-center uppercase font-bold text-18px lg:text-26px leading-26px tracking-tighter">Calificación</p>
+                                        <p class="bg-white text-primary h-full w-4/12 flex justify-center items-center uppercase font-bold text-18px lg:text-30px leading-30px">{{ allQuestions[activeQuestion].score }}</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="question-and-answers-container w-8/12 mx-auto">
+                    <div class="question-and-answers-container lg:w-8/12 mx-auto">
                         <transition name="slide-fade" appear>
                             <div class="question-and-answers-container-inner" :key="allQuestions[activeQuestion].question">
                                 <div class="question">
@@ -79,7 +96,7 @@
                     </div>
                 </template>
 
-                <div v-else class="bg-white rounded-10px p-30px text-center w-8/12 mx-auto">
+                <div v-else class="bg-white rounded-10px p-30px text-center w-full lg:w-8/12 mx-auto">
                     <h2 class="text-primary text-30px text-center leading-30px font-bold mb-25px">Juego terminado</h2>
                     <p class="text-gray-dark tracking-tighter mb-30px text-26px">¡Muchas gracias por haber participado!</p>
                     <div class="grid grid-cols-2 gap-6">
@@ -264,11 +281,21 @@ export default {
 
 .clock-container{
     position: absolute;
-    left: -30px;
-    bottom: -30px;
+    top: 0;
+
+    @screen lg{
+        top: auto;
+        left: -30px;
+        bottom: -30px;
+        height: 300px;
+    }
 
     img{
-        width: 300px;
+        width: 155px;
+
+        @screen lg{
+            width: 300px;
+        }
     }
 
     .timer-circle-container{
@@ -276,7 +303,11 @@ export default {
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        height: 200px;
+        height: 100px;
+
+        @screen lg{
+            height: 200px;
+        }
     }
 
     .clock-counter{
@@ -287,20 +318,30 @@ export default {
         text-align: center;
         @apply bg-gray-dark;
         border-radius: 50%;
-        width: 148px;
-        height: 148px;
+        width: 82px;
+        height: 82px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
 
+        @screen lg{
+            width: 148px;
+            height: 148px;
+        }
+
         p{
             @apply font-bold;
             display: block;
-            font-size: 90px;
-            line-height: 80px;
+            font-size: 44px;
+            line-height: 53px;
             margin-bottom: 0;
             color: #fff;
+
+            @screen lg{
+                font-size: 90px;
+                line-height: 80px;
+            }
         }
 
         span{
@@ -329,9 +370,13 @@ export default {
             text-align: center;
             top: 50%;
             transform: translate(-50%, -50%);
-            font-size: 24px;
+            font-size: 16px;
             width: 82%;
             @apply text-primary;
+
+            @screen lg{
+                font-size: 24px;
+            }
         }
     }
 
@@ -341,10 +386,14 @@ export default {
 
         .answer{
             margin-top: 10px;
-            margin-bottom: 10px;
             cursor: pointer;
-            width: 50%;
+            width: 100%;
             position: relative;
+
+            @screen md{
+                margin-bottom: 10px;
+                width: 50%;
+            }
 
             img{
                 width: 100%;
@@ -373,8 +422,12 @@ export default {
                 text-align: left;
                 top: 50%;
                 transform: translateY(-50%);
-                font-size: 24px;
+                font-size: 16px;
                 width: 67%;
+
+                @screen lg{
+                    font-size: 24px;
+                }
             }
         }
     }
