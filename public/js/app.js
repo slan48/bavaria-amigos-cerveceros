@@ -3155,6 +3155,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -49223,80 +49246,200 @@ var render = function() {
             "div",
             {
               staticClass:
-                "lg:w-5/12 pt-50px pb-100px pt-95px px-30px bg-white relative lg:ml-auto lg:mr-0 -mx-15px"
+                "lg:w-5/12 pt-50px pb-10px pt-56px px-15px bg-white relative lg:ml-auto lg:mr-0 -mx-15px"
             },
             [
               _c(
                 "h3",
                 {
                   staticClass:
-                    "text-primary text-30px text-center leading-30px font-bold mb-40px"
+                    "text-primary text-26px text-center leading-26px font-bold tracking-tighter"
                 },
-                [_vm._v("CÓMO PARTICIPAR")]
+                [
+                  _vm._v(
+                    "¿CÓMO PUEDES PARTICIPAR, APRENDER Y GANAR ESPECTACULARES PREMIOS?,"
+                  )
+                ]
               ),
               _vm._v(" "),
-              _c("div", { staticClass: "flex mb-60px" }, [
-                _c(
-                  "p",
-                  {
-                    staticClass:
-                      "text-90px leading-90px text-gray-dark w-2/12 font-bold text-center"
-                  },
-                  [_vm._v("1")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "p",
-                  { staticClass: "w-10/12 text-gray-dark tracking-tighter" },
-                  [
-                    _vm._v(
-                      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea "
+              _c(
+                "p",
+                {
+                  staticClass:
+                    "text-gray font-bold text-center tracking-tighter text-18px"
+                },
+                [
+                  _vm._v(
+                    "EN NUESTRA PLATAFORMA INTERACTIVA EN TAN SOLO 3 PASOS"
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "flex items-center border-b border-gray py-10px"
+                },
+                [
+                  _c("div", { staticClass: "flex" }, [
+                    _c(
+                      "p",
+                      {
+                        staticClass:
+                          "flex-shrink-0 w-58px text-90px leading-90px text-gray-dark w-2/12 font-bold text-center"
+                      },
+                      [_vm._v("1")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "p",
+                      {
+                        staticClass: "w-10/12 text-gray-dark tracking-tighter"
+                      },
+                      [
+                        _vm._v(
+                          "Consulta con tu representante de ventas Bavaria tus metas y objetivos del mes, si cumples con ellos, ganarás 2 códigos de forma mensual."
+                        )
+                      ]
                     )
-                  ]
-                )
+                  ]),
+                  _vm._v(" "),
+                  _c("img", {
+                    staticClass: "w-62px flex-shrink-0",
+                    attrs: { src: "/img/icons/icon-goals-red.svg", alt: "" }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "flex items-center border-b border-gray py-10px"
+                },
+                [
+                  _c("div", { staticClass: "flex" }, [
+                    _c(
+                      "p",
+                      {
+                        staticClass:
+                          "flex-shrink-0 w-58px text-90px leading-90px text-gray-dark w-2/12 font-bold text-center"
+                      },
+                      [_vm._v("2")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "p",
+                      {
+                        staticClass: "w-10/12 text-gray-dark tracking-tighter"
+                      },
+                      [
+                        _vm._v(
+                          "Podrás ganar 1 código adicional a los anteriores, por comprar al menos 3 cajas en cada una de las variedades de Club Colombia."
+                        )
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("img", {
+                    staticClass: "flex-shrink-0",
+                    staticStyle: { width: "189px" },
+                    attrs: { src: "/img/club-colombia.jpg", alt: "" }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "flex items-center py-10px" }, [
+                _c("div", { staticClass: "flex" }, [
+                  _c(
+                    "p",
+                    {
+                      staticClass:
+                        "flex-shrink-0 w-58px text-90px leading-90px text-gray-dark w-2/12 font-bold text-center"
+                    },
+                    [_vm._v("3")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    { staticClass: "w-10/12 text-gray-dark tracking-tighter" },
+                    [
+                      _vm._v(
+                        "Estamos comprometidos con la innovación, así que pregúntale a tu representante Bavaria cual es la innovación del mes, compra 10 cajas de dicho producto y así obtendrás 1 código adicional."
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("img", {
+                  staticClass: "w-65px flex-shrink-0",
+                  attrs: { src: "/img/icons/icon-ligth-red.svg", alt: "" }
+                })
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "flex mb-60px" }, [
-                _c(
-                  "p",
-                  {
-                    staticClass:
-                      "text-90px leading-90px text-gray-dark w-2/12 font-bold text-center"
-                  },
-                  [_vm._v("2")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "p",
-                  { staticClass: "w-10/12 text-gray-dark tracking-tighter" },
-                  [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "lg:-mx-25px -mx-15px bg-primary text-white flex py-10px px-35px justify-between"
+                },
+                [
+                  _c("p", { staticClass: "pr-20px leading-none" }, [
                     _vm._v(
-                      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea "
-                    )
-                  ]
-                )
-              ]),
+                      "\n                        En total podrás obtener "
+                    ),
+                    _c("span", { staticClass: "text-22px" }, [
+                      _vm._v("4 códigos")
+                    ]),
+                    _c("br"),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "text-15px" }, [
+                      _vm._v("mensuales, para participar en nuestra")
+                    ]),
+                    _c("br"),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "text-24px font-bold" }, [
+                      _vm._v("trivia en línea")
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "text-15px" }, [
+                      _vm._v("y así poder ganar")
+                    ]),
+                    _c("br"),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "text-13px" }, [_vm._v("los")]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "text-26px" }, [
+                      _vm._v("fabulosos premios")
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "block text-right text-12px" }, [
+                      _vm._v("que tenemos para tí.")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("img", {
+                    staticClass: "block flex-shrink-0",
+                    staticStyle: { width: "160px" },
+                    attrs: {
+                      src: "/img/icons/icon-pc-goals-white.svg",
+                      alt: ""
+                    }
+                  })
+                ]
+              ),
               _vm._v(" "),
-              _c("div", { staticClass: "flex" }, [
-                _c(
-                  "p",
-                  {
-                    staticClass:
-                      "text-90px leading-90px text-gray-dark w-2/12 font-bold text-center"
-                  },
-                  [_vm._v("3")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "p",
-                  { staticClass: "w-10/12 text-gray-dark tracking-tighter" },
-                  [
-                    _vm._v(
-                      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea "
-                    )
-                  ]
-                )
-              ])
+              _c(
+                "p",
+                {
+                  staticClass:
+                    "text-center text-gray-dark text-10px leading-12px pt-10px"
+                },
+                [
+                  _vm._v(
+                    "Consulta en detalle los Términos y Condiciones del programa, a través de nuestros representantes de ventas Bavaria y en la plataforma www.amigoscerveceros.com"
+                  )
+                ]
+              )
             ]
           )
         ]
