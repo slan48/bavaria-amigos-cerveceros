@@ -38,7 +38,7 @@
                                 </div>
                                 <div class="absolute timer-circle-container lg:hidden">
                                     <vue-circle
-                                        ref="vueCircle"
+                                        ref="vueCircleMobile"
                                         :progress="questionSecondsLeftPercentage"
                                         :size="100"
                                         :reverse="false"
@@ -214,6 +214,7 @@ export default {
             this.interval = setInterval(() => {
                 this.questionSecondsLeft--;
                 this.$refs.vueCircle.updateProgress(this.questionSecondsLeftPercentage);
+                this.$refs.vueCircleMobile.updateProgress(this.questionSecondsLeftPercentage);
 
                 if (this.questionSecondsLeft === 0){
                     clearInterval(this.interval);

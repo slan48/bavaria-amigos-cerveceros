@@ -4953,6 +4953,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
         _this3.$refs.vueCircle.updateProgress(_this3.questionSecondsLeftPercentage);
 
+        _this3.$refs.vueCircleMobile.updateProgress(_this3.questionSecondsLeftPercentage);
+
         if (_this3.questionSecondsLeft === 0) {
           clearInterval(_this3.interval);
 
@@ -52933,7 +52935,7 @@ var render = function() {
                         },
                         [
                           _c("vue-circle", {
-                            ref: "vueCircle",
+                            ref: "vueCircleMobile",
                             attrs: {
                               progress: _vm.questionSecondsLeftPercentage,
                               size: 100,
