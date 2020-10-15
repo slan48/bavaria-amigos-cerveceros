@@ -3384,6 +3384,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -49701,7 +49704,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("DefaultLayout", [
     _c("div", { staticClass: "winners-page-open" }, [
-      _c("div", { staticClass: "container py-45px" }, [
+      _c("div", { staticClass: "container py-45px lg:px-0 px-15px" }, [
         _c(
           "h2",
           {
@@ -49712,244 +49715,251 @@ var render = function() {
         ),
         _vm._v(" "),
         _c("div", { staticClass: "flex flex-wrap" }, [
-          _c("div", { staticClass: "w-4/12 mx-auto" }, [
-            _c(
-              "div",
-              {
-                staticClass: "bg-primary pt-20px px-30px pb-10px rounded-t-10px"
-              },
-              [
-                _c("input", {
-                  ref: "photo",
-                  staticClass: "hidden",
-                  attrs: { type: "file" },
-                  on: { change: _vm.updatePhotoPreview }
-                }),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "avatar-container",
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.selectNewPhoto($event)
-                      }
-                    }
-                  },
-                  [
-                    _c("img", {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: !_vm.photoPreview,
-                          expression: "!photoPreview"
-                        }
-                      ],
-                      attrs: {
-                        src: _vm.user.profile_photo_path
-                          ? _vm.user.profile_photo_path
-                          : "/img/avatar-blank.svg",
-                        alt: ""
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("div", {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: _vm.photoPreview,
-                          expression: "photoPreview"
-                        }
-                      ],
-                      staticClass: "block rounded-full w-full h-full",
-                      style:
-                        "background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url('" +
-                        _vm.photoPreview +
-                        "');"
-                    })
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "mb-7px text-left py-4px px-7px bg-white uppercase rounded-10px tracking-tighter flex flex-wrap items-center"
-                  },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "w-5/12 uppercase text-gray-dark py-2px border-r border-gray text-center font-bold"
-                      },
-                      [_vm._v("Nombre")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "w-7/12 uppercase text-primary py-2px text-left pl-15px"
-                      },
-                      [_vm._v(_vm._s(_vm.user.name))]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "text-left py-4px px-7px bg-white uppercase rounded-10px tracking-tighter flex flex-wrap items-center"
-                  },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "w-5/12 uppercase text-gray-dark py-2px border-r border-gray text-center font-bold"
-                      },
-                      [_vm._v("Id Comercial")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "w-7/12 uppercase text-primary py-2px text-left pl-15px"
-                      },
-                      [_vm._v(_vm._s(_vm.user.commercial_id))]
-                    )
-                  ]
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass:
-                  "bg-gray py-10px px-20px grid grid-cols-2 gap-x-15px"
-              },
-              [
-                _c("div", [
+          _c(
+            "div",
+            { staticClass: "w-full lg:w-4/12 mx-auto mb-15px lg:mb-0" },
+            [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "bg-primary pt-20px px-30px pb-10px rounded-t-10px"
+                },
+                [
+                  _c("input", {
+                    ref: "photo",
+                    staticClass: "hidden",
+                    attrs: { type: "file" },
+                    on: { change: _vm.updatePhotoPreview }
+                  }),
+                  _vm._v(" "),
                   _c(
-                    "p",
+                    "div",
                     {
-                      staticClass: "uppercase text-white font-bold text-center"
+                      staticClass: "avatar-container",
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.selectNewPhoto($event)
+                        }
+                      }
                     },
-                    [_vm._v("Calificación")]
+                    [
+                      _c("img", {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: !_vm.photoPreview,
+                            expression: "!photoPreview"
+                          }
+                        ],
+                        attrs: {
+                          src: _vm.user.profile_photo_path
+                            ? _vm.user.profile_photo_path
+                            : "/img/avatar-blank.svg",
+                          alt: ""
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("div", {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: _vm.photoPreview,
+                            expression: "photoPreview"
+                          }
+                        ],
+                        staticClass: "block rounded-full w-full h-full",
+                        style:
+                          "background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url('" +
+                          _vm.photoPreview +
+                          "');"
+                      })
+                    ]
                   ),
                   _vm._v(" "),
                   _c(
                     "div",
                     {
                       staticClass:
-                        "rounded-10px bg-white py-20px text-center w-full"
+                        "mb-7px text-left py-4px px-7px bg-white uppercase rounded-10px tracking-tighter flex flex-wrap items-center"
                     },
                     [
                       _c(
-                        "p",
+                        "div",
                         {
                           staticClass:
-                            "text-gray-dark font-bold text-70px leading-70px tracking-tighter"
+                            "w-5/12 uppercase text-gray-dark py-2px border-r border-gray text-center font-bold"
                         },
-                        [
-                          _vm._v(
-                            _vm._s(
-                              _vm.participations && _vm.participations.length
-                                ? _vm.participations[0].score
-                                : 0
-                            )
-                          )
-                        ]
+                        [_vm._v("Nombre")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "w-7/12 uppercase text-primary py-2px text-left pl-15px"
+                        },
+                        [_vm._v(_vm._s(_vm.user.name))]
                       )
                     ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c(
-                    "p",
-                    {
-                      staticClass: "uppercase text-white font-bold text-center"
-                    },
-                    [_vm._v("Tiempo")]
                   ),
                   _vm._v(" "),
                   _c(
                     "div",
                     {
                       staticClass:
-                        "rounded-10px bg-white py-20px text-center w-full relative"
+                        "text-left py-4px px-7px bg-white uppercase rounded-10px tracking-tighter flex flex-wrap items-center"
                     },
                     [
                       _c(
-                        "p",
+                        "div",
                         {
                           staticClass:
-                            "uppercase tracking-tighter leading-12px text-12px text-gray-dark absolute top-3 left-0 w-full text-center"
+                            "w-5/12 uppercase text-gray-dark py-2px border-r border-gray text-center font-bold"
                         },
-                        [_vm._v("Mi menor tiempo registrado")]
+                        [_vm._v("Id Comercial")]
                       ),
                       _vm._v(" "),
                       _c(
-                        "p",
+                        "div",
                         {
                           staticClass:
-                            "text-gray-dark font-bold text-70px leading-70px tracking-tighter"
+                            "w-7/12 uppercase text-primary py-2px text-left pl-15px"
                         },
-                        [
-                          _vm._v(
-                            _vm._s(
-                              _vm.lowestTimeRegisteredInSeconds
-                                ? _vm
-                                    .moment("00:00", "mm:ss")
-                                    .add(
-                                      _vm.lowestTimeRegisteredInSeconds,
-                                      "seconds"
-                                    )
-                                    .format("mm:ss")
-                                : "00:00"
-                            )
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "p",
-                        {
-                          staticClass:
-                            "uppercase tracking-tighter leading-12px text-12px text-gray-dark absolute bottom-3 left-0 w-full text-center"
-                        },
-                        [
-                          _vm._v(
-                            _vm._s(
-                              _vm.lowestTimeRegisteredInSeconds &&
-                                _vm.lowestTimeRegisteredInSeconds > 59
-                                ? "Minutos"
-                                : "Segundos"
-                            )
-                          )
-                        ]
+                        [_vm._v(_vm._s(_vm.user.commercial_id))]
                       )
                     ]
                   )
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "bg-primary py-15px rounded-b-10px" })
-          ]),
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "bg-gray py-10px px-20px grid grid-cols-2 gap-x-15px"
+                },
+                [
+                  _c("div", [
+                    _c(
+                      "p",
+                      {
+                        staticClass:
+                          "uppercase text-white font-bold text-center"
+                      },
+                      [_vm._v("Calificación")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "rounded-10px bg-white py-20px text-center w-full"
+                      },
+                      [
+                        _c(
+                          "p",
+                          {
+                            staticClass:
+                              "text-gray-dark font-bold text-70px leading-70px tracking-tighter"
+                          },
+                          [
+                            _vm._v(
+                              _vm._s(
+                                _vm.participations && _vm.participations.length
+                                  ? _vm.participations[0].score
+                                  : 0
+                              )
+                            )
+                          ]
+                        )
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c(
+                      "p",
+                      {
+                        staticClass:
+                          "uppercase text-white font-bold text-center"
+                      },
+                      [_vm._v("Tiempo")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "rounded-10px bg-white py-20px text-center w-full relative"
+                      },
+                      [
+                        _c(
+                          "p",
+                          {
+                            staticClass:
+                              "uppercase tracking-tighter leading-12px text-12px text-gray-dark absolute top-3 left-0 w-full text-center"
+                          },
+                          [_vm._v("Mi menor tiempo registrado")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "p",
+                          {
+                            staticClass:
+                              "text-gray-dark font-bold text-70px leading-70px tracking-tighter"
+                          },
+                          [
+                            _vm._v(
+                              _vm._s(
+                                _vm.lowestTimeRegisteredInSeconds
+                                  ? _vm
+                                      .moment("00:00", "mm:ss")
+                                      .add(
+                                        _vm.lowestTimeRegisteredInSeconds,
+                                        "seconds"
+                                      )
+                                      .format("mm:ss")
+                                  : "00:00"
+                              )
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "p",
+                          {
+                            staticClass:
+                              "uppercase tracking-tighter leading-12px text-12px text-gray-dark absolute bottom-3 left-0 w-full text-center"
+                          },
+                          [
+                            _vm._v(
+                              _vm._s(
+                                _vm.lowestTimeRegisteredInSeconds &&
+                                  _vm.lowestTimeRegisteredInSeconds > 59
+                                  ? "Minutos"
+                                  : "Segundos"
+                              )
+                            )
+                          ]
+                        )
+                      ]
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "bg-primary py-15px rounded-b-10px" })
+            ]
+          ),
           _vm._v(" "),
           _vm.awardsWithParticipations && _vm.awardsWithParticipations.length
             ? _c(
                 "div",
-                { staticClass: "w-6/12 mx-auto" },
+                { staticClass: "w-full lg:w-6/12 mx-auto" },
                 _vm._l(_vm.awardsWithParticipations, function(award) {
                   return _c("div", { staticClass: "mb-15px" }, [
                     _c(
@@ -49967,7 +49977,7 @@ var render = function() {
                         staticClass: "bg-white py-10px px-20px grid grid-cols-3"
                       },
                       [
-                        _c("div", { staticClass: "col-span-2" }, [
+                        _c("div", { staticClass: "lg:col-span-2 col-span-3" }, [
                           _c(
                             "p",
                             { staticClass: "text-gray text-center mb-5px" },
@@ -50073,6 +50083,13 @@ var render = function() {
                                 )
                           ]),
                           _vm._v(" "),
+                          _c("div", { staticClass: "lg:hidden p-15px" }, [
+                            _c("img", {
+                              staticClass: "w-full",
+                              attrs: { src: award.award.image_path, alt: "" }
+                            })
+                          ]),
+                          _vm._v(" "),
                           _c(
                             "div",
                             { staticClass: "grid grid-cols-2 gap-5px mt-10px" },
@@ -50133,7 +50150,9 @@ var render = function() {
                         _vm._v(" "),
                         _c(
                           "div",
-                          { staticClass: "pl-15px flex items-center" },
+                          {
+                            staticClass: "pl-15px lg:flex items-center hidden"
+                          },
                           [
                             _c("img", {
                               attrs: { src: award.award.image_path, alt: "" }

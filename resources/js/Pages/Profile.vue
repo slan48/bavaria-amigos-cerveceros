@@ -1,11 +1,11 @@
 <template>
     <DefaultLayout>
         <div class="winners-page-open">
-            <div class="container py-45px">
+            <div class="container py-45px lg:px-0 px-15px">
                 <h2 class="font-bold text-28px text-primary text-center uppercase mb-40px">MI PERFIL</h2>
 
                 <div class="flex flex-wrap">
-                    <div class="w-4/12 mx-auto">
+                    <div class="w-full lg:w-4/12 mx-auto mb-15px lg:mb-0">
                         <div class="bg-primary pt-20px px-30px pb-10px rounded-t-10px">
                             <input type="file" class="hidden" ref="photo" @change="updatePhotoPreview">
                             <div class="avatar-container" @click.prevent="selectNewPhoto">
@@ -39,11 +39,11 @@
                         </div>
                         <div class="bg-primary py-15px rounded-b-10px"></div>
                     </div>
-                    <div class="w-6/12 mx-auto" v-if="awardsWithParticipations && awardsWithParticipations.length">
+                    <div class="w-full lg:w-6/12 mx-auto" v-if="awardsWithParticipations && awardsWithParticipations.length">
                         <div v-for="award in awardsWithParticipations" class="mb-15px">
                             <div class="rounded-t-10px bg-primary p-5px text-center text-white text-30px tracking-tighter leading-30px uppercase">{{ award.award.name }}</div>
                             <div class="bg-white py-10px px-20px grid grid-cols-3">
-                                <div class="col-span-2">
+                                <div class="lg:col-span-2 col-span-3">
                                     <p class="text-gray text-center mb-5px">Códigos ingresados y jugados</p>
                                     <div class="played-games">
                                         <div class="played-games-header">
@@ -68,13 +68,16 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="lg:hidden p-15px">
+                                        <img class="w-full" :src="award.award.image_path" alt="">
+                                    </div>
                                     <div class="grid grid-cols-2 gap-5px mt-10px">
                                         <input v-model="code[award.award.id]" class="text-center py-5px px-7px bg-gray-light text-gray-dark placeholder-gray uppercase rounded-10px tracking-tighter" placeholder="Ingresa tu código" />
                                         <button class="py-5px px-7px bg-primary text-white uppercase rounded-10px tracking-tighter focus:outline-none" @click.prevent="startParticipation(award.award.id)">Jugar ahora</button>
                                     </div>
                                     <p class="text-primary" v-if="$page.errors.code && $page.errors.award_id == award.award.id">{{ $page.errors.code[0] }}</p>
                                 </div>
-                                <div class="pl-15px flex items-center">
+                                <div class="pl-15px lg:flex items-center hidden">
                                     <img :src="award.award.image_path" alt="">
                                 </div>
                             </div>
