@@ -4,17 +4,17 @@
             <div class="container py-45px">
                 <h2 class="font-bold text-28px text-primary text-center uppercase mb-40px">RANKING DE GANADORES {{ currentMonth }}</h2>
 
-                <div class="flex flex-wrap px-30px">
-                    <div class="w-8/12 pr-15px">
-                        <div class="bg-white rounded-10px py-30px px-60px">
+                <div class="flex flex-wrap px-15px lg:px-30px">
+                    <div class="w-full lg:w-8/12 lg:pr-15px">
+                        <div class="bg-white rounded-10px py-30px px-15px lg:px-60px">
                             <p class="text-center text-18px mb-25px text-gray-dark">Selecciona el premio por el cual estás participando</p>
-                            <div class="grid grid-cols-3 gap-x-30px gap-y-10px">
-                                <div @click.prevent="selectAward(index)" :class="{'bg-gray text-black': index === awardSelectedIndex, 'bg-primary text-white': index !== awardSelectedIndex}" v-for="(award, index) in winnersByAward" class="py-5px px-7px uppercase rounded-10px tracking-tighter focus:outline-none font-bold text-center cursor-pointer">
+                            <div class="grid grid-cols-3 gap-x-10px lg:gap-x-30px gap-y-10px">
+                                <div @click.prevent="selectAward(index)" :class="{'bg-gray text-black': index === awardSelectedIndex, 'bg-primary text-white': index !== awardSelectedIndex}" v-for="(award, index) in winnersByAward" class="py-5px px-7px text-13px flex items-center justify-center lg:text-16px uppercase rounded-10px tracking-tighter focus:outline-none font-bold text-center cursor-pointer">
                                     {{ award.award.name }}
                                 </div>
                             </div>
                             <h3 class="text-center text-18px my-25px uppercase text-gray-dark">Top del ranking de ganadores</h3>
-                            <div class="pl-30px">
+                            <div class="pl-30px overflow-x-auto">
                                 <div class="ranking-table" :class="{'no-results': !winnersByAwardParticipationsFiltered.length}">
                                     <div class="ranking-table-header">
                                         <div>Nombre</div>
@@ -46,7 +46,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="w-4/12 pl-15px">
+                    <div class="w-full lg:w-4/12 lg:pl-15px mt-15px lg:mt-0">
                         <div class="bg-primary rounded-10px p-20px">
                             <p class="font-bold text-28px leading-28px text-white text-center uppercase mb-5px">Premio en juego</p>
                             <p class="text-28px leading-28px text-white text-center uppercase mb-10px">{{ winnersByAward[awardSelectedIndex].award.name }}</p>
@@ -63,22 +63,22 @@
             </div>
         </div>
         <div class="winners-page-closed" v-else>
-            <div class="container flex">
-                <div class="w-5/12 ml-auto pb-40px pt-80px">
-                    <div class="pr-25px">
+            <div class="container flex flex-wrap px-15px lg:px-0">
+                <div class="lg:w-5/12 ml-auto pb-40px pt-80px">
+                    <div class="lg:pr-25px">
                         <img class="block w-full" src="/img/logo-amigos-cerveceros.svg" alt="">
                     </div>
                     <div class="divider"></div>
                     <div class="custom-text-with-shadow relative">
-                        <p class="font-bold text-35px leading-35px text-white z-0 absolute w-full text-center">EL JUEGO EN EL QUE APRENDES</p>
-                        <p class="font-bold text-35px leading-35px text-white z-0 absolute w-full text-center">EL JUEGO EN EL QUE APRENDES</p>
-                        <p class="font-bold text-35px leading-35px text-white z-0 absolute w-full text-center">EL JUEGO EN EL QUE APRENDES</p>
-                        <p class="font-bold text-35px leading-35px text-white z-0 absolute w-full text-center">EL JUEGO EN EL QUE APRENDES</p>
-                        <p class="font-bold text-35px leading-33px text-black relative z-10 w-full text-center">EL JUEGO EN EL QUE APRENDES</p>
+                        <p class="font-bold text-26px lg:text-35px leading-35px text-white z-0 absolute w-full text-center">EL JUEGO EN EL QUE APRENDES</p>
+                        <p class="font-bold text-26px lg:text-35px leading-35px text-white z-0 absolute w-full text-center">EL JUEGO EN EL QUE APRENDES</p>
+                        <p class="font-bold text-26px lg:text-35px leading-35px text-white z-0 absolute w-full text-center">EL JUEGO EN EL QUE APRENDES</p>
+                        <p class="font-bold text-26px lg:text-35px leading-35px text-white z-0 absolute w-full text-center">EL JUEGO EN EL QUE APRENDES</p>
+                        <p class="font-bold text-26px lg:text-35px leading-33px text-black relative z-10 w-full text-center">EL JUEGO EN EL QUE APRENDES</p>
                     </div>
-                    <p class="text-white text-26px leading-35px text-center">Y GANAS CON NUESTROS PRODUCTOS</p>
+                    <p class="text-white text-22px lg:text-26px leading-35px text-center">Y GANAS CON NUESTROS PRODUCTOS</p>
                 </div>
-                <div class="w-6/12 pl-80px pr-30px py-100px bg-white relative flex flex-wrap items-center content-center">
+                <div class="lg:w-6/12 lg:pl-80px lg:pr-30px lg:py-100px p-30px bg-white relative flex flex-wrap items-center content-center -mx-15px lg:mx-0">
                     <h3 class="text-primary text-30px text-left leading-30px font-bold mb-40px w-full">RANKING DE GANADORES</h3>
                     <p class="text-gray-dark tracking-tighter text-28px w-full mb-35px">Podrás conocer el ranking de ganadores y tu posición dentro de él, al finalizar cada mes.</p>
                     <p class="text-gray-dark tracking-tighter text-28px w-full">Los ganadores de cada premio serán contactados por nuestra torre de control, para indicarles como y cuando recibir su premio.</p>
@@ -150,6 +150,7 @@ export default {
 
 .ranking-table{
     position: relative;
+    min-width: 460px;
 
     &::before{
         content: "";
@@ -308,34 +309,54 @@ export default {
     background-position: center;
 
     .divider{
-        width: 200%;
         height: 1px;
         background: #fff;
+        width: 100%;
         margin-top: 30px;
         margin-bottom: 15px;
-        margin-right: 0;
-        margin-left: -100%;
+
+        @screen lg{
+            width: 200%;
+            margin-right: 0;
+            margin-left: -100%;
+        }
     }
 
     .custom-text-with-shadow p:nth-child(1){
-        top: -3px;
+        top: -4px;
         left: -2px;
         pointer-events: none;
+
+        @screen lg{
+            top: -3px;
+        }
     }
     .custom-text-with-shadow p:nth-child(2){
         top: 1px;
         left: -2px;
         pointer-events: none;
+
+        @screen lg{
+            top: 1px;
+        }
     }
     .custom-text-with-shadow p:nth-child(3){
-        top: -3px;
+        top: -4px;
         left: 2px;
         pointer-events: none;
+
+        @screen lg{
+            top: -3px;
+        }
     }
     .custom-text-with-shadow p:nth-child(4){
-        top: 1px;
+        top: 0;
         left: 2px;
         pointer-events: none;
+
+        @screen lg{
+            top: 1px;
+        }
     }
 }
 

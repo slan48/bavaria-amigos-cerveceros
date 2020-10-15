@@ -5192,7 +5192,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".winners-page-open[data-v-4fec367b] {\n  background-image: url(\"/img/bg-white.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.ranking-table[data-v-4fec367b] {\n  position: relative;\n}\n.ranking-table[data-v-4fec367b]::before {\n  content: \"\";\n  display: block;\n  position: absolute;\n  top: 48px;\n  left: -30px;\n  width: 30px;\n  height: 1px;\n  --bg-opacity: 1;\n  background-color: #BE0811;\n  background-color: rgba(190, 8, 17, var(--bg-opacity));\n  z-index: 2;\n}\n.ranking-table.no-results[data-v-4fec367b]::before {\n  display: none;\n}\n.ranking-table .ranking-table-header[data-v-4fec367b] {\n  display: flex;\n  flex-wrap: wrap;\n}\n.ranking-table .ranking-table-header > div[data-v-4fec367b] {\n  width: 20%;\n  border-left: 1px solid #BE0811;\n  border-top: 1px solid #BE0811;\n  text-align: center;\n  font-size: 18px;\n  font-weight: bold;\n  --text-opacity: 1;\n  color: #666666;\n  color: rgba(102, 102, 102, var(--text-opacity));\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n.ranking-table .ranking-table-header > div[data-v-4fec367b]:nth-child(1) {\n  width: 30%;\n}\n.ranking-table .ranking-table-header > div[data-v-4fec367b]:nth-child(2) {\n  width: 15%;\n}\n.ranking-table .ranking-table-header > div[data-v-4fec367b]:nth-child(3) {\n  width: 20%;\n}\n.ranking-table .ranking-table-header > div[data-v-4fec367b]:nth-child(4) {\n  width: 20%;\n}\n.ranking-table .ranking-table-header > div[data-v-4fec367b]:nth-child(5) {\n  width: 15%;\n}\n.ranking-table .ranking-table-header > div[data-v-4fec367b]:last-child {\n  border-right: 1px solid #BE0811;\n}\n.ranking-table .ranking-table-body[data-v-4fec367b] {\n  border-bottom: 1px solid;\n  --border-opacity: 1;\n  border-color: #BE0811;\n  border-color: rgba(190, 8, 17, var(--border-opacity));\n  position: relative;\n  max-height: 171px;\n  overflow-y: auto;\n  overflow-x: auto;\n  width: calc(100% + 30px);\n  padding-left: 30px;\n  left: -30px;\n}\n.ranking-table .ranking-table-body.no-results[data-v-4fec367b] {\n  border: none;\n}\n.ranking-table .ranking-table-body .ranking-table-body-row[data-v-4fec367b] {\n  position: relative;\n  display: flex;\n  flex-wrap: wrap;\n}\n.ranking-table .ranking-table-body .ranking-table-body-row[data-v-4fec367b]:nth-child(odd) {\n  background: #F8D9DA;\n}\n.ranking-table .ranking-table-body .ranking-table-body-row:nth-child(odd) .ranking-table-body-row-index[data-v-4fec367b] {\n  background: #F8D9DA;\n}\n.ranking-table .ranking-table-body .ranking-table-body-row[data-v-4fec367b]:nth-child(even) {\n  background: #fff;\n}\n.ranking-table .ranking-table-body .ranking-table-body-row .ranking-table-body-row-index[data-v-4fec367b] {\n  position: absolute;\n  height: 100%;\n  width: 30px;\n  left: -30px;\n  top: 0;\n  border-left: 1px solid;\n  --text-opacity: 1;\n  color: #666666;\n  color: rgba(102, 102, 102, var(--text-opacity));\n  font-weight: 700;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  --border-opacity: 1;\n  border-color: #BE0811;\n  border-color: rgba(190, 8, 17, var(--border-opacity));\n}\n.ranking-table .ranking-table-body .ranking-table-body-row:first-child > div[data-v-4fec367b]:not(.ranking-table-body-row-index) {\n  --text-opacity: 1;\n  color: #BE0811;\n  color: rgba(190, 8, 17, var(--text-opacity));\n}\n.ranking-table .ranking-table-body .ranking-table-body-row:nth-child(2) > div[data-v-4fec367b]:not(.ranking-table-body-row-index) {\n  --text-opacity: 1;\n  color: #BE0811;\n  color: rgba(190, 8, 17, var(--text-opacity));\n}\n.ranking-table .ranking-table-body .ranking-table-body-row > div[data-v-4fec367b]:not(.ranking-table-body-row-index) {\n  border-left: 1px solid;\n  --text-opacity: 1;\n  color: #666666;\n  color: rgba(102, 102, 102, var(--text-opacity));\n  font-weight: 700;\n  padding-left: 10px;\n  padding-right: 10px;\n  padding-top: 5px;\n  padding-bottom: 5px;\n  text-align: left;\n  --border-opacity: 1;\n  border-color: #BE0811;\n  border-color: rgba(190, 8, 17, var(--border-opacity));\n}\n.ranking-table .ranking-table-body .ranking-table-body-row > div[data-v-4fec367b]:nth-child(2) {\n  width: 30%;\n}\n.ranking-table .ranking-table-body .ranking-table-body-row > div[data-v-4fec367b]:nth-child(3) {\n  width: 15%;\n  padding-left: 0;\n  padding-right: 0;\n  text-align: center;\n}\n.ranking-table .ranking-table-body .ranking-table-body-row > div[data-v-4fec367b]:nth-child(4) {\n  width: 20%;\n}\n.ranking-table .ranking-table-body .ranking-table-body-row > div[data-v-4fec367b]:nth-child(5) {\n  width: 20%;\n  text-align: center;\n}\n.ranking-table .ranking-table-body .ranking-table-body-row > div[data-v-4fec367b]:nth-child(6) {\n  width: 15%;\n  text-align: center;\n  padding-left: 0;\n  padding-right: 0;\n  border-right: 1px solid;\n  --border-opacity: 1;\n  border-color: #BE0811;\n  border-color: rgba(190, 8, 17, var(--border-opacity));\n}\n.winners-page-closed[data-v-4fec367b] {\n  background-image: url(\"/img/bg-home.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.winners-page-closed .divider[data-v-4fec367b] {\n  width: 200%;\n  height: 1px;\n  background: #fff;\n  margin-top: 30px;\n  margin-bottom: 15px;\n  margin-right: 0;\n  margin-left: -100%;\n}\n.winners-page-closed .custom-text-with-shadow p[data-v-4fec367b]:nth-child(1) {\n  top: -3px;\n  left: -2px;\n  pointer-events: none;\n}\n.winners-page-closed .custom-text-with-shadow p[data-v-4fec367b]:nth-child(2) {\n  top: 1px;\n  left: -2px;\n  pointer-events: none;\n}\n.winners-page-closed .custom-text-with-shadow p[data-v-4fec367b]:nth-child(3) {\n  top: -3px;\n  left: 2px;\n  pointer-events: none;\n}\n.winners-page-closed .custom-text-with-shadow p[data-v-4fec367b]:nth-child(4) {\n  top: 1px;\n  left: 2px;\n  pointer-events: none;\n}\n", ""]);
+exports.push([module.i, ".winners-page-open[data-v-4fec367b] {\n  background-image: url(\"/img/bg-white.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.ranking-table[data-v-4fec367b] {\n  position: relative;\n  min-width: 460px;\n}\n.ranking-table[data-v-4fec367b]::before {\n  content: \"\";\n  display: block;\n  position: absolute;\n  top: 48px;\n  left: -30px;\n  width: 30px;\n  height: 1px;\n  --bg-opacity: 1;\n  background-color: #BE0811;\n  background-color: rgba(190, 8, 17, var(--bg-opacity));\n  z-index: 2;\n}\n.ranking-table.no-results[data-v-4fec367b]::before {\n  display: none;\n}\n.ranking-table .ranking-table-header[data-v-4fec367b] {\n  display: flex;\n  flex-wrap: wrap;\n}\n.ranking-table .ranking-table-header > div[data-v-4fec367b] {\n  width: 20%;\n  border-left: 1px solid #BE0811;\n  border-top: 1px solid #BE0811;\n  text-align: center;\n  font-size: 18px;\n  font-weight: bold;\n  --text-opacity: 1;\n  color: #666666;\n  color: rgba(102, 102, 102, var(--text-opacity));\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n.ranking-table .ranking-table-header > div[data-v-4fec367b]:nth-child(1) {\n  width: 30%;\n}\n.ranking-table .ranking-table-header > div[data-v-4fec367b]:nth-child(2) {\n  width: 15%;\n}\n.ranking-table .ranking-table-header > div[data-v-4fec367b]:nth-child(3) {\n  width: 20%;\n}\n.ranking-table .ranking-table-header > div[data-v-4fec367b]:nth-child(4) {\n  width: 20%;\n}\n.ranking-table .ranking-table-header > div[data-v-4fec367b]:nth-child(5) {\n  width: 15%;\n}\n.ranking-table .ranking-table-header > div[data-v-4fec367b]:last-child {\n  border-right: 1px solid #BE0811;\n}\n.ranking-table .ranking-table-body[data-v-4fec367b] {\n  border-bottom: 1px solid;\n  --border-opacity: 1;\n  border-color: #BE0811;\n  border-color: rgba(190, 8, 17, var(--border-opacity));\n  position: relative;\n  max-height: 171px;\n  overflow-y: auto;\n  overflow-x: auto;\n  width: calc(100% + 30px);\n  padding-left: 30px;\n  left: -30px;\n}\n.ranking-table .ranking-table-body.no-results[data-v-4fec367b] {\n  border: none;\n}\n.ranking-table .ranking-table-body .ranking-table-body-row[data-v-4fec367b] {\n  position: relative;\n  display: flex;\n  flex-wrap: wrap;\n}\n.ranking-table .ranking-table-body .ranking-table-body-row[data-v-4fec367b]:nth-child(odd) {\n  background: #F8D9DA;\n}\n.ranking-table .ranking-table-body .ranking-table-body-row:nth-child(odd) .ranking-table-body-row-index[data-v-4fec367b] {\n  background: #F8D9DA;\n}\n.ranking-table .ranking-table-body .ranking-table-body-row[data-v-4fec367b]:nth-child(even) {\n  background: #fff;\n}\n.ranking-table .ranking-table-body .ranking-table-body-row .ranking-table-body-row-index[data-v-4fec367b] {\n  position: absolute;\n  height: 100%;\n  width: 30px;\n  left: -30px;\n  top: 0;\n  border-left: 1px solid;\n  --text-opacity: 1;\n  color: #666666;\n  color: rgba(102, 102, 102, var(--text-opacity));\n  font-weight: 700;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  --border-opacity: 1;\n  border-color: #BE0811;\n  border-color: rgba(190, 8, 17, var(--border-opacity));\n}\n.ranking-table .ranking-table-body .ranking-table-body-row:first-child > div[data-v-4fec367b]:not(.ranking-table-body-row-index) {\n  --text-opacity: 1;\n  color: #BE0811;\n  color: rgba(190, 8, 17, var(--text-opacity));\n}\n.ranking-table .ranking-table-body .ranking-table-body-row:nth-child(2) > div[data-v-4fec367b]:not(.ranking-table-body-row-index) {\n  --text-opacity: 1;\n  color: #BE0811;\n  color: rgba(190, 8, 17, var(--text-opacity));\n}\n.ranking-table .ranking-table-body .ranking-table-body-row > div[data-v-4fec367b]:not(.ranking-table-body-row-index) {\n  border-left: 1px solid;\n  --text-opacity: 1;\n  color: #666666;\n  color: rgba(102, 102, 102, var(--text-opacity));\n  font-weight: 700;\n  padding-left: 10px;\n  padding-right: 10px;\n  padding-top: 5px;\n  padding-bottom: 5px;\n  text-align: left;\n  --border-opacity: 1;\n  border-color: #BE0811;\n  border-color: rgba(190, 8, 17, var(--border-opacity));\n}\n.ranking-table .ranking-table-body .ranking-table-body-row > div[data-v-4fec367b]:nth-child(2) {\n  width: 30%;\n}\n.ranking-table .ranking-table-body .ranking-table-body-row > div[data-v-4fec367b]:nth-child(3) {\n  width: 15%;\n  padding-left: 0;\n  padding-right: 0;\n  text-align: center;\n}\n.ranking-table .ranking-table-body .ranking-table-body-row > div[data-v-4fec367b]:nth-child(4) {\n  width: 20%;\n}\n.ranking-table .ranking-table-body .ranking-table-body-row > div[data-v-4fec367b]:nth-child(5) {\n  width: 20%;\n  text-align: center;\n}\n.ranking-table .ranking-table-body .ranking-table-body-row > div[data-v-4fec367b]:nth-child(6) {\n  width: 15%;\n  text-align: center;\n  padding-left: 0;\n  padding-right: 0;\n  border-right: 1px solid;\n  --border-opacity: 1;\n  border-color: #BE0811;\n  border-color: rgba(190, 8, 17, var(--border-opacity));\n}\n.winners-page-closed[data-v-4fec367b] {\n  background-image: url(\"/img/bg-home.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.winners-page-closed .divider[data-v-4fec367b] {\n  height: 1px;\n  background: #fff;\n  width: 100%;\n  margin-top: 30px;\n  margin-bottom: 15px;\n}\n@media (min-width: 1024px) {\n.winners-page-closed .divider[data-v-4fec367b] {\n    width: 200%;\n    margin-right: 0;\n    margin-left: -100%;\n}\n}\n.winners-page-closed .custom-text-with-shadow p[data-v-4fec367b]:nth-child(1) {\n  top: -4px;\n  left: -2px;\n  pointer-events: none;\n}\n@media (min-width: 1024px) {\n.winners-page-closed .custom-text-with-shadow p[data-v-4fec367b]:nth-child(1) {\n    top: -3px;\n}\n}\n.winners-page-closed .custom-text-with-shadow p[data-v-4fec367b]:nth-child(2) {\n  top: 1px;\n  left: -2px;\n  pointer-events: none;\n}\n@media (min-width: 1024px) {\n.winners-page-closed .custom-text-with-shadow p[data-v-4fec367b]:nth-child(2) {\n    top: 1px;\n}\n}\n.winners-page-closed .custom-text-with-shadow p[data-v-4fec367b]:nth-child(3) {\n  top: -4px;\n  left: 2px;\n  pointer-events: none;\n}\n@media (min-width: 1024px) {\n.winners-page-closed .custom-text-with-shadow p[data-v-4fec367b]:nth-child(3) {\n    top: -3px;\n}\n}\n.winners-page-closed .custom-text-with-shadow p[data-v-4fec367b]:nth-child(4) {\n  top: 0;\n  left: 2px;\n  pointer-events: none;\n}\n@media (min-width: 1024px) {\n.winners-page-closed .custom-text-with-shadow p[data-v-4fec367b]:nth-child(4) {\n    top: 1px;\n}\n}\n", ""]);
 
 // exports
 
@@ -52025,11 +52025,14 @@ var render = function() {
               [_vm._v("RANKING DE GANADORES " + _vm._s(_vm.currentMonth))]
             ),
             _vm._v(" "),
-            _c("div", { staticClass: "flex flex-wrap px-30px" }, [
-              _c("div", { staticClass: "w-8/12 pr-15px" }, [
+            _c("div", { staticClass: "flex flex-wrap px-15px lg:px-30px" }, [
+              _c("div", { staticClass: "w-full lg:w-8/12 lg:pr-15px" }, [
                 _c(
                   "div",
-                  { staticClass: "bg-white rounded-10px py-30px px-60px" },
+                  {
+                    staticClass:
+                      "bg-white rounded-10px py-30px px-15px lg:px-60px"
+                  },
                   [
                     _c(
                       "p",
@@ -52046,13 +52049,16 @@ var render = function() {
                     _vm._v(" "),
                     _c(
                       "div",
-                      { staticClass: "grid grid-cols-3 gap-x-30px gap-y-10px" },
+                      {
+                        staticClass:
+                          "grid grid-cols-3 gap-x-10px lg:gap-x-30px gap-y-10px"
+                      },
                       _vm._l(_vm.winnersByAward, function(award, index) {
                         return _c(
                           "div",
                           {
                             staticClass:
-                              "py-5px px-7px uppercase rounded-10px tracking-tighter focus:outline-none font-bold text-center cursor-pointer",
+                              "py-5px px-7px text-13px flex items-center justify-center lg:text-16px uppercase rounded-10px tracking-tighter focus:outline-none font-bold text-center cursor-pointer",
                             class: {
                               "bg-gray text-black":
                                 index === _vm.awardSelectedIndex,
@@ -52087,7 +52093,7 @@ var render = function() {
                       [_vm._v("Top del ranking de ganadores")]
                     ),
                     _vm._v(" "),
-                    _c("div", { staticClass: "pl-30px" }, [
+                    _c("div", { staticClass: "pl-30px overflow-x-auto" }, [
                       _c(
                         "div",
                         {
@@ -52256,224 +52262,234 @@ var render = function() {
                 )
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "w-4/12 pl-15px" }, [
-                _c("div", { staticClass: "bg-primary rounded-10px p-20px" }, [
-                  _c(
-                    "p",
-                    {
-                      staticClass:
-                        "font-bold text-28px leading-28px text-white text-center uppercase mb-5px"
-                    },
-                    [_vm._v("Premio en juego")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "p",
-                    {
-                      staticClass:
-                        "text-28px leading-28px text-white text-center uppercase mb-10px"
-                    },
-                    [
-                      _vm._v(
-                        _vm._s(
-                          _vm.winnersByAward[_vm.awardSelectedIndex].award.name
-                        )
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "bg-white p-10px" }, [
-                    _c("img", {
-                      staticClass: "block",
-                      attrs: {
-                        src:
-                          _vm.winnersByAward[_vm.awardSelectedIndex].award
-                            .image_path,
-                        alt: ""
-                      }
-                    }),
-                    _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "w-full lg:w-4/12 lg:pl-15px mt-15px lg:mt-0" },
+                [
+                  _c("div", { staticClass: "bg-primary rounded-10px p-20px" }, [
                     _c(
                       "p",
                       {
                         staticClass:
-                          "text-24px leading-24px text-primary text-center uppercase mb-5px tracking-tighter"
+                          "font-bold text-28px leading-28px text-white text-center uppercase mb-5px"
                       },
-                      [_vm._v("Menor tiempo registrado")]
+                      [_vm._v("Premio en juego")]
                     ),
                     _vm._v(" "),
-                    _vm.winnersByAward[_vm.awardSelectedIndex].participations
-                      .length
-                      ? _c(
-                          "p",
-                          {
-                            staticClass:
-                              "text-gray-dark text-center text-100px leading-80px font-bold"
-                          },
-                          [
-                            _vm._v(
-                              _vm._s(
-                                _vm
-                                  .moment("00:00", "mm:ss")
-                                  .add(
-                                    _vm.getLowestTimeRegisteredInSeconds(
-                                      _vm.awardSelectedIndex
-                                    ),
-                                    "seconds"
-                                  )
-                                  .format("mm:ss")
-                              )
-                            )
-                          ]
-                        )
-                      : _c(
-                          "p",
-                          {
-                            staticClass:
-                              "text-gray-dark text-center text-100px leading-80px font-bold"
-                          },
-                          [_vm._v("00:00")]
-                        ),
-                    _vm._v(" "),
                     _c(
                       "p",
                       {
                         staticClass:
-                          "text-gray text-26px leading-26px text-center uppercase"
+                          "text-28px leading-28px text-white text-center uppercase mb-10px"
                       },
                       [
                         _vm._v(
                           _vm._s(
-                            _vm.getLowestTimeRegisteredInSeconds(
-                              _vm.awardSelectedIndex
-                            ) &&
-                              _vm.getLowestTimeRegisteredInSeconds(
-                                _vm.awardSelectedIndex
-                              ) > 59
-                              ? "Minutos"
-                              : "Segundos"
+                            _vm.winnersByAward[_vm.awardSelectedIndex].award
+                              .name
                           )
                         )
                       ]
-                    )
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "bg-white p-10px" }, [
+                      _c("img", {
+                        staticClass: "block",
+                        attrs: {
+                          src:
+                            _vm.winnersByAward[_vm.awardSelectedIndex].award
+                              .image_path,
+                          alt: ""
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "p",
+                        {
+                          staticClass:
+                            "text-24px leading-24px text-primary text-center uppercase mb-5px tracking-tighter"
+                        },
+                        [_vm._v("Menor tiempo registrado")]
+                      ),
+                      _vm._v(" "),
+                      _vm.winnersByAward[_vm.awardSelectedIndex].participations
+                        .length
+                        ? _c(
+                            "p",
+                            {
+                              staticClass:
+                                "text-gray-dark text-center text-100px leading-80px font-bold"
+                            },
+                            [
+                              _vm._v(
+                                _vm._s(
+                                  _vm
+                                    .moment("00:00", "mm:ss")
+                                    .add(
+                                      _vm.getLowestTimeRegisteredInSeconds(
+                                        _vm.awardSelectedIndex
+                                      ),
+                                      "seconds"
+                                    )
+                                    .format("mm:ss")
+                                )
+                              )
+                            ]
+                          )
+                        : _c(
+                            "p",
+                            {
+                              staticClass:
+                                "text-gray-dark text-center text-100px leading-80px font-bold"
+                            },
+                            [_vm._v("00:00")]
+                          ),
+                      _vm._v(" "),
+                      _c(
+                        "p",
+                        {
+                          staticClass:
+                            "text-gray text-26px leading-26px text-center uppercase"
+                        },
+                        [
+                          _vm._v(
+                            _vm._s(
+                              _vm.getLowestTimeRegisteredInSeconds(
+                                _vm.awardSelectedIndex
+                              ) &&
+                                _vm.getLowestTimeRegisteredInSeconds(
+                                  _vm.awardSelectedIndex
+                                ) > 59
+                                ? "Minutos"
+                                : "Segundos"
+                            )
+                          )
+                        ]
+                      )
+                    ])
                   ])
-                ])
-              ])
+                ]
+              )
             ])
           ])
         ])
       : _c("div", { staticClass: "winners-page-closed" }, [
-          _c("div", { staticClass: "container flex" }, [
-            _c("div", { staticClass: "w-5/12 ml-auto pb-40px pt-80px" }, [
-              _c("div", { staticClass: "pr-25px" }, [
-                _c("img", {
-                  staticClass: "block w-full",
-                  attrs: { src: "/img/logo-amigos-cerveceros.svg", alt: "" }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "divider" }),
-              _vm._v(" "),
-              _c("div", { staticClass: "custom-text-with-shadow relative" }, [
-                _c(
-                  "p",
-                  {
-                    staticClass:
-                      "font-bold text-35px leading-35px text-white z-0 absolute w-full text-center"
-                  },
-                  [_vm._v("EL JUEGO EN EL QUE APRENDES")]
-                ),
+          _c(
+            "div",
+            { staticClass: "container flex flex-wrap px-15px lg:px-0" },
+            [
+              _c("div", { staticClass: "lg:w-5/12 ml-auto pb-40px pt-80px" }, [
+                _c("div", { staticClass: "lg:pr-25px" }, [
+                  _c("img", {
+                    staticClass: "block w-full",
+                    attrs: { src: "/img/logo-amigos-cerveceros.svg", alt: "" }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "divider" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "custom-text-with-shadow relative" }, [
+                  _c(
+                    "p",
+                    {
+                      staticClass:
+                        "font-bold text-26px lg:text-35px leading-35px text-white z-0 absolute w-full text-center"
+                    },
+                    [_vm._v("EL JUEGO EN EL QUE APRENDES")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    {
+                      staticClass:
+                        "font-bold text-26px lg:text-35px leading-35px text-white z-0 absolute w-full text-center"
+                    },
+                    [_vm._v("EL JUEGO EN EL QUE APRENDES")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    {
+                      staticClass:
+                        "font-bold text-26px lg:text-35px leading-35px text-white z-0 absolute w-full text-center"
+                    },
+                    [_vm._v("EL JUEGO EN EL QUE APRENDES")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    {
+                      staticClass:
+                        "font-bold text-26px lg:text-35px leading-35px text-white z-0 absolute w-full text-center"
+                    },
+                    [_vm._v("EL JUEGO EN EL QUE APRENDES")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    {
+                      staticClass:
+                        "font-bold text-26px lg:text-35px leading-33px text-black relative z-10 w-full text-center"
+                    },
+                    [_vm._v("EL JUEGO EN EL QUE APRENDES")]
+                  )
+                ]),
                 _vm._v(" "),
                 _c(
                   "p",
                   {
                     staticClass:
-                      "font-bold text-35px leading-35px text-white z-0 absolute w-full text-center"
+                      "text-white text-22px lg:text-26px leading-35px text-center"
                   },
-                  [_vm._v("EL JUEGO EN EL QUE APRENDES")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "p",
-                  {
-                    staticClass:
-                      "font-bold text-35px leading-35px text-white z-0 absolute w-full text-center"
-                  },
-                  [_vm._v("EL JUEGO EN EL QUE APRENDES")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "p",
-                  {
-                    staticClass:
-                      "font-bold text-35px leading-35px text-white z-0 absolute w-full text-center"
-                  },
-                  [_vm._v("EL JUEGO EN EL QUE APRENDES")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "p",
-                  {
-                    staticClass:
-                      "font-bold text-35px leading-33px text-black relative z-10 w-full text-center"
-                  },
-                  [_vm._v("EL JUEGO EN EL QUE APRENDES")]
+                  [_vm._v("Y GANAS CON NUESTROS PRODUCTOS")]
                 )
               ]),
               _vm._v(" "),
               _c(
-                "p",
+                "div",
                 {
-                  staticClass: "text-white text-26px leading-35px text-center"
+                  staticClass:
+                    "lg:w-6/12 lg:pl-80px lg:pr-30px lg:py-100px p-30px bg-white relative flex flex-wrap items-center content-center -mx-15px lg:mx-0"
                 },
-                [_vm._v("Y GANAS CON NUESTROS PRODUCTOS")]
+                [
+                  _c(
+                    "h3",
+                    {
+                      staticClass:
+                        "text-primary text-30px text-left leading-30px font-bold mb-40px w-full"
+                    },
+                    [_vm._v("RANKING DE GANADORES")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    {
+                      staticClass:
+                        "text-gray-dark tracking-tighter text-28px w-full mb-35px"
+                    },
+                    [
+                      _vm._v(
+                        "Podrás conocer el ranking de ganadores y tu posición dentro de él, al finalizar cada mes."
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    {
+                      staticClass:
+                        "text-gray-dark tracking-tighter text-28px w-full"
+                    },
+                    [
+                      _vm._v(
+                        "Los ganadores de cada premio serán contactados por nuestra torre de control, para indicarles como y cuando recibir su premio."
+                      )
+                    ]
+                  )
+                ]
               )
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass:
-                  "w-6/12 pl-80px pr-30px py-100px bg-white relative flex flex-wrap items-center content-center"
-              },
-              [
-                _c(
-                  "h3",
-                  {
-                    staticClass:
-                      "text-primary text-30px text-left leading-30px font-bold mb-40px w-full"
-                  },
-                  [_vm._v("RANKING DE GANADORES")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "p",
-                  {
-                    staticClass:
-                      "text-gray-dark tracking-tighter text-28px w-full mb-35px"
-                  },
-                  [
-                    _vm._v(
-                      "Podrás conocer el ranking de ganadores y tu posición dentro de él, al finalizar cada mes."
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "p",
-                  {
-                    staticClass:
-                      "text-gray-dark tracking-tighter text-28px w-full"
-                  },
-                  [
-                    _vm._v(
-                      "Los ganadores de cada premio serán contactados por nuestra torre de control, para indicarles como y cuando recibir su premio."
-                    )
-                  ]
-                )
-              ]
-            )
-          ])
+            ]
+          )
         ])
   ])
 }
