@@ -5080,7 +5080,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".login-page[data-v-6a63e488] {\n  background-image: url(\"/img/bg-home.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.divider[data-v-6a63e488] {\n  width: 200%;\n  height: 1px;\n  background: #fff;\n  margin-top: 30px;\n  margin-bottom: 15px;\n  margin-right: 0;\n  margin-left: -100%;\n}\n.custom-text-with-shadow p[data-v-6a63e488]:nth-child(1) {\n  top: -3px;\n  left: -2px;\n  pointer-events: none;\n}\n.custom-text-with-shadow p[data-v-6a63e488]:nth-child(2) {\n  top: 1px;\n  left: -2px;\n  pointer-events: none;\n}\n.custom-text-with-shadow p[data-v-6a63e488]:nth-child(3) {\n  top: -3px;\n  left: 2px;\n  pointer-events: none;\n}\n.custom-text-with-shadow p[data-v-6a63e488]:nth-child(4) {\n  top: 1px;\n  left: 2px;\n  pointer-events: none;\n}\n.login-form-box[data-v-6a63e488] {\n  background: rgba(0, 0, 0, 0.4);\n  border-radius: 10px;\n  border: 1px solid #fff;\n  padding: 50px 30px 30px;\n}\n.form-control[data-v-6a63e488] {\n  border-radius: 10px;\n  width: 100%;\n  display: block;\n  font-size: 20px;\n  line-height: 24px;\n  padding: 5px 30px;\n}\n.form-control[data-v-6a63e488]:focus {\n  outline: none;\n}\n.bavaria-custom-checkbox input[data-v-6a63e488] {\n  position: absolute;\n  visibility: hidden;\n}\n.bavaria-custom-checkbox label[data-v-6a63e488] {\n  display: flex;\n  align-items: center;\n}\n.bavaria-custom-checkbox .custom-checkbox-box[data-v-6a63e488] {\n  width: 18px;\n  height: 18px;\n  margin-right: 10px;\n  border: 1px solid #fff;\n  position: relative;\n}\n.bavaria-custom-checkbox .custom-checkbox-icon[data-v-6a63e488] {\n  display: none;\n  width: 15px;\n  position: absolute;\n  left: 4px;\n  top: -4px;\n}\n.bavaria-custom-checkbox input:checked ~ label .custom-checkbox-icon[data-v-6a63e488] {\n  display: block;\n}\n", ""]);
+exports.push([module.i, ".login-page[data-v-6a63e488] {\n  background-image: url(\"/img/bg-home.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.divider[data-v-6a63e488] {\n  height: 1px;\n  background: #fff;\n  width: 100%;\n  margin-left: 0;\n}\n@media (min-width: 1024px) {\n.divider[data-v-6a63e488] {\n    width: 200%;\n    margin-top: 30px;\n    margin-bottom: 15px;\n    margin-right: 0;\n    margin-left: -100%;\n}\n}\n.custom-text-with-shadow p[data-v-6a63e488]:nth-child(1) {\n  top: -3px;\n  left: -2px;\n  pointer-events: none;\n}\n.custom-text-with-shadow p[data-v-6a63e488]:nth-child(2) {\n  top: 1px;\n  left: -2px;\n  pointer-events: none;\n}\n.custom-text-with-shadow p[data-v-6a63e488]:nth-child(3) {\n  top: -3px;\n  left: 2px;\n  pointer-events: none;\n}\n.custom-text-with-shadow p[data-v-6a63e488]:nth-child(4) {\n  top: 1px;\n  left: 2px;\n  pointer-events: none;\n}\n.login-form-box[data-v-6a63e488] {\n  background: rgba(0, 0, 0, 0.4);\n  border-radius: 10px;\n  border: 1px solid #fff;\n  padding: 50px 30px 30px;\n}\n.form-control[data-v-6a63e488] {\n  border-radius: 10px;\n  width: 100%;\n  display: block;\n  font-size: 20px;\n  line-height: 24px;\n  padding: 5px 30px;\n}\n.form-control[data-v-6a63e488]:focus {\n  outline: none;\n}\n.bavaria-custom-checkbox input[data-v-6a63e488] {\n  position: absolute;\n  visibility: hidden;\n}\n.bavaria-custom-checkbox label[data-v-6a63e488] {\n  display: flex;\n  align-items: center;\n}\n.bavaria-custom-checkbox .custom-checkbox-box[data-v-6a63e488] {\n  width: 18px;\n  height: 18px;\n  margin-right: 10px;\n  border: 1px solid #fff;\n  position: relative;\n}\n.bavaria-custom-checkbox .custom-checkbox-icon[data-v-6a63e488] {\n  display: none;\n  width: 15px;\n  position: absolute;\n  left: 4px;\n  top: -4px;\n}\n.bavaria-custom-checkbox input:checked ~ label .custom-checkbox-icon[data-v-6a63e488] {\n  display: block;\n}\n", ""]);
 
 // exports
 
@@ -5232,7 +5232,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "header[data-v-1f42fb90] {\n  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);\n}\n.logo[data-v-1f42fb90] {\n  width: 91px;\n  height: 91px;\n}\n@media (min-width: 768px) {\n.logo[data-v-1f42fb90] {\n    width: 120px;\n    height: 120px;\n}\n}\n@media (min-width: 1024px) {\n.logo[data-v-1f42fb90] {\n    width: 170px;\n    height: 160px;\n}\n}\n.main-menu-container li[data-v-1f42fb90] {\n  text-align: center;\n}\n@media (min-width: 1024px) {\n.main-menu-container li[data-v-1f42fb90] {\n    min-width: 160px;\n}\n}\n.main-menu-container li a.active[data-v-1f42fb90] {\n  --bg-opacity: 1;\n  background-color: #BE0811;\n  background-color: rgba(190, 8, 17, var(--bg-opacity));\n  --text-opacity: 1;\n  color: #ffffff;\n  color: rgba(255, 255, 255, var(--text-opacity));\n  margin-top: -15px;\n  margin-bottom: -15px;\n  height: 74px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.user-menu[data-v-1f42fb90] {\n  position: absolute;\n  right: 0;\n  top: 15px;\n  z-index: 2;\n}\n.user-menu .user-menu-toggle[data-v-1f42fb90] {\n  display: flex;\n  --bg-opacity: 1;\n  background-color: #BE0811;\n  background-color: rgba(190, 8, 17, var(--bg-opacity));\n  font-weight: 700;\n  letter-spacing: -0.05em;\n  border-radius: 10px;\n  color: #fff;\n  font-size: 20px;\n  line-height: 24px;\n  text-transform: uppercase;\n  padding: 8px 10px 8px 39px;\n}\n.user-menu .user-menu-toggle img[data-v-1f42fb90] {\n  border-radius: 50%;\n  width: 41px;\n  height: 41px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  position: absolute;\n  left: -10px;\n  top: 0;\n}\n.user-menu ul[data-v-1f42fb90] {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  width: 100%;\n  display: none;\n}\n.user-menu ul li[data-v-1f42fb90] {\n  margin-top: 5px;\n  --bg-opacity: 1;\n  background-color: #B3B3B3;\n  background-color: rgba(179, 179, 179, var(--bg-opacity));\n  font-weight: 700;\n  text-align: center;\n  letter-spacing: -0.05em;\n  border-radius: 10px;\n  color: #fff;\n  font-size: 20px;\n  line-height: 24px;\n  text-transform: uppercase;\n  padding: 8px 10px;\n}\n.user-menu:hover ul[data-v-1f42fb90] {\n  display: block;\n}\n", ""]);
+exports.push([module.i, "header[data-v-1f42fb90] {\n  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);\n}\n.logo[data-v-1f42fb90] {\n  width: 91px;\n  height: 91px;\n}\n@media (min-width: 768px) {\n.logo[data-v-1f42fb90] {\n    width: 120px;\n    height: 120px;\n}\n}\n@media (min-width: 1024px) {\n.logo[data-v-1f42fb90] {\n    width: 170px;\n    height: 160px;\n}\n}\n.main-menu-container li[data-v-1f42fb90] {\n  text-align: center;\n}\n@media (min-width: 1024px) {\n.main-menu-container li[data-v-1f42fb90] {\n    min-width: 160px;\n}\n}\n.main-menu-container li a.active[data-v-1f42fb90] {\n  --bg-opacity: 1;\n  background-color: #BE0811;\n  background-color: rgba(190, 8, 17, var(--bg-opacity));\n  --text-opacity: 1;\n  color: #ffffff;\n  color: rgba(255, 255, 255, var(--text-opacity));\n  border-top: 1px solid #fff;\n}\n@media (min-width: 768px) {\n.main-menu-container li a.active[data-v-1f42fb90] {\n    border-top: none;\n    margin-top: -15px;\n    margin-bottom: -15px;\n    height: 74px;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n}\n.user-menu[data-v-1f42fb90] {\n  position: absolute;\n  z-index: 2;\n  top: 3px;\n  right: 55px;\n}\n@media (min-width: 768px) {\n.user-menu[data-v-1f42fb90] {\n    right: 0;\n    top: 15px;\n    transform: none;\n}\n}\n.user-menu .user-menu-toggle[data-v-1f42fb90] {\n  display: flex;\n  --bg-opacity: 1;\n  background-color: #BE0811;\n  background-color: rgba(190, 8, 17, var(--bg-opacity));\n  font-weight: 700;\n  letter-spacing: -0.05em;\n  border-radius: 10px;\n  color: #fff;\n  font-size: 20px;\n  line-height: 24px;\n  text-transform: uppercase;\n  padding: 8px 10px 8px 39px;\n}\n.user-menu .user-menu-toggle img[data-v-1f42fb90] {\n  border-radius: 50%;\n  width: 41px;\n  height: 41px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  position: absolute;\n  left: -10px;\n  top: 0;\n}\n.user-menu ul[data-v-1f42fb90] {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  width: 100%;\n  display: none;\n}\n.user-menu ul li[data-v-1f42fb90] {\n  margin-top: 5px;\n  --bg-opacity: 1;\n  background-color: #B3B3B3;\n  background-color: rgba(179, 179, 179, var(--bg-opacity));\n  font-weight: 700;\n  text-align: center;\n  letter-spacing: -0.05em;\n  border-radius: 10px;\n  color: #fff;\n  font-size: 20px;\n  line-height: 24px;\n  text-transform: uppercase;\n  padding: 8px 10px;\n}\n.user-menu:hover ul[data-v-1f42fb90] {\n  display: block;\n}\n", ""]);
 
 // exports
 
@@ -49036,97 +49036,103 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("DefaultLayout", [
     _c("div", { staticClass: "login-page" }, [
-      _c("div", { staticClass: "container flex" }, [
-        _c("div", { staticClass: "w-5/12 pt-50px pb-40px ml-65px" }, [
-          _c("img", {
-            staticClass: "block w-full",
-            attrs: { src: "/img/logo-amigos-cerveceros.svg", alt: "" }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "divider" }),
-          _vm._v(" "),
-          _c(
-            "p",
-            {
-              staticClass:
-                "text-center text-white text-30px leading-30px font-bold"
-            },
-            [_vm._v("Felicitaciones ya eres parte de nuestro")]
-          ),
-          _vm._v(" "),
-          _c(
-            "p",
-            {
-              staticClass:
-                "text-center tracking-tighter text-white text-24px leading-30px"
-            },
-            [
-              _vm._v(
-                "programa de incentivos AMIGOS CERVECEROS, cumple tus metas y podrás ganar fabulosos premios."
-              )
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass:
-              "w-6/12 pt-50px pb-10px pt-55px px-30px bg-white relative ml-auto"
-          },
-          [
+      _c(
+        "div",
+        {
+          staticClass: "container flex px-15px lg:px-0 flex-wrap justify-center"
+        },
+        [
+          _c("div", { staticClass: "lg:w-5/12 pt-50px pb-40px lg:ml-65px" }, [
+            _c("img", {
+              staticClass: "block w-full",
+              attrs: { src: "/img/logo-amigos-cerveceros.svg", alt: "" }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "divider" }),
+            _vm._v(" "),
             _c(
-              "h3",
+              "p",
               {
                 staticClass:
-                  "text-primary text-30px text-center leading-30px font-bold"
+                  "text-center text-white text-30px leading-30px font-bold"
               },
-              [_vm._v("PREMIOS")]
+              [_vm._v("Felicitaciones ya eres parte de nuestro")]
             ),
             _vm._v(" "),
-            _vm.awards && _vm.awards.length
-              ? _c(
-                  "ul",
-                  { staticClass: "flex flex-wrap" },
-                  _vm._l(_vm.awards, function(award) {
-                    return _c(
-                      "li",
-                      { staticClass: "w-1/2 text-center mb-10px" },
-                      [
-                        _c("img", {
-                          staticClass:
-                            "h-40 w-full block object-contain object-center",
-                          attrs: { src: award.image_path, alt: "" }
-                        }),
-                        _vm._v(" "),
-                        _c(
-                          "p",
-                          {
+            _c(
+              "p",
+              {
+                staticClass:
+                  "text-center tracking-tighter text-white text-24px leading-30px"
+              },
+              [
+                _vm._v("programa de incentivos AMIGOS CERVECEROS, "),
+                _c("br", { staticClass: "lg:hidden" }),
+                _vm._v("cumple tus metas y podrás ganar fabulosos premios.")
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "lg:w-6/12 pt-50px pb-10px pt-55px px-10px md:px-30px bg-white relative lg:ml-auto lg:mr-0 -mx-15px"
+            },
+            [
+              _c(
+                "h3",
+                {
+                  staticClass:
+                    "text-primary text-30px text-center leading-30px font-bold"
+                },
+                [_vm._v("PREMIOS")]
+              ),
+              _vm._v(" "),
+              _vm.awards && _vm.awards.length
+                ? _c(
+                    "ul",
+                    { staticClass: "flex flex-wrap" },
+                    _vm._l(_vm.awards, function(award) {
+                      return _c(
+                        "li",
+                        { staticClass: "w-1/2 text-center mb-10px px-5px" },
+                        [
+                          _c("img", {
                             staticClass:
-                              "inline-block font-bold rounded-10px px-14px py-5px uppercase text-white bg-primary"
-                          },
-                          [
-                            _vm._v(
-                              "Son " +
-                                _vm._s(award.stock) +
-                                " " +
-                                _vm._s(award.name)
-                            )
-                          ]
-                        )
-                      ]
-                    )
-                  }),
-                  0
-                )
-              : _vm._e(),
-            _vm._v(" "),
-            _c("p", { staticClass: "text-gray-dark text-center text-12px" }, [
-              _vm._v("*Imagenes de referencia")
-            ])
-          ]
-        )
-      ])
+                              "h-40 w-full block object-contain object-center",
+                            attrs: { src: award.image_path, alt: "" }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "p",
+                            {
+                              staticClass:
+                                "inline-block font-bold rounded-10px px-14px py-5px uppercase text-white bg-primary"
+                            },
+                            [
+                              _vm._v(
+                                "Son " +
+                                  _vm._s(award.stock) +
+                                  " " +
+                                  _vm._s(award.name)
+                              )
+                            ]
+                          )
+                        ]
+                      )
+                    }),
+                    0
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _c("p", { staticClass: "text-gray-dark text-center text-12px" }, [
+                _vm._v("*Imagenes de referencia")
+              ])
+            ]
+          )
+        ]
+      )
     ])
   ])
 }
@@ -53255,7 +53261,7 @@ var render = function() {
                 "ul",
                 {
                   staticClass:
-                    "w-full md:hidden bg-white absolute top-42px left-0 z-10",
+                    "w-full md:hidden bg-white absolute top-46px left-0 z-10",
                   attrs: { id: "mobileMenu" }
                 },
                 [
@@ -53388,7 +53394,9 @@ var render = function() {
                 }),
                 _vm._v(
                   "\n                " +
-                    _vm._s(_vm.$page.user.name) +
+                    _vm._s(_vm.$page.user.name.split(" ")[0]) +
+                    " " +
+                    _vm._s(_vm.$page.user.name.split(" ")[1]) +
                     "\n            "
                 )
               ]),

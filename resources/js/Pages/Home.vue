@@ -1,18 +1,18 @@
 <template>
     <DefaultLayout>
         <div class="login-page">
-            <div class="container flex">
-                <div class="w-5/12 pt-50px pb-40px ml-65px">
+            <div class="container flex px-15px lg:px-0 flex-wrap justify-center">
+                <div class="lg:w-5/12 pt-50px pb-40px lg:ml-65px">
                     <img class="block w-full" src="/img/logo-amigos-cerveceros.svg" alt="">
                     <div class="divider"></div>
                     <p class="text-center text-white text-30px leading-30px font-bold">Felicitaciones ya eres parte de nuestro</p>
-                    <p class="text-center tracking-tighter text-white text-24px leading-30px">programa de incentivos AMIGOS CERVECEROS, cumple tus metas y podrás ganar fabulosos premios.</p>
+                    <p class="text-center tracking-tighter text-white text-24px leading-30px">programa de incentivos AMIGOS CERVECEROS, <br class="lg:hidden">cumple tus metas y podrás ganar fabulosos premios.</p>
                 </div>
 
-                <div class="w-6/12 pt-50px pb-10px pt-55px px-30px bg-white relative ml-auto">
+                <div class="lg:w-6/12 pt-50px pb-10px pt-55px px-10px md:px-30px bg-white relative lg:ml-auto lg:mr-0 -mx-15px">
                     <h3 class="text-primary text-30px text-center leading-30px font-bold">PREMIOS</h3>
                     <ul v-if="awards && awards.length" class="flex flex-wrap">
-                        <li v-for="award in awards" class="w-1/2 text-center mb-10px">
+                        <li v-for="award in awards" class="w-1/2 text-center mb-10px px-5px">
                             <img class="h-40 w-full block object-contain object-center" :src="award.image_path" alt="">
                             <p class="inline-block font-bold rounded-10px px-14px py-5px uppercase text-white bg-primary">Son {{ award.stock }} {{ award.name }}</p>
                         </li>
@@ -63,13 +63,18 @@ export default {
 }
 
 .divider{
-    width: 200%;
     height: 1px;
     background: #fff;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    margin-right: 0;
-    margin-left: -100%;
+    width: 100%;
+    margin-left: 0;
+
+    @screen lg{
+        width: 200%;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        margin-right: 0;
+        margin-left: -100%;
+    }
 }
 
 .custom-text-with-shadow p:nth-child(1){

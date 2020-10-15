@@ -24,7 +24,7 @@
                     <div class="bg-black mb-2px h-2px w-full"></div>
                     <div class="bg-black h-2px w-full"></div>
                 </div>
-                <ul class="w-full md:hidden bg-white absolute top-42px left-0 z-10" v-if="showMobileMenu" id="mobileMenu">
+                <ul class="w-full md:hidden bg-white absolute top-46px left-0 z-10" v-if="showMobileMenu" id="mobileMenu">
                     <li @click.prevent="showMobileMenu = false">
                         <InertiaLink :class="{ 'active': $page.currentRouteName === 'home' }" class="text-20px leading-24px font-bold uppercase block text-center py-10px px-15px md:border-l border-gray" href="/">Inicio</InertiaLink>
                     </li>
@@ -42,7 +42,7 @@
             <div v-if="$page.user" class="user-menu">
                 <div class="user-menu-toggle">
                     <img :src="$page.user.profile_photo_path ? $page.user.profile_photo_path : '/img/avatar-blank.svg'" alt="">
-                    {{ $page.user.name }}
+                    {{ $page.user.name.split(' ')[0] }} {{ $page.user.name.split(' ')[1] }}
                 </div>
                 <ul>
                     <li>
@@ -112,20 +112,31 @@ header{
 
     a.active{
         @apply bg-primary text-white;
-        margin-top: -15px;
-        margin-bottom: -15px;
-        height: 74px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        border-top: 1px solid #fff;
+
+        @screen md{
+            border-top: none;
+            margin-top: -15px;
+            margin-bottom: -15px;
+            height: 74px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
 }
 
 .user-menu{
     position: absolute;
-    right: 0;
-    top: 15px;
     z-index: 2;
+    top: 3px;
+    right: 55px;
+
+    @screen md{
+        right: 0;
+        top: 15px;
+        transform: none;
+    }
 
     .user-menu-toggle{
         display: flex;
