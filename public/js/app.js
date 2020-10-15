@@ -49160,114 +49160,127 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("DefaultLayout", [
     _c("div", { staticClass: "how-to-participate-page" }, [
-      _c("div", { staticClass: "container flex items-center" }, [
-        _c("div", { staticClass: "w-7/12 pr-60px" }, [
+      _c(
+        "div",
+        {
+          staticClass: "container flex items-center flex-wrap px-15px lg:px-0"
+        },
+        [
           _c(
-            "h6",
+            "div",
             {
               staticClass:
-                "mb-5px text-16px leading-18px text-white text-center tracking-tighter"
+                "lg:w-7/12 lg:pr-60px w-full pr-0 mt-80px lg:mt-0 mb-30px lg:mb-0"
             },
             [
-              _vm._v(
-                "¿CÓMO PARTICIPAR EN EL  PROGRAMA DE INCENTIVOS AMIGOS CERVECEROS?"
-              )
+              _c(
+                "h6",
+                {
+                  staticClass:
+                    "mb-5px text-16px leading-18px text-white text-center tracking-tighter"
+                },
+                [
+                  _vm._v(
+                    "¿CÓMO PARTICIPAR EN EL  PROGRAMA DE INCENTIVOS AMIGOS CERVECEROS?"
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c("iframe", {
+                staticClass: "w-full border-4 border-gray",
+                attrs: {
+                  src: "https://www.youtube.com/embed/a3ICNMQW7Ok",
+                  frameborder: "0",
+                  allow:
+                    "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+                  allowfullscreen: ""
+                }
+              })
             ]
           ),
           _vm._v(" "),
-          _c("iframe", {
-            staticClass: "w-full border-4 border-gray",
-            attrs: {
-              src: "https://www.youtube.com/embed/a3ICNMQW7Ok",
-              frameborder: "0",
-              allow:
-                "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
-              allowfullscreen: ""
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass:
-              "w-5/12 pt-50px pb-100px pt-95px px-30px bg-white relative ml-auto"
-          },
-          [
-            _c(
-              "h3",
-              {
-                staticClass:
-                  "text-primary text-30px text-center leading-30px font-bold mb-40px"
-              },
-              [_vm._v("CÓMO PARTICIPAR")]
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "flex mb-60px" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "lg:w-5/12 pt-50px pb-100px pt-95px px-30px bg-white relative lg:ml-auto lg:mr-0 -mx-15px"
+            },
+            [
               _c(
-                "p",
+                "h3",
                 {
                   staticClass:
-                    "text-90px leading-90px text-gray-dark w-2/12 font-bold text-center"
+                    "text-primary text-30px text-center leading-30px font-bold mb-40px"
                 },
-                [_vm._v("1")]
+                [_vm._v("CÓMO PARTICIPAR")]
               ),
               _vm._v(" "),
-              _c(
-                "p",
-                { staticClass: "w-10/12 text-gray-dark tracking-tighter" },
-                [
-                  _vm._v(
-                    "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea "
-                  )
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "flex mb-60px" }, [
-              _c(
-                "p",
-                {
-                  staticClass:
-                    "text-90px leading-90px text-gray-dark w-2/12 font-bold text-center"
-                },
-                [_vm._v("2")]
-              ),
+              _c("div", { staticClass: "flex mb-60px" }, [
+                _c(
+                  "p",
+                  {
+                    staticClass:
+                      "text-90px leading-90px text-gray-dark w-2/12 font-bold text-center"
+                  },
+                  [_vm._v("1")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "p",
+                  { staticClass: "w-10/12 text-gray-dark tracking-tighter" },
+                  [
+                    _vm._v(
+                      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea "
+                    )
+                  ]
+                )
+              ]),
               _vm._v(" "),
-              _c(
-                "p",
-                { staticClass: "w-10/12 text-gray-dark tracking-tighter" },
-                [
-                  _vm._v(
-                    "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea "
-                  )
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "flex" }, [
-              _c(
-                "p",
-                {
-                  staticClass:
-                    "text-90px leading-90px text-gray-dark w-2/12 font-bold text-center"
-                },
-                [_vm._v("3")]
-              ),
+              _c("div", { staticClass: "flex mb-60px" }, [
+                _c(
+                  "p",
+                  {
+                    staticClass:
+                      "text-90px leading-90px text-gray-dark w-2/12 font-bold text-center"
+                  },
+                  [_vm._v("2")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "p",
+                  { staticClass: "w-10/12 text-gray-dark tracking-tighter" },
+                  [
+                    _vm._v(
+                      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea "
+                    )
+                  ]
+                )
+              ]),
               _vm._v(" "),
-              _c(
-                "p",
-                { staticClass: "w-10/12 text-gray-dark tracking-tighter" },
-                [
-                  _vm._v(
-                    "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea "
-                  )
-                ]
-              )
-            ])
-          ]
-        )
-      ])
+              _c("div", { staticClass: "flex" }, [
+                _c(
+                  "p",
+                  {
+                    staticClass:
+                      "text-90px leading-90px text-gray-dark w-2/12 font-bold text-center"
+                  },
+                  [_vm._v("3")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "p",
+                  { staticClass: "w-10/12 text-gray-dark tracking-tighter" },
+                  [
+                    _vm._v(
+                      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea "
+                    )
+                  ]
+                )
+              ])
+            ]
+          )
+        ]
+      )
     ])
   ])
 }

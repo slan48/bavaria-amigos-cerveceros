@@ -1,13 +1,13 @@
 <template>
     <DefaultLayout>
         <div class="how-to-participate-page">
-            <div class="container flex items-center">
-                <div class="w-7/12 pr-60px">
+            <div class="container flex items-center flex-wrap px-15px lg:px-0">
+                <div class="lg:w-7/12 lg:pr-60px w-full pr-0 mt-80px lg:mt-0 mb-30px lg:mb-0">
                     <h6 class="mb-5px text-16px leading-18px text-white text-center tracking-tighter">¿CÓMO PARTICIPAR EN EL  PROGRAMA DE INCENTIVOS AMIGOS CERVECEROS?</h6>
                     <iframe class="w-full border-4 border-gray" src="https://www.youtube.com/embed/a3ICNMQW7Ok" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
 
-                <div class="w-5/12 pt-50px pb-100px pt-95px px-30px bg-white relative ml-auto">
+                <div class="lg:w-5/12 pt-50px pb-100px pt-95px px-30px bg-white relative lg:ml-auto lg:mr-0 -mx-15px">
                     <h3 class="text-primary text-30px text-center leading-30px font-bold mb-40px">CÓMO PARTICIPAR</h3>
                     <div class="flex mb-60px">
                         <p class="text-90px leading-90px text-gray-dark w-2/12 font-bold text-center">1</p>
