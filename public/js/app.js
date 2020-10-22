@@ -4912,16 +4912,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.stopCounter();
       event.currentTarget.classList.add('active');
       setTimeout(function () {
-        if (!answer.correct) {
-          _this2.finishGame();
-        } else {
-          axios.patch('/participations', {
-            participation_id: _this2.participation.id,
-            question_id: answeredQuestion.id
-          }).then(function (res) {
+        axios.patch('/participations', {
+          participation_id: _this2.participation.id,
+          question_id: answeredQuestion.id,
+          answer_correct: answer.correct
+        }).then(function (res) {
+          if (!answer.correct) {
+            _this2.finishGame();
+          } else {
             _this2.goToNextQuestion();
-          })["catch"](console.log);
-        }
+          }
+        })["catch"](console.log);
       }, 1000);
     },
     goToNextQuestion: function goToNextQuestion() {
@@ -53032,10 +53033,7 @@ var render = function() {
                                   },
                                   [
                                     _vm._v(
-                                      _vm._s(
-                                        _vm.allQuestions[_vm.activeQuestion]
-                                          .score
-                                      )
+                                      _vm._s((_vm.activeQuestion + 1) * 100)
                                     )
                                   ]
                                 )

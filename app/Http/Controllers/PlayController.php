@@ -50,7 +50,7 @@ class PlayController extends Controller
         $code->save();
 
         return Inertia::render('juega-y-gana/Play', [
-            'questions' => Question::all(),
+            'questions' => Question::inRandomOrder()->take(15)->get(),
             'participation' => $participation
         ]);
     }

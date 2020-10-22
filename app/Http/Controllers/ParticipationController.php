@@ -101,7 +101,8 @@ class ParticipationController extends Controller
     public function update(Request $request){
         $this->validate($request, [
             'participation_id' => 'required',
-            'question_id' => 'required'
+            'question_id' => 'required',
+            'answer_correct' => 'required'
         ]);
 
         $participation = Participation::find($request['participation_id']);
@@ -112,8 +113,16 @@ class ParticipationController extends Controller
         }
 
         $timeInSeconds = Carbon::parse($participation->created_at)->diffInSeconds(Carbon::now());
+        $numberOfAnsweredQuestion = $participation->last_answered_question_number + 1;
+        $newScore = 0;
+
+        if ($request['answer_correct'] == true){
+            $newScore = $numberOfAnsweredQuestion * 100;
+        }
+
         $participation->time_in_seconds = $timeInSeconds;
-        $participation->score = $participation->score + $question->score;
+        $participation->last_answered_question_number = $numberOfAnsweredQuestion;
+        $participation->score = $participation->score + $newScore;
         $participation->save();
 
         return response()->json(['status' => '200', 'message' => 'Participacion actualizada correctamente']);

@@ -70,7 +70,7 @@
                                     <p class="font-bold text-center text-22px lg:text-32px leading-22px lg:leading-32px tracking-tighter mb-15px text-gray-dark uppercase">Pregunta {{ activeQuestion + 1 }} / {{ allQuestions.length }}</p>
                                     <div class="rounded-10px overflow-hidden flex flex-wrap h-78px">
                                         <p class="bg-primary text-white h-full w-8/12 flex justify-center items-center uppercase font-bold text-18px lg:text-26px leading-26px tracking-tighter">Calificación</p>
-                                        <p class="bg-white text-primary h-full w-4/12 flex justify-center items-center uppercase font-bold text-18px lg:text-30px leading-30px">{{ allQuestions[activeQuestion].score }}</p>
+                                        <p class="bg-white text-primary h-full w-4/12 flex justify-center items-center uppercase font-bold text-18px lg:text-30px leading-30px">{{ (activeQuestion + 1) * 100 }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -180,15 +180,15 @@ export default {
             this.stopCounter();
             event.currentTarget.classList.add('active');
             setTimeout(() => {
-                if (!answer.correct){
-                    this.finishGame();
-                } else{
-                    axios.patch('/participations', {participation_id: this.participation.id, question_id: answeredQuestion.id})
+                axios.patch('/participations', {participation_id: this.participation.id, question_id: answeredQuestion.id, answer_correct: answer.correct})
                     .then(res => {
-                        this.goToNextQuestion();
+                        if (!answer.correct){
+                            this.finishGame();
+                        } else{
+                            this.goToNextQuestion();
+                        }
                     })
                     .catch(console.log);
-                }
             }, 1000);
         },
         goToNextQuestion(){
