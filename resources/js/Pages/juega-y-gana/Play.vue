@@ -82,7 +82,7 @@
                             <div class="question-and-answers-container-inner" :key="allQuestions[activeQuestion].question">
                                 <div class="question">
                                     <img src="/img/question-bg.svg" alt="">
-                                    <p>{{ allQuestions[activeQuestion].question }}</p>
+                                    <p :class="allQuestions[activeQuestion].question.length > 110 ? 'lg:text-16px text-12px' : 'lg:text-24px text-14px'">{{ allQuestions[activeQuestion].question }}</p>
                                 </div>
                                 <div class="answers">
                                     <div class="answer" v-for="(answer, index) in allQuestions[activeQuestion].answers" @click="validateAnswerAndSave($event, allQuestions[activeQuestion], answer)">
@@ -371,12 +371,12 @@ export default {
             text-align: center;
             top: 50%;
             transform: translate(-50%, -50%);
-            font-size: 16px;
             width: 82%;
             @apply text-primary;
+            line-height: 14px;
 
             @screen lg{
-                font-size: 24px;
+                line-height: 18px;
             }
         }
     }
@@ -424,9 +424,11 @@ export default {
                 top: 50%;
                 transform: translateY(-50%);
                 font-size: 16px;
+                line-height: 17px;
                 width: 67%;
 
                 @screen lg{
+                    line-height: 17px;
                     font-size: 24px;
                 }
             }
