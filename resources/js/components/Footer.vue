@@ -12,16 +12,16 @@
             </div>
             <div class="w-full lg:w-6/12 flex items-center justify-center lg:justify-end mt-15px lg:mt-0 flex-wrap lg:flex-no-wrap">
                 <p class="uppercase font-bold text-14px leading-17px w-full lg:w-auto text-center lg:text-left mb-15px lg:mb-0">Síguenos</p>
-                <a class="block w-72px px-24px border-r border-primary" href="#">
+                <a target="_blank" class="block w-72px px-24px border-r border-primary" href="https://www.instagram.com/bavaria_colombia/">
                     <img class="w-full block h-24px" src="/img/icons/icon-instagram-red.svg" alt="">
                 </a>
-                <a class="block w-72px px-24px border-r border-primary" href="#">
+                <a target="_blank" class="block w-72px px-24px border-r border-primary" href="https://www.facebook.com/amigosBAVARIA/">
                     <img class="w-full block h-24px" src="/img/icons/icon-facebook-red.svg" alt="">
                 </a>
-                <a class="block w-72px px-24px border-r border-primary" href="#">
-                    <img class="w-full block h-24px" src="/img/icons/icon-pinterest-red.svg" alt="">
+                <a target="_blank" class="block w-72px px-24px border-r border-primary" href="https://twitter.com/Club_Colombia">
+                    <img class="w-full block h-24px" src="/img/icons/icon-twitter-red.svg" alt="">
                 </a>
-                <a class="block w-72px px-24px" href="#">
+                <a target="_blank" class="block w-72px px-24px" href="https://www.sesiones.clubcolombia.com.co/">
                     <img class="w-full block h-24px" src="/img/icons/icon-message-red.svg" alt="">
                 </a>
             </div>

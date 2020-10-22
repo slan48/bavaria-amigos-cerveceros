@@ -53307,7 +53307,10 @@ var staticRenderFns = [
                 "a",
                 {
                   staticClass: "block w-72px px-24px border-r border-primary",
-                  attrs: { href: "#" }
+                  attrs: {
+                    target: "_blank",
+                    href: "https://www.instagram.com/bavaria_colombia/"
+                  }
                 },
                 [
                   _c("img", {
@@ -53321,7 +53324,10 @@ var staticRenderFns = [
                 "a",
                 {
                   staticClass: "block w-72px px-24px border-r border-primary",
-                  attrs: { href: "#" }
+                  attrs: {
+                    target: "_blank",
+                    href: "https://www.facebook.com/amigosBAVARIA/"
+                  }
                 },
                 [
                   _c("img", {
@@ -53335,19 +53341,28 @@ var staticRenderFns = [
                 "a",
                 {
                   staticClass: "block w-72px px-24px border-r border-primary",
-                  attrs: { href: "#" }
+                  attrs: {
+                    target: "_blank",
+                    href: "https://twitter.com/Club_Colombia"
+                  }
                 },
                 [
                   _c("img", {
                     staticClass: "w-full block h-24px",
-                    attrs: { src: "/img/icons/icon-pinterest-red.svg", alt: "" }
+                    attrs: { src: "/img/icons/icon-twitter-red.svg", alt: "" }
                   })
                 ]
               ),
               _vm._v(" "),
               _c(
                 "a",
-                { staticClass: "block w-72px px-24px", attrs: { href: "#" } },
+                {
+                  staticClass: "block w-72px px-24px",
+                  attrs: {
+                    target: "_blank",
+                    href: "https://www.sesiones.clubcolombia.com.co/"
+                  }
+                },
                 [
                   _c("img", {
                     staticClass: "w-full block h-24px",
