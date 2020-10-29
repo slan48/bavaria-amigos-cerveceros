@@ -55,7 +55,7 @@
                 <div class="modal-overlay" @click.prevent="modalActive = false"></div>
                 <div class="modal-box relative">
                     <h2 class="uppercase text-28px leading-28px md:leading-normal text-white text-center tracking-tighter">¿CÓMO PARTICIPAR EN EL PROGRAMA DE INCENTIVOS AMIGOS CERVECEROS?</h2>
-                    <iframe class="relative w-full rounded-10px border-4 border-gray" src="https://www.youtube.com/embed/e_oQM334j2I?autoplay=1&controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe class="relative w-full rounded-10px border-4 border-gray" src="https://www.youtube.com/embed/e_oQM334j2I?autoplay=1&controls=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <button @click.prevent="modalActive = false" type="button" class="absolute right-20px bottom-20px z-10 focus:outline-none inline-block rounded-10px bg-white font-bold text-xl text-primary uppercase p-3 flex items-center">
                         Saltar video
                         <img class="ml-6px h-6" src="/img/icons/icon-arrow-right-red.svg" alt="">
