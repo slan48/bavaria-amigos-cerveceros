@@ -4,7 +4,7 @@
             <div class="container flex items-center flex-wrap px-15px lg:px-0">
                 <div class="lg:w-7/12 lg:pr-60px w-full pr-0 mt-80px lg:mt-0 mb-30px lg:mb-0">
                     <h6 class="mb-5px text-16px leading-18px text-white text-center tracking-tighter">¿CÓMO PARTICIPAR EN EL  PROGRAMA DE INCENTIVOS AMIGOS CERVECEROS?</h6>
-                    <iframe class="w-full border-4 border-gray" src="https://www.youtube.com/embed/a3ICNMQW7Ok" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe class="w-full border-4 border-gray" src="https://www.youtube.com/embed/e_oQM334j2I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
 
                 <div class="lg:w-5/12 pt-50px pb-10px pt-56px px-15px bg-white relative lg:ml-auto lg:mr-0 -mx-15px">
