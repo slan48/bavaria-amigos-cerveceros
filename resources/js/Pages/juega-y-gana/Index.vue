@@ -22,7 +22,12 @@
                             </div>
                             <p class="text-primary" v-if="$page.errors.code && $page.errors.award_id == award.id">{{ $page.errors.code[0] }}</p>
                             <div v-if="!award.available" class="absolute top-0 left-0 w-full h-full z-10 uppercase text-white text-center flex justify-center items-center text-22px leading-22px" style="background: rgba(0,0,0,0.8);">
-                                Premio disponible<br>en {{ award.available_month }}
+                                <template v-if="award.custom_message_when_blocked">
+                                    {{ award.custom_message_when_blocked }}
+                                </template>
+                                <template v-else>
+                                    Premio disponible<br>en {{ award.available_month }}
+                                </template>
                             </div>
                         </div>
                     </div>
