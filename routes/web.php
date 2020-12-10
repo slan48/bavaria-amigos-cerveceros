@@ -24,10 +24,6 @@ use App\Http\Controllers\ParticipationController;
 Route::middleware(['auth:sanctum'])->group(function (){
     Route::get('/', HomeController::class)->name('home');
 
-    Route::get('/como-participar', function (){
-        return Inertia\Inertia::render('HowToParticipate');
-    })->name('como-participar');
-
     Route::get('/juega-y-gana', [PlayController::class, 'Instructions'])->name('juega-y-gana');
     Route::get('/juega-y-gana/juego/{participation}', [PlayController::class, 'game'])->name('juega-y-gana.game');
     Route::get('/perfil', [UserController::class, 'profile'])->name('perfil');
@@ -36,6 +32,10 @@ Route::middleware(['auth:sanctum'])->group(function (){
     Route::post('/participations', [ParticipationController::class, 'create'])->name('participations.create');
     Route::patch('/participations', [ParticipationController::class, 'update'])->name('participations.update');
 });
+
+Route::get('/como-participar', function (){
+    return Inertia\Inertia::render('HowToParticipate');
+})->name('como-participar');
 
 // Fortify custom routes
 Route::group(['middleware' => config('fortify.middleware', ['web'])], function () {
