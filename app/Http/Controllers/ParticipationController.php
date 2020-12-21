@@ -18,9 +18,9 @@ class ParticipationController extends Controller
     public function show(){
         $winnersByAward = [];
         if (env('SHOW_WINNERS', 'false') == 'true'){
-            $startOfMonth = Carbon::now()->startOfMonth()->toDateTimeString();
-            $endOfMonth = Carbon::now()->endOfMonth()->toDateTimeString();
-            $participations = Participation::whereBetween('created_at', [$startOfMonth, $endOfMonth])->with('user')->orderBy('score', 'desc')->orderBy('time_in_seconds', 'asc')->get();
+            $startOfLastMonth = Carbon::now()->subMonth()->startOfMonth()->toDateTimeString();
+            $endOfLastMonth = Carbon::now()->subMonth()->endOfMonth()->toDateTimeString();
+            $participations = Participation::whereBetween('created_at', [$startOfLastMonth, $endOfLastMonth])->with('user')->orderBy('score', 'desc')->orderBy('time_in_seconds', 'asc')->get();
             $awards = Award::all(['id', 'name', 'image_path']);
 
             foreach ($awards as $award){
