@@ -1,6 +1,6 @@
 <template>
     <DefaultLayout>
-        <div class="winners-page-open" v-if="winnersByAward && winnersByAward.length">
+        <div class="winners-page-open" v-if="true">
             <div class="container py-45px">
                 <h2 class="font-bold text-28px text-primary text-center uppercase mb-40px">RANKING DE GANADORES {{ currentMonth }}</h2>
 
