@@ -18,19 +18,19 @@
                                 <div class="ranking-table" :class="{'no-results': !winnersByAwardParticipationsFiltered.length}">
                                     <div class="ranking-table-header">
                                         <div>Nombre</div>
-                                        <div>ID</div>
-                                        <div>Regional</div>
-                                        <div>Calificación</div>
-                                        <div>Tiempo</div>
+<!--                                        <div>ID</div>-->
+<!--                                        <div>Regional</div>-->
+<!--                                        <div>Calificación</div>-->
+<!--                                        <div>Tiempo</div>-->
                                     </div>
                                     <div class="ranking-table-body" v-if="winnersByAwardParticipationsFiltered.length">
                                         <div class="ranking-table-body-row" v-for="participation in winnersByAwardParticipationsFiltered">
                                             <div class="ranking-table-body-row-index">{{ participation.positionNumber }}</div>
                                             <div>{{ participation.user.name }}</div>
-                                            <div>{{ participation.user.commercial_id }}</div>
-                                            <div>{{ participation.user.zone }}</div>
-                                            <div>{{ participation.score }}</div>
-                                            <div>{{ moment('00:00', 'mm:ss').add(participation.time_in_seconds, 'seconds').format('mm:ss') }}</div>
+<!--                                            <div>{{ participation.user.commercial_id }}</div>-->
+<!--                                            <div>{{ participation.user.zone }}</div>-->
+<!--                                            <div>{{ participation.score }}</div>-->
+<!--                                            <div>{{ moment('00:00', 'mm:ss').add(participation.time_in_seconds, 'seconds').format('mm:ss') }}</div>-->
                                         </div>
                                     </div>
                                     <div class="ranking-table-body no-results" v-else>
@@ -184,24 +184,24 @@ export default {
             @apply text-gray-dark py-10px;
 
             &:nth-child(1){
-                width: 30%;
+                width: 100%;
             }
 
-            &:nth-child(2){
-                width: 15%;
-            }
-
-            &:nth-child(3){
-                width: 20%;
-            }
-
-            &:nth-child(4){
-                width: 20%;
-            }
-
-            &:nth-child(5){
-                width: 15%;
-            }
+            //&:nth-child(2){
+            //    width: 15%;
+            //}
+            //
+            //&:nth-child(3){
+            //    width: 20%;
+            //}
+            //
+            //&:nth-child(4){
+            //    width: 20%;
+            //}
+            //
+            //&:nth-child(5){
+            //    width: 15%;
+            //}
 
             &:last-child{
                 border-right: 1px solid #BE0811;
@@ -271,33 +271,33 @@ export default {
 
             >div{
                 &:nth-child(2){
-                    width: 30%;
+                    width: 100%;
                 }
 
-                &:nth-child(3){
-                    width: 15%;
-                    padding-left: 0;
-                    padding-right: 0;
-                    text-align: center;
-                }
-
-                &:nth-child(4){
-                    width: 20%;
-                }
-
-                &:nth-child(5){
-                    width: 20%;
-                    text-align: center;
-                }
-
-                &:nth-child(6){
-                    width: 15%;
-                    text-align: center;
-                    padding-left: 0;
-                    padding-right: 0;
-                    border-right: 1px solid;
-                    @apply border-primary;
-                }
+                //&:nth-child(3){
+                //    width: 15%;
+                //    padding-left: 0;
+                //    padding-right: 0;
+                //    text-align: center;
+                //}
+                //
+                //&:nth-child(4){
+                //    width: 20%;
+                //}
+                //
+                //&:nth-child(5){
+                //    width: 20%;
+                //    text-align: center;
+                //}
+                //
+                //&:nth-child(6){
+                //    width: 15%;
+                //    text-align: center;
+                //    padding-left: 0;
+                //    padding-right: 0;
+                //    border-right: 1px solid;
+                //    @apply border-primary;
+                //}
             }
         }
     }
